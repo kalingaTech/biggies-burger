@@ -19,7 +19,7 @@
         function animateEmoji() {
           emojiSpan.textContent = emojis[index];
     
-          if (progress >90) {
+          if (progress >95) {
             emojiSpan.style.transform = "translateY(0px)";
             emojiSpan.style.opacity = 1;
         }else{
@@ -27,9 +27,9 @@
                 targets: emojiSpan,
                 keyframes: [
                     { opacity: 0, duration: 0 },
-                    { translateY: -30, opacity: 1, duration: 300, easing: 'easeOutCubic' },
-                    { translateY: 0, duration: 300, easing: 'easeInCubic' },
-                    { opacity: 0, duration: 300, delay: 300 }
+                    { translateY: -30, opacity: 1, duration: 150, easing: 'easeOutCubic' },
+                    { translateY: 0, duration: 150, easing: 'easeInCubic' },
+                    { opacity: 0, duration: 150, delay: 150 }
                   ],
                   complete: () => {
                 index = (index + 1) % emojis.length;
@@ -164,8 +164,7 @@
                                         duration: 300,
                                         easing: 'easeOutQuad',
                                         complete: function () {
-                                            document.querySelector('.loader').style.display = 'none';
-                                            headerLoadAnimation(); 
+                                            document.querySelector('.loader').style.display = 'none'; 
                                         }
                                     });
                                 }
@@ -175,15 +174,76 @@
                 }
             });
         }
-
         
-       const headerLoadAnimation=()=>{
-           anime({
-               targets: 'header',
-               translateY: ['-100px' , '0px'],
-               duration: 500,
-               easing: 'easeOutBounce'
-           });
-       }
-
         updateProgress();
+function wrapCharacters(selector) {
+    const el = document.querySelector(selector);
+    const text = el.textContent;
+    el.innerHTML = text
+      .split('')
+      .map(char => `<span class="char">${char === ' ' ? '&nbsp;' : char}</span>`)
+      .join('');
+  }
+  
+  // 2. Scroll-driven animation
+  function setupScrollDrivenAnimation() {
+    const chars = document.querySelectorAll('.scroll-text .char');
+    const video = document.querySelector('.scroll-video');
+    const section = document.querySelector('.what-so-good');
+  
+    // Text color animation
+    const textAnim = anime({
+      targets: chars,
+      color: ['#888', '#000'],
+      delay: anime.stagger(30),
+      duration: 1000,
+      autoplay: false
+    });
+  
+    // Video scale & move animation
+    const videoAnim = anime({
+      targets: video,
+      translateY: ['100px', '0px'],
+      left:'0%',
+      height: ['10%','100%'],
+      width:['10vw','100vw'],
+      opacity: [0, 1],
+      duration: 100,
+      easing: 'easeOutQuad',
+      autoplay: false
+    });
+  
+    let videoPlayed = false;
+  
+    window.addEventListener('scroll', () => {
+        const sectionRect = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+    
+        // Start animation when section enters the viewport
+        const sectionTop = sectionRect.top;
+        const sectionHeight = section.offsetHeight;
+    
+        // Calculate how much we've scrolled through the section
+        if (sectionTop < windowHeight && sectionRect.bottom > 0) {
+          const scrollAmount = windowHeight - sectionTop;
+          const scrollProgress = Math.min(scrollAmount / (windowHeight + sectionHeight), 1);
+    
+          // Update animations
+          textAnim.seek(textAnim.duration * scrollProgress);
+          videoAnim.seek((videoAnim.duration) * scrollProgress);
+    
+          // Play video when half the characters have changed
+          if (!videoPlayed && scrollProgress > 0.5) {
+            video.play();
+            videoPlayed = true;
+          }
+        }
+      });
+  }
+  
+  // 3. Init
+  wrapCharacters('.scroll-text');
+  setupScrollDrivenAnimation();
+  
+
+        // heroLoadAnimation();

@@ -60,7 +60,7 @@
   <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center justify-center">
     <!-- Award Badge -->
-    <div class="absolute left-6 top-1/2 transform -translate-y-1/2 hidden lg:block">
+    <div class="award-section absolute left-6 top-1/2 transform -translate-y-1/2 hidden lg:block">
       <div class=" p-4 flex items-center flex-col justify-center max-w-xs">
         <div class="text-yellow-400 mb-2">
           <img src="/assets/no1.png" alt="">
@@ -77,7 +77,7 @@
     </div>
 
     <!-- Social Media Icons -->
-    <div class="absolute right-6 top-1/2 transform -translate-y-1/2 hidden lg:block">
+    <div class="socials absolute right-6 top-1/2 transform -translate-y-1/2 hidden lg:block">
       <div class="flex flex-col space-y-4">
         <a href="#" class="text-yellow-400 hover:text-yellow-300 transition-colors">
           <i class="fab fa-twitter text-xl"></i>
@@ -95,7 +95,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="text-center max-w-6xl mx-auto relative">
+    <div class="hero-section text-center max-w-6xl mx-auto relative">
       <h1 class="text-yellow-400 text-sm font-medium mb-8 tracking-wider">WELCOME TO THE BIGGEST</h1>
 
       <!-- Large BURGER Text with Image -->
@@ -104,7 +104,7 @@
           BURGER
         </div>
         <!-- Burger Image Overlay -->
-        <div class="absolute inset-0 flex items-center justify-center">
+        <div class="hero-burger absolute inset-0 flex items-center justify-center">
           <img src="/assets/burger1.png" alt="Delicious Burger" class="w-150 object-contain">
         </div>
       </div>
@@ -140,40 +140,39 @@
       <div class="relative">
         <!-- Central Burger Image -->
         <div class="flex justify-center mb-16">
-          <img src="/placeholder.svg?height=500&width=400" alt="Deconstructed Burger" class="w-80 h-96 object-contain">
+          <img src="/assets/burger2.png" alt="Deconstructed Burger" class="w-80 h-96 object-contain">
         </div>
 
         <!-- Statistics Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           <!-- 130+ Stores -->
-          <div class="space-y-2">
-            <div class="stats-number text-white">130+</div>
+          <div class="space-y-2 text-center absolute left-24 top-10">
+            <div class="stats-number text-white text-3xl md:text-7xl font-semibold">130+</div>
             <p class="text-gray-400 text-sm">Stores Of Biggies<br>Burger</p>
           </div>
 
           <!-- 67+ Franchise -->
-          <div class="space-y-2">
-            <div class="stats-number text-white">67+</div>
+          <div class="space-y-2 text-center absolute right-20 top-5">
+            <div class="stats-number text-white text-3xl md:text-7xl font-semibold">67+</div>
             <p class="text-gray-400 text-sm">Franchise<br>Entrepreneur</p>
           </div>
 
           <!-- 24+ Cities -->
-          <div class="space-y-2">
-            <div class="stats-number text-white">24+</div>
+          <div class="space-y-2 text-center absolute left-20 bottom-10">
+            <div class="stats-number text-white text-3xl md:text-7xl font-semibold">24+</div>
             <p class="text-gray-400 text-sm">Cities PAN India</p>
           </div>
 
           <!-- 70+ Lakh -->
-          <div class="space-y-2">
-            <div class="stats-number text-white">70+</div>
+          <div class="space-y-2 text-center absolute right-20 bottom-10">
+            <div class="stats-number text-white text-3xl md:text-7xl font-semibold">70+</div>
             <p class="text-gray-400 text-sm">Lakh Burgers Sold</p>
           </div>
-        </div>
+        
       </div>
 
       <!-- Description and CTA -->
       <div class="text-center mt-16">
-        <p class="text-gray-300 max-w-2xl mx-auto text-sm leading-relaxed mb-8">
+        <p class="text-gray-400 max-w-md mx-auto text-md leading-relaxed mb-8">
           Join millions of burger lovers across India who crave the sizzling taste, bold flavors, and unforgettable
           experience of Biggies Burger.
         </p>
@@ -184,11 +183,16 @@
     </div>
   </section>
 
-  <section class="bg-white py-20 px-6">
-    <h2 class="text-center text-black text-[40px] md:text-[48px] font-bold mb-6 mx-auto w-[75%]">
-      You guessed it right! We are BIGG on our burgers. Check out what's so good about the burgers everyone is talking
-      about and order your favorite!
+  <section class="bg-white py-20 px-6 what-so-good h-screen relative">
+    <h2 class="scroll-text text-center text-black text-[40px] md:text-[48px] font-bold z-10 w-[75%]">
+      You guessed it right! We are BIGG on our burgers. Check out what's so good about the burgers everyone is talking about and order your favorite!
     </h2>
+    <video
+    class="scroll-video"
+    src="/assets/Screen Recording 2025-04-25 at 5.07.06 AM (1).mp4"
+    muted
+    playsinline
+  ></video>
   </section>
 
 <section class="bg-white py-16 px-4">
@@ -235,128 +239,328 @@
   </div>
 </section>
 
+<div class=" pt-8">
+        <!-- Header Section -->
+        <div class="mb-8 px-4">
+            <div class="flex items-start mb-6">
+                <span class="text-yellow-400 font-bold text-[14px] mr-8 mt-7">MENU</span>
+                <h1 class="text-white text-4xl md:text-[48px] font-[400] leading-[140%]">
+                  You guessed it right! We are BIGG on our burgers. Check out what's so good about the burgers everyone is talking about and order your favorite!                </h1>
+            </div>
+        </div>
 
-<section class="bg-white text-white py-20">
-  <div class="bg-black max-w-7xl mx-auto p-10 flex flex-col md:flex-row justify-between items-end">
-    <!-- Text Content -->
-    <div class="mb-8 md:mb-0 md:max-w-2xl">
-      <p class="uppercase text-sm font-semibold text-white">Our Presence</p>
-      <h2 class="text-[32px] font-[600] mt-2">
-        Your Dream Business. Our Secret Sauce.
-      </h2>
-      <p class="mt-4 text-gray-300 text-sm leading-relaxed">
-        Biggies Burger Started Gaining Popularity. The Idea Of Multi-Location Venture Came Into Inception.
-      </p>
+        <!-- Menu Items Section -->
+        <div class="flex items-stretch">
+            <!-- Menu Items Container -->
+            <div class="menu-container flex gap-0 flex-1">
+                <!-- Grilled Chicken Wings -->
+                <div class="menu-item relative overflow-hidden h-96">
+                    <img src="/assets/burger1.png" alt="Grilled Chicken Wings" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <h3 class="text-white font-bold text-xl mb-1">GRILLED CHICKEN WINGS</h3>
+                        <p class="text-gray-300 text-sm">Biggies Burger Started Gaining Popularity.</p>
+                    </div>
+                </div>
+
+                <!-- Doner Wraps -->
+                <div class="menu-item relative overflow-hidden h-96">
+                    <img src="/assets/burger1.png" alt="Doner Wraps" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <h3 class="text-white font-bold text-xl mb-1">DONER WRAPS</h3>
+                        <p class="text-gray-300 text-sm">Biggies Burger Started Gaining Popularity.</p>
+                    </div>
+                </div>
+
+                <!-- Crinkle Fries -->
+                <div class="menu-item relative overflow-hidden h-96">
+                    <img src="/assets/burger1.png" alt="Crinkle Fries" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <h3 class="text-white font-bold text-xl mb-1">CRINKLE FRIES</h3>
+                        <p class="text-gray-300 text-sm">Biggies Burger Started Gaining Popularity.</p>
+                    </div>
+                </div>
+
+                <!-- Sides and Platter -->
+                <div class="menu-item relative overflow-hidden h-96">
+                    <img src="/assets/burger1.png" alt="Sides and Platter" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <h3 class="text-white font-bold text-xl mb-1">SIDES AND PLATTER</h3>
+                        <p class="text-gray-300 text-sm">Biggies Burger Started Gaining Popularity.</p>
+                    </div>
+                </div>
+
+                <!-- Cookie Shakes and Mojitos -->
+                <div class="menu-item relative overflow-hidden h-96">
+                    <img src="/assets/burger1.png" alt="Cookie Shakes and Mojitos" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <h3 class="text-white font-bold text-xl mb-1">COOKIE SHAKES AND MOJITOS</h3>
+                        <p class="text-gray-300 text-sm">Biggies Burger Started Gaining Popularity.</p>
+                    </div>
+                </div>
+
+                <!-- Bigg 6 Meal Box -->
+                <div class="menu-item relative overflow-hidden h-96">
+                    <img src="/assets/burger1.png" alt="Bigg 6 Meal Box" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <h3 class="text-white font-bold text-xl mb-1">BIGG 6 MEAL BOX</h3>
+                        <p class="text-gray-300 text-sm">Biggies Burger Started Gaining Popularity.</p>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item relative overflow-hidden h-96">
+                    <img src="/assets/burger1.png" alt="Desserts" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <h3 class="text-white font-bold text-xl mb-1">DESSERTS</h3>
+                        <p class="text-gray-300 text-sm">Biggies Burger Started Gaining Popularity.</p>
+                    </div>
+                </div>
+                <!-- Vertical Text -->
+                <div class=" flex items-center bg-yellow-400 h-full w-[90px]">
+                    <div class="vertical-text text-black font-bold text-lg tracking-wider">
+                        DUE INTO OUR FULL MENU
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <!-- CTA Button -->
-    <a href="#" class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded shadow">
-      BECOME A FRANCHISE PARTNER
-    </a>
-  </div>
-</section>
-
-
-  <!-- Footer Section -->
-  <footer class="py-10 bg-black text-white px-16">
-    <div class="flex flex-col md:flex-row justify-between gap-10 md:gap-20">
-      <!-- Left section -->
-      <div class="flex-1">
-        <img src="/assets/logo.png" alt="Biggies Burger Logo" class="mb-4 w-32" />
-        <p class="text-sm font-semibold">BEAMER FOOD & BEVERAGES PVT LTD</p>
-        <p class="text-sm mt-2 leading-6">
-          #48, 2ND CROSS ST, SHANTHI PURA, PHASE 2,<br />
-          ELECTRONIC CITY, BENGALURU, KARNATAKA 560100
-        </p>
+    <!-- Presence Section -->
+    <div class="bg-white py-20">
+      <div class="text-center mb-12">
+          <p class="text-[14px] font-[700] text-gray-600 mb-4">OUR PRESENCE</p>
+          <h2 class="text-3xl md:text-[32px] text-black font-[600] leading-tight max-w-[800px] mx-auto px-6">
+              Today, Biggies Burger Has Its Presence In 150+ Locations And Is Taking Up The Market Share Of All The Global Brands.
+          </h2>
+          <button class="bg-yellow-400 text-black px-8 py-3 rounded font-semibold mt-8 hover:bg-yellow-500 transition-colors">
+              SEE WHAT MAKES US SIZZLE
+          </button>
       </div>
 
-      <!-- Right section -->
-      <div class="flex flex-1 flex-col md:flex-row justify-between gap-10">
-        <div class="flex flex-col space-y-2 text-sm">
-          <a href="#">About Us</a>
-          <a href="#">Franchise</a>
-          <a href="#">Menu</a>
+      <!-- Location Images Grid -->
+      <div class="slider-container">
+        <!-- Slider 1 -->
+        <div class="slider">
+          <div class="slider-track">
+            <!-- Duplicate images for infinite effect -->
+            <img src="/assets/burger2.png" alt="cat1" />
+            <img src="/assets/burger2.png" alt="cat2" />
+            <img src="/assets/burger2.png" alt="cat3" />
+            <img src="/assets/burger2.png" alt="cat1" />
+            <img src="/assets/burger2.png" alt="cat2" />
+            <img src="/assets/burger2.png" alt="cat3" />
+            <img src="/assets/burger2.png" alt="cat1" />
+            <img src="/assets/burger2.png" alt="cat2" />
+            <img src="/assets/burger2.png" alt="cat3" />
+            <img src="/assets/burger2.png" alt="cat1" />
+            <img src="/assets/burger2.png" alt="cat2" />
+            <img src="/assets/burger2.png" alt="cat3" />
+          </div>
         </div>
-        <div class="flex flex-col space-y-2 text-sm">
-          <a href="#">Career</a>
-          <a href="#">Store Locator</a>
-          <a href="#">Media</a>
-        </div>
-        <div>
-          <span class="block mb-2 text-sm font-semibold">FOLLOW US</span>
-          <div class="flex space-x-4">
-            <a href="#">
-              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none">
-                <path
-                  d="M22 4.00002C22 4.00002 21.3 6.10002 20 7.40002C21.6 17.4 10.6 24.7 2 19C4.2 19.1 6.4 18.4 8 17C3 15.5 0.5 9.60002 3 5.00002C5.2 7.60002 8.6 9.10002 12 9.00002C11.1 4.80002 16 2.40002 19 5.20002C20.1 5.20002 22 4.00002 22 4.00002Z"
-                  stroke="#FBCE0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
-            <a href="#">
-              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none">
-                <path
-                  d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"
-                  stroke="#FBCE0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M6 9H2V21H6V9Z" stroke="#FBCE0F" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z"
-                  stroke="#FBCE0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
-            <a href="#">
-              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none">
-                <path
-                  d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"
-                  stroke="#FBCE0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
-            <a href="#">
-              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none">
-                <path
-                  d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
-                  stroke="#FBCE0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M15.9997 11.3703C16.1231 12.2025 15.981 13.0525 15.5935 13.7993C15.206 14.5461 14.5929 15.1517 13.8413 15.53C13.0898 15.9082 12.2382 16.0399 11.4075 15.9062C10.5768 15.7726 9.80947 15.3804 9.21455 14.7855C8.61962 14.1905 8.22744 13.4232 8.09377 12.5925C7.96011 11.7619 8.09177 10.9102 8.47003 10.1587C8.84829 9.40716 9.45389 8.79404 10.2007 8.40654C10.9475 8.01904 11.7975 7.87689 12.6297 8.0003C13.4786 8.12619 14.2646 8.52176 14.8714 9.12861C15.4782 9.73545 15.8738 10.5214 15.9997 11.3703Z"
-                  stroke="#FBCE0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M17.5 6.5H17.51" stroke="#FBCE0F" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </a>
+      
+        <!-- Slider 2 - Opposite direction -->
+        <div class="slider reverse">
+          <div class="slider-track">
+            <img src="/assets/burger2.png" alt="cat4" />
+            <img src="/assets/burger2.png" alt="cat5" />
+            <img src="/assets/burger2.png" alt="cat6" />
+            <img src="/assets/burger2.png" alt="cat4" />
+            <img src="/assets/burger2.png" alt="cat5" />
+            <img src="/assets/burger2.png" alt="cat6" />
+            <img src="/assets/burger2.png" alt="cat4" />
+            <img src="/assets/burger2.png" alt="cat5" />
+            <img src="/assets/burger2.png" alt="cat6" />
+            <img src="/assets/burger2.png" alt="cat4" />
+            <img src="/assets/burger2.png" alt="cat5" />
+            <img src="/assets/burger2.png" alt="cat6" />
           </div>
         </div>
       </div>
-    </div>
+      <section class="bg-white text-white py-20">
+        <div class="bg-black max-w-7xl mx-auto p-10 flex flex-col md:flex-row justify-between items-end">
+          <!-- Text Content -->
+          <div class="mb-8 md:mb-0 md:max-w-2xl">
+            <p class="uppercase text-sm font-semibold text-white">Our Presence</p>
+            <h2 class="text-[32px] font-[600] mt-2">
+              Your Dream Business. Our Secret Sauce.
+            </h2>
+            <p class="mt-4 text-gray-300 text-sm leading-relaxed">
+              Biggies Burger Started Gaining Popularity. The Idea Of Multi-Location Venture Came Into Inception.
+            </p>
+          </div>
+      
+          <!-- CTA Button -->
+          <a href="#" class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded shadow">
+            BECOME A FRANCHISE PARTNER
+          </a>
+        </div>
+      </section>
+  </div>
+  
+    <!-- Footer Section -->
+    <footer class="py-10 bg-black text-white px-16">
+      <div class="flex flex-col md:flex-row justify-between gap-10 md:gap-20">
+        <!-- Left section -->
+        <div class="flex-1">
+          <img
+            src="/assets/logo.png"
+            alt="Biggies Burger Logo"
+            class="mb-4 w-32"
+          />
+          <p class="text-sm font-semibold">BEAMER FOOD & BEVERAGES PVT LTD</p>
+          <p class="text-sm mt-2 leading-6">
+            #48, 2ND CROSS ST, SHANTHI PURA, PHASE 2,<br />
+            ELECTRONIC CITY, BENGALURU, KARNATAKA 560100
+          </p>
+        </div>
 
-    <hr class="my-6 border-gray-700" />
-
-    <div class="flex flex-col md:flex-row justify-between text-xs text-gray-400">
-      <span>BENGALURU</span>
-      <span>© 2023 ALL RIGHTS RESERVED BY BIGGIES BURGER</span>
-      <span>ENGLISH / HINDI</span>
-    </div>
-  </footer>
-  <section class="loader">
-    <div class="loading-container">
-      <div class="emoji-bounce">
-        <span id="emoji">🍔</span>
+        <!-- Right section -->
+        <div class="flex flex-1 flex-col md:flex-row justify-between gap-10">
+          <div class="flex flex-col space-y-2 text-sm">
+            <a href="#">About Us</a>
+            <a href="#">Franchise</a>
+            <a href="#">Menu</a>
+          </div>
+          <div class="flex flex-col space-y-2 text-sm">
+            <a href="#">Career</a>
+            <a href="#">Store Locator</a>
+            <a href="#">Media</a>
+          </div>
+          <div>
+            <span class="block mb-2 text-sm font-semibold">FOLLOW US</span>
+            <div class="flex space-x-4">
+              <a href="#">
+                <svg
+                  class="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M22 4.00002C22 4.00002 21.3 6.10002 20 7.40002C21.6 17.4 10.6 24.7 2 19C4.2 19.1 6.4 18.4 8 17C3 15.5 0.5 9.60002 3 5.00002C5.2 7.60002 8.6 9.10002 12 9.00002C11.1 4.80002 16 2.40002 19 5.20002C20.1 5.20002 22 4.00002 22 4.00002Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M6 9H2V21H6V9Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M15.9997 11.3703C16.1231 12.2025 15.981 13.0525 15.5935 13.7993C15.206 14.5461 14.5929 15.1517 13.8413 15.53C13.0898 15.9082 12.2382 16.0399 11.4075 15.9062C10.5768 15.7726 9.80947 15.3804 9.21455 14.7855C8.61962 14.1905 8.22744 13.4232 8.09377 12.5925C7.96011 11.7619 8.09177 10.9102 8.47003 10.1587C8.84829 9.40716 9.45389 8.79404 10.2007 8.40654C10.9475 8.01904 11.7975 7.87689 12.6297 8.0003C13.4786 8.12619 14.2646 8.52176 14.8714 9.12861C15.4782 9.73545 15.8738 10.5214 15.9997 11.3703Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M17.5 6.5H17.51"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="loading-text">
-        Loading... <span id="progress">0%</span>
-      </div>
-    </div>
 
-    <div class="transition-line">
-      <div class="word-roller" id="wordRoller">
-      </div>
-    </div>
-  </section>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-<script src="loader.js"></script>
+      <hr class="my-6 border-gray-700" />
 
+      <div
+        class="flex flex-col md:flex-row justify-between text-xs text-gray-400"
+      >
+        <span>BENGALURU</span>
+        <span>© 2023 ALL RIGHTS RESERVED BY BIGGIES BURGER</span>
+        <span>ENGLISH / HINDI</span>
+      </div>
+    </footer>
+    <section class="loader">
+      <div class="loading-container">
+        <div class="emoji-bounce">
+          <span id="emoji">🍔</span>
+        </div>
+        <div class="loading-text">
+          Loading... <span id="progress">0%</span>
+        </div>
+      </div>
+    
+      <div class="transition-line">
+        <div class="word-roller" id="wordRoller">
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="loader.js"></script>
 </html>

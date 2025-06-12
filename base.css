@@ -111,7 +111,6 @@ a:hover {
 header {
   background-color: #000;
   padding: 1rem 0;
-  transform: translateY(-100px);
 }
 
 .navbar {
@@ -288,4 +287,109 @@ footer a:hover {
 
 #wordRoller .yellow {
   color: #FFD700; /* Yellow color for specific words (if any remain) */
+}
+
+.scroll-text{
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+
+.scroll-text .char {
+  display: inline-block;
+  color: gray;
+  transition: none;
+  
+}
+
+.scroll-video {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0.4);
+  opacity: 0;
+  width: 320px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.menu-container {
+  display: flex;
+  overflow: hidden; /* optional: avoids overflow when resizing */
+}
+
+.menu-item {
+  transition: flex 0.3s ease;
+  flex: 1;
+  min-width: 0; /* prevents content from forcing expansion */
+}
+
+.menu-container:hover .menu-item:not(:hover) {
+  flex: 0.8;
+}
+
+.menu-container:hover .menu-item:hover {
+  flex: 1.6; /* increase as needed */
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.slider {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  height: 100%;
+}
+
+.slider-track {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll-left 4s linear infinite;
+}
+
+.slider.reverse .slider-track {
+  animation: scroll-right 4s linear infinite;
+}
+
+.slider img {
+  height: 300px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.slider.reverse img:hover {
+  transform: rotateZ(10deg);
+  z-index: 10;
+}
+
+.slider img:hover {
+  transform: rotateZ(-10deg);
+  z-index: 10;
+}
+
+/* Pause animation when hovered */
+.slider:hover .slider-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
