@@ -19,7 +19,12 @@ body {
 }
 
 /* ========== Typography ========== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   color: #fff;
@@ -188,13 +193,15 @@ footer a:hover {
 
 /* ==========Loader============ */
 
-.loader{
+.loader {
+  display: none;
   position: fixed;
   width: 100vw;
   height: 100vh;
   top: 0;
   background-color: #fff;
   color: #000;
+  z-index: 99999;
 }
 
 
@@ -219,6 +226,7 @@ footer a:hover {
   opacity: 0;
   transform: translateY(0);
 }
+
 .loading-text {
   font-size: 24px;
 }
@@ -239,31 +247,32 @@ footer a:hover {
 }
 
 .word-roller {
-    height: 150px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .text {
-  display: flex; 
-  position: relative; 
-  justify-content: center; 
-  align-items: center; 
-  width: 100%; 
-  line-height: 1; 
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  line-height: 1;
 }
 
 .letter {
-    display: inline-block;
-    color: white;
-    font-size: 5rem;
-    font-weight: bold;
-    /* opacity: 0; */
-    transform: translateY(100px);
+  display: inline-block;
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+  /* opacity: 0; */
+  transform: translateY(100px);
 }
+
 #wordRoller .sub-text {
   position: absolute;
   display: inline-block;
@@ -271,36 +280,37 @@ footer a:hover {
   font-weight: bold;
   transform: translateY(100px);
   font-size: 4rem;
-  z-index: 111; 
-  white-space: nowrap; 
-  line-height: 1; 
-  text-shadow: 
-    -4px -4px 0 #000,  
-     4px -4px 0 #000,
-    -4px  4px 0 #000,
-     4px  4px 0 #000,
-     0px -4px 0 #000,
-     0px  4px 0 #000,
-    -4px  0px 0 #000,
-     4px  0px 0 #000;
+  z-index: 111;
+  white-space: nowrap;
+  line-height: 1;
+  text-shadow:
+    -4px -4px 0 #000,
+    4px -4px 0 #000,
+    -4px 4px 0 #000,
+    4px 4px 0 #000,
+    0px -4px 0 #000,
+    0px 4px 0 #000,
+    -4px 0px 0 #000,
+    4px 0px 0 #000;
 }
 
 #wordRoller .yellow {
-  color: #FFD700; /* Yellow color for specific words (if any remain) */
+  color: #FFD700;
+  /* Yellow color for specific words (if any remain) */
 }
 
-.scroll-text{
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
+.scroll-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .scroll-text .char {
   display: inline-block;
   color: gray;
   transition: none;
-  
+
 }
 
 .scroll-video {
@@ -321,13 +331,15 @@ transform: translate(-50%, -50%);
 
 .menu-container {
   display: flex;
-  overflow: hidden; /* optional: avoids overflow when resizing */
+  overflow: hidden;
+  /* optional: avoids overflow when resizing */
 }
 
 .menu-item {
   transition: flex 0.3s ease;
   flex: 1;
-  min-width: 0; /* prevents content from forcing expansion */
+  min-width: 0;
+  /* prevents content from forcing expansion */
 }
 
 .menu-container:hover .menu-item:not(:hover) {
@@ -335,7 +347,8 @@ transform: translate(-50%, -50%);
 }
 
 .menu-container:hover .menu-item:hover {
-  flex: 1.6; /* increase as needed */
+  flex: 1.6;
+  /* increase as needed */
 }
 
 .slider-container {
@@ -385,11 +398,31 @@ transform: translate(-50%, -50%);
 }
 
 @keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes scroll-right {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+p.font-yellow {
+  font-family: 'Inter Tight';
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 160%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FBCE0F;
 }
