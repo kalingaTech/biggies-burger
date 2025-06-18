@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biggies Burger</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="base.css" />
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: "Inter Tight", sans-serif;
+      }
+      .anton-regular {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+  </head>
+
+  <body class="text-white">
+    <header
+      class="bg-transparent absolute top-0 left-0 w-screen z-[100] text-white py-4 px-16"
+    >
+      <div class="mx-auto flex items-center justify-between">
+        <!-- Left Navigation -->
+        <div class="flex items-center space-x-6">
+          <!-- <button class="bg-[#111] border border-gray-700 rounded-md p-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-yellow-400"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button> -->
+          <a
+            href="/about.html"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >About Us</a
+          >
+          <a
+            href="/franchise.html"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Franchise</a
+          >
+          <a
+            href="#"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Menu</a
+          >
+        </div>
+
+        <!-- Logo -->
+        <div>
+          <a href="/">
+            <img src="assets/logo.png" alt="Biggies Burger" class="h-10" />
+          </a>
+        </div>
+
+        <!-- Right Navigation -->
+        <div class="flex items-center space-x-6">
+          <a
+            href="#"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Career</a
+          >
+          <a
+            href="#"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Store Locator</a
+          >
+          <a
+            href="#"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Media</a
+          >
+          <button class="bg-[#111] border border-gray-700 rounded-md p-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-yellow-400"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Section One Start -->
+    <section class="relative w-screen h-screen overflow-hidden">
+      <!-- Background Image -->
+      <img
+        src="./assets/franchise-hero.png"
+        alt="Franchise Hero"
+        class="absolute top-0 left-0 w-full h-full object-cover z-0"
+      />
+
+      <!-- Overlay Content -->
+      <div
+        class="absolute inset-0 bg-black bg-opacity-80 z-10 flex flex-col justify-center items-center text-center px-4"
+      >
+        <p class="text-yellow-400 text-lg font-yellow mb-2">
+          JOIN THE WORLD OF
+        </p>
+        <h1
+          class="text-white text-5xl md:text-[120px] leading-none anton-regular"
+        >
+          BIGGIES
+        </h1>
+        <p class="text-yellow-400 text-lg font-yellow mt-2">BURGER</p>
+        <p class="text-white text-sm md:text-base opacity-70 max-w-xl mt-6">
+          Join millions of burger lovers across India who crave the sizzling
+          taste, bold flavors, and unforgettable experience of Biggies Burger.
+        </p>
+      </div>
+    </section>
+    <!-- Section One End -->
+
+    <!-- Footer start -->
+    <footer class="py-10 bg-black text-white px-16 border-t border-[#FFFFFF33]">
+      <div class="flex flex-col md:flex-row justify-between gap-10 md:gap-20">
+        <!-- Left section -->
+        <div class="flex-1">
+          <img
+            src="/assets/logo.png"
+            alt="Biggies Burger Logo"
+            class="mb-4 w-32"
+          />
+          <p class="text-sm font-semibold text-left">
+            BEAMER FOOD & BEVERAGES PVT LTD
+          </p>
+          <p class="text-sm mt-2 leading-6 text-left">
+            #48, 2ND CROSS ST, SHANTHI PURA, PHASE 2,<br />
+            ELECTRONIC CITY, BENGALURU, KARNATAKA 560100
+          </p>
+        </div>
+
+        <!-- Right section -->
+        <div class="flex flex-1 flex-col md:flex-row justify-between gap-10">
+          <div
+            class="flex flex-col justify-start items-start space-y-2 text-sm"
+          >
+            <a href="/about.html" class="text-white">About Us</a>
+            <a href="/franchise.html" class="text-white">Franchise</a>
+            <a href="#" class="text-white">Menu</a>
+          </div>
+          <div
+            class="flex flex-col justify-start items-start space-y-2 text-sm"
+          >
+            <a href="#" class="text-white">Career</a>
+            <a href="#" class="text-white">Store Locator</a>
+            <a href="#" class="text-white">Media</a>
+          </div>
+          <div>
+            <span
+              class="block mb-2 text-base font-semibold text-right opacity-60"
+              >FOLLOW US</span
+            >
+            <div class="flex space-x-4">
+              <a href="#">
+                <svg
+                  class="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M22 4.00002C22 4.00002 21.3 6.10002 20 7.40002C21.6 17.4 10.6 24.7 2 19C4.2 19.1 6.4 18.4 8 17C3 15.5 0.5 9.60002 3 5.00002C5.2 7.60002 8.6 9.10002 12 9.00002C11.1 4.80002 16 2.40002 19 5.20002C20.1 5.20002 22 4.00002 22 4.00002Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M6 9H2V21H6V9Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M15.9997 11.3703C16.1231 12.2025 15.981 13.0525 15.5935 13.7993C15.206 14.5461 14.5929 15.1517 13.8413 15.53C13.0898 15.9082 12.2382 16.0399 11.4075 15.9062C10.5768 15.7726 9.80947 15.3804 9.21455 14.7855C8.61962 14.1905 8.22744 13.4232 8.09377 12.5925C7.96011 11.7619 8.09177 10.9102 8.47003 10.1587C8.84829 9.40716 9.45389 8.79404 10.2007 8.40654C10.9475 8.01904 11.7975 7.87689 12.6297 8.0003C13.4786 8.12619 14.2646 8.52176 14.8714 9.12861C15.4782 9.73545 15.8738 10.5214 15.9997 11.3703Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M17.5 6.5H17.51"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-6 border-gray-700" />
+
+      <div
+        class="flex flex-col md:flex-row justify-between text-xs text-gray-400"
+      >
+        <span>BENGALURU</span>
+        <span>© 2023 ALL RIGHTS RESERVED BY BIGGIES BURGER</span>
+        <span>ENGLISH / HINDI</span>
+      </div>
+    </footer>
+    <!-- Footer end -->
+  </body>
+</html>
