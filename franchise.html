@@ -18,7 +18,24 @@
     />
     <link rel="stylesheet" href="base.css" />
     <script src="script.js" defer></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              input: "#0E0E0E",
+              placeholder: "#A0A0A0",
+              yellow: "#FFD700",
+              focus: "#3A3A3A",
+            },
+          },
+        },
+      };
+    </script>
     <style>
+      * {
+        box-sizing: border-box;
+      }
       body {
         font-family: "Inter Tight", sans-serif;
       }
@@ -26,6 +43,67 @@
         font-family: "Anton", sans-serif;
         font-weight: 400;
         font-style: normal;
+      }
+      .custom-radio {
+        position: absolute;
+        opacity: 0;
+      }
+      .custom-radio + label:before {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #a0a0a0;
+        background-color: #0e0e0e;
+        vertical-align: middle;
+        margin-right: 10px;
+        transition: all 0.2s ease;
+      }
+      .custom-radio:checked + label:before {
+        background-color: #ffd700;
+        border-color: #ffd700;
+      }
+      .custom-radio:checked + label:after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 9px;
+        width: 5px;
+        height: 10px;
+        border: solid #0e0e0e;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      input::placeholder,
+      textarea::placeholder,
+      select {
+        color: #a0a0a0 !important;
+      }
+      input,
+      select,
+      textarea {
+        color: white !important;
+      }
+      select option {
+        background-color: #0e0e0e;
+        color: white;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        background-color: #3a3a3a;
+      }
+      .form-section {
+        transition: all 0.3s ease;
+      }
+      .submit-btn {
+        transition: all 0.3s ease;
+        transform: perspective(1px) translateZ(0);
+      }
+      .submit-btn:hover {
+        transform: scale(1.05) perspective(1px) translateZ(0);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
       }
     </style>
   </head>
@@ -141,6 +219,575 @@
       </div>
     </section>
     <!-- Section One End -->
+
+    <!-- Section Two Start -->
+    <section class="bg-white h-96 md:h-screen flex justify-center items-center">
+      <div class="flex justify-center items-center flex-col gap-[25px]">
+        <h2 class="text-black font-bold text-sm">OWNED BY FRANCHISES</h2>
+        <p
+          class="text-black text-center font-normal text-xs p-2 md:p-0 md:text-base"
+        >
+          In a market dominated by global giants like McDonald’s, Domino’s, KFC,
+          and Burger King—each earning over ₹15,000 crore
+          <br class="hidden md:block" />
+          annually from India—options for homegrown alternatives were scarce.
+          But in 2011, Biraja Rout, a visionary from Bangalore,
+          <br class="hidden md:block" />
+          set up a humble kiosk serving grilled burgers. While the concept was
+          familiar, two things set it apart: it was founded by
+          <br class="hidden md:block" />
+          an Indian, and the patties were grilled, not fried. This wasn’t just
+          another burger joint—it was the beginning of India’s
+          <br class="hidden md:block" />
+          very own burger brand, built for the future.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section Two End -->
+    <!-- Section Three Start -->
+    <section class="bg-black flex justify-center items-center flex-col">
+      <div class="flex items-center justify-center flex-col gap-6 mt-24 mb-36">
+        <h2
+          class="text-white font-semibold text-2xl md:text-5xl leading-[140%] text-center"
+        >
+          Build Your Burger Empire, One <br />
+          Format at a Time
+        </h2>
+        <p
+          class="text-white/30 font-normal text-xs md:text-sm leading-[140%] text-center"
+        >
+          Explore our flexible franchise formats to match your <br />
+          vision, investment, and growth potential.
+        </p>
+      </div>
+      <div class="flex justify-center items-center flex-col xl:flex-row gap-5">
+        <div
+          class="flex justify-end items-start flex-col bg-[#161616] w-[376px] h-[636px]"
+        >
+          <!-- first  -->
+          <div class="flex justify-center items-center pt-4 px-4">
+            <img
+              src="/assets/fig1.svg"
+              alt="fig1"
+              class="h-[289px] w-[325px]"
+            />
+          </div>
+          <div class="flex justify-start items-start flex-col pt-4 px-4 gap-4">
+            <img
+              src="/assets/biggies.svg"
+              alt="Biggies Logo"
+              class="h-[27px] w-[203px]"
+            />
+            <p class="text-white">High Street, Prime Areas</p>
+          </div>
+          <div class="p-4">
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>700 sqft minimum area required</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>Starts at 40+ lacs total investment</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>INR 8 lacs Franchise Fee</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>20-30 months Average Payback</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>Foco/fofo Mode of operations</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>5yrs agreement term</p>
+            </div>
+          </div>
+          <div class="flex p-4">
+            <button
+              class="bg-[#FBCE0F] text-black font-bold text-[14px] py-4 px-8 w-[342px] h-[54px]"
+            >
+              KNOW MORE
+            </button>
+          </div>
+        </div>
+        <!-- second -->
+        <div
+          class="flex justify-end items-start flex-col bg-[#161616] mt-20 xl:mt-0 w-[376px] h-[636px]"
+        >
+          <div class="flex justify-center items-center pt-4 px-4">
+            <img
+              src="/assets/fig3.svg"
+              alt="fig1"
+              class="h-[289px] w-[325px]"
+            />
+          </div>
+          <div class="flex justify-start items-start flex-col pt-4 px-4 gap-4">
+            <img
+              src="/assets/biggies.svg"
+              alt="Biggies Logo"
+              class="h-[27px] w-[203px]"
+            />
+            <p class="text-white">High Street, Prime Areas</p>
+          </div>
+          <div class="p-4">
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>700 sqft minimum area required</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>Starts at 40+ lacs total investment</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>INR 8 lacs Franchise Fee</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>20-30 months Average Payback</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>Foco/fofo Mode of operations</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>5yrs agreement term</p>
+            </div>
+          </div>
+          <div class="flex p-4">
+            <button
+              class="bg-[#FBCE0F] text-black font-bold text-[14px] py-4 px-8 w-[342px] h-[54px]"
+            >
+              KNOW MORE
+            </button>
+          </div>
+        </div>
+        <!-- third -->
+        <div
+          class="flex justify-end items-start flex-col bg-[#161616] mt-20 xl:mt-0 w-[376px] h-[636px]"
+        >
+          <div class="flex justify-center items-center pt-4 px-4">
+            <img
+              src="/assets/fig2.svg"
+              alt="fig1"
+              class="h-[289px] w-[325px]"
+            />
+          </div>
+          <div class="flex justify-start items-start flex-col pt-4 px-4 gap-4">
+            <img
+              src="/assets/biggies.svg"
+              alt="Biggies Logo"
+              class="h-[27px] w-[203px]"
+            />
+            <p class="text-white">High Street, Prime Areas</p>
+          </div>
+          <div class="p-4">
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>700 sqft minimum area required</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>Starts at 40+ lacs total investment</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>INR 8 lacs Franchise Fee</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>20-30 months Average Payback</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>Foco/fofo Mode of operations</p>
+            </div>
+            <div class="flex justify-start items-center gap-2 mt-4">
+              <img
+                src="/assets/w-rec.svg"
+                alt="W-rec"
+                class="h-[24px] w-[24px]"
+              />
+              <p>5yrs agreement term</p>
+            </div>
+          </div>
+          <div class="flex p-4">
+            <button
+              class="bg-[#FBCE0F] text-black font-bold text-[14px] py-4 px-8 w-[342px] h-[54px]"
+            >
+              KNOW MORE
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <div
+          class="flex items-center justify-center flex-col gap-6 mt-24 mb-24"
+        >
+          <h2
+            class="text-white font-semibold text-2xl md:text-5xl leading-[140%] text-center"
+          >
+            Take The First Step Toward <br />
+            Franchise Success
+          </h2>
+          <p
+            class="text-white/30 font-normal text-xs md:text-sm leading-[140%] text-center"
+          >
+            Partner with India’s homegrown burger brand and turn your
+            entrepreneurial <br class="hidden md:block" />
+            dream into reality with our proven franchise model.
+          </p>
+        </div>
+      </div>
+      <div>
+        <section class="px-4">
+          <div class="mx-auto">
+            <div class="max-w-3xl mx-auto">
+              <form action="#" method="POST" class="space-y-6">
+                <!-- Personal Info -->
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 form-section"
+                >
+                  <div>
+                    <input
+                      type="text"
+                      name="firstName"
+                      required
+                      class="w-full px-4 py-3 bg-input border-none rounded-none focus:bg-focus"
+                      placeholder="First Name"
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      type="text"
+                      name="lastName"
+                      required
+                      class="w-full px-4 py-3 bg-input border-none rounded-none focus:bg-focus"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+                <!-- Contact Info -->
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 form-section"
+                >
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      class="w-full px-4 py-3 bg-input border-none rounded-none focus:bg-focus"
+                      placeholder="Email"
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      class="w-full px-4 py-3 bg-input border-none rounded-none focus:bg-focus"
+                      placeholder="Phone"
+                    />
+                  </div>
+                </div>
+                <!-- Location Info -->
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 form-section"
+                >
+                  <div>
+                    <input
+                      type="text"
+                      name="city"
+                      class="w-full px-4 py-3 bg-input border-none rounded-none focus:bg-focus"
+                      placeholder="City Preference"
+                    />
+                  </div>
+
+                  <div>
+                    <select
+                      name="timeline"
+                      class="w-full px-4 py-3 bg-input border-none rounded-none focus:bg-focus appearance-none"
+                    >
+                      <option value="">
+                        How Soon Are You Looking To Open?
+                      </option>
+                      <option value="immediately">Immediately</option>
+                      <option value="1-3">1-3 Months</option>
+                      <option value="3-6">3-6 Months</option>
+                      <option value="6+">6+ Months</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Experience -->
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 pt-4 form-section"
+                >
+                  <div>
+                    <p
+                      class="text-[#D0D0D0] font-medium mb-3 text-sm md:text-base"
+                    >
+                      What Is Your Budget Slabs?*
+                    </p>
+                    <div class="space-y-3">
+                      <div class="flex items-center justify-start">
+                        <input
+                          type="radio"
+                          id="budget30"
+                          name="budget"
+                          value="30-35"
+                          required
+                          class="custom-radio"
+                        />
+                        <label
+                          for="budget30"
+                          class="text-white flex items-center relative cursor-pointer text-sm md:text-base"
+                          >30-35 Lakhs</label
+                        >
+                      </div>
+                      <div class="flex items-center justify-start">
+                        <input
+                          type="radio"
+                          id="budget35"
+                          name="budget"
+                          value="35+"
+                          required
+                          class="custom-radio"
+                        />
+                        <label
+                          for="budget35"
+                          class="text-white flex items-center relative cursor-pointer text-sm md:text-base"
+                          >35+ Lakhs</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Business Ownership -->
+                  <div>
+                    <p
+                      class="text-[#D0D0D0] font-medium mb-3 text-sm md:text-base"
+                    >
+                      Have You Ever Owned A Business?*
+                    </p>
+                    <div class="space-y-3">
+                      <div class="flex items-center justify-start">
+                        <input
+                          type="radio"
+                          id="businessYes"
+                          name="businessOwned"
+                          value="yes"
+                          required
+                          class="custom-radio"
+                        />
+                        <label
+                          for="businessYes"
+                          class="text-white flex items-center relative cursor-pointer text-sm md:text-base"
+                          >Yes</label
+                        >
+                      </div>
+                      <div class="flex items-center justify-start">
+                        <input
+                          type="radio"
+                          id="businessNo"
+                          name="businessOwned"
+                          value="no"
+                          required
+                          class="custom-radio"
+                        />
+                        <label
+                          for="businessNo"
+                          class="text-white flex items-center relative cursor-pointer text-sm md:text-base"
+                          >No</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Franchise Experience -->
+                  <div>
+                    <p
+                      class="text-[#D0D0D0] font-medium mb-3 text-sm md:text-base"
+                    >
+                      Have You Ever Been A Franchise Partner?*
+                    </p>
+                    <div class="space-y-3">
+                      <div class="flex items-center justify-start">
+                        <input
+                          type="radio"
+                          id="franchiseYes"
+                          name="franchisePartner"
+                          value="yes"
+                          required
+                          class="custom-radio"
+                        />
+                        <label
+                          for="franchiseYes"
+                          class="text-white flex items-center relative cursor-pointer text-sm md:text-base"
+                          >Yes</label
+                        >
+                      </div>
+                      <div class="flex items-center justify-start">
+                        <input
+                          type="radio"
+                          id="franchiseNo"
+                          name="franchisePartner"
+                          value="no"
+                          required
+                          class="custom-radio"
+                        />
+                        <label
+                          for="franchiseNo"
+                          class="text-white flex items-center relative cursor-pointer text-sm md:text-base"
+                          >No</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Commercial Spaces -->
+                  <div>
+                    <p
+                      class="text-[#D0D0D0] font-medium mb-3 text-sm md:text-base"
+                    >
+                      Do You Own Any Commercial Spaces?*
+                    </p>
+                    <div class="space-y-3">
+                      <div class="flex items-center justify-start">
+                        <input
+                          type="radio"
+                          id="spaceYes"
+                          name="commercialSpace"
+                          value="yes"
+                          required
+                          class="custom-radio"
+                        />
+                        <label
+                          for="spaceYes"
+                          class="text-white flex items-center relative cursor-pointer text-sm md:text-base"
+                          >Yes</label
+                        >
+                      </div>
+                      <div class="flex items-center justify-start">
+                        <input
+                          type="radio"
+                          id="spaceNo"
+                          name="commercialSpace"
+                          value="no"
+                          required
+                          class="custom-radio"
+                        />
+                        <label
+                          for="spaceNo"
+                          class="text-white flex items-center relative cursor-pointer text-sm md:text-base"
+                          >No</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- About Yourself -->
+                <div class="pt-4 form-section">
+                  <textarea
+                    name="about"
+                    rows="4"
+                    class="w-full px-4 py-3 bg-input border-none rounded-none focus:bg-focus"
+                    placeholder="Tell Us About Yourself.."
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-4 flex justify-center">
+                  <button
+                    type="submit"
+                    class="submit-btn bg-yellow text-black font-bold py-3 px-8 rounded-none w-full max-w-[200px]"
+                  >
+                    SUBMIT
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- Section Three End -->
 
     <!-- Footer start -->
     <footer class="py-10 bg-black text-white px-16 border-t border-[#FFFFFF33]">
