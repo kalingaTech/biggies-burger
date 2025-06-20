@@ -281,21 +281,20 @@
       </div>
     </section>
 
-    <section class="bg-white py-20 px-6 what-so-good h-screen relative">
-      <h2
-        class="scroll-text text-center text-black text-[40px] md:text-[48px] font-bold z-10 w-[75%]"
-      >
-        You guessed it right! We are BIGG on our burgers. Check out what's so
-        good about the burgers everyone is talking about and order your
-        favorite!
-      </h2>
-      <video
-        class="scroll-video"
-        src="/assets/Screen Recording 2025-04-25 at 5.07.06 AM (1).mp4"
-        muted
-        playsinline
-      ></video>
-    </section>
+    <div class="what-so-good-wrapper">
+  <section class="what-so-good">
+    <h2 class="scroll-text">
+      You guessed it right! We are BIGG on our burgers. Check out what's so good about the burgers everyone is talking about and order your favorite!
+    </h2>
+    <video
+      class="scroll-video"
+      src="/assets/video-animation.mp4"
+      muted
+      playsinline
+    ></video>
+  </section>
+</div>
+
 
     <section class="bg-white py-16 px-4">
       <div class="max-w-5xl mx-auto text-center">
@@ -615,7 +614,27 @@
           unforgettable flavours and create lasting experiences.
         </h3>
       </div>
+      <section class="sticky-wrapper">
+        <div id="animate-section">
+          
+          <div class="line-section">Awards<div class="line"></div>Recognition</div>
+          <div class="box">
+            <p class="box-text">This is animated content!</p>
+            <p class="box-text">This is animated content!</p>
+            <p class="box-text">This is animated content!</p>
+            <p class="box-text">This is animated content!</p>
+            <p class="box-text">This is animated content!</p>
+            <p class="box-text">This is animated content!</p>
+            <p class="box-text">This is animated content!</p>
+            <p class="box-text">This is animated content!</p>
+            <p class="box-text">This is animated content!</p>
+            <p class="box-text">This is animated content!</p>
+          </div>
+        </div>
+      </section>
     </section>
+
+
 
     <footer class="py-10 bg-black text-white px-16 border-t border-[#FFFFFF33]">
       <div class="flex flex-col md:flex-row justify-between gap-10 md:gap-20">
@@ -774,7 +793,7 @@
     </footer>
     <!-- Footer end -->
 
-    <section class="loader">
+    <section class="loader" style="display: none;">
       <div class="loading-container">
         <div class="emoji-bounce">
           <span id="emoji">🍔</span>

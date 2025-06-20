@@ -177,67 +177,105 @@ function wrapCharacters(selector) {
     .join("");
 }
 
-// 2. Scroll-driven animation
 function setupScrollDrivenAnimation() {
   const chars = document.querySelectorAll(".scroll-text .char");
   const video = document.querySelector(".scroll-video");
   const section = document.querySelector(".what-so-good");
 
-  // Text color animation
-  const textAnim = anime({
+  let videoPlayed = false;
+
+  // Combined timeline
+  const scrollTimeline = anime.timeline({
+    autoplay: false,
+  });
+
+  // 1. Animate characters color
+  scrollTimeline.add({
     targets: chars,
     color: ["#888", "#000"],
     delay: anime.stagger(30),
     duration: 1000,
-    autoplay: false,
+    easing: "easeOutQuad"
   });
 
-  // Video scale & move animation
-  const videoAnim = anime({
+  // 2. Animate video
+  scrollTimeline.add({
     targets: video,
     translateY: ["100px", "0px"],
-    left: "0%",
     height: ["10%", "100%"],
-    width: ["10vw", "100vw"],
+    width: ["80vw", "100vw"],
+    objectFit: 'cover',
     opacity: [0, 1],
-    duration: 100,
-    easing: "easeOutQuad",
-    autoplay: false,
-  });
+    duration: 1500,
+    easing: "easeOutQuad"
+  }, '-=800'); // Start before previous finishes fully
 
-  let videoPlayed = false;
+  // Scroll-based progress
+window.addEventListener("scroll", () => {
+  const stickyWrapper = document.querySelector(".what-so-good-wrapper");
+  const rect = stickyWrapper.getBoundingClientRect();
 
-  window.addEventListener("scroll", () => {
-    const sectionRect = section.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
+  const totalScroll = stickyWrapper.offsetHeight - window.innerHeight;
+  const scrolled = Math.min(Math.max(0, -rect.top), totalScroll);
 
-    // Start animation when section enters the viewport
-    const sectionTop = sectionRect.top;
-    const sectionHeight = section.offsetHeight;
+  const progress = scrolled / totalScroll;
 
-    // Calculate how much we've scrolled through the section
-    if (sectionTop < windowHeight && sectionRect.bottom > 0) {
-      const scrollAmount = windowHeight - sectionTop;
-      const scrollProgress = Math.min(
-        scrollAmount / (windowHeight + sectionHeight),
-        1
-      );
+  scrollTimeline.seek(scrollTimeline.duration * progress);
 
-      // Update animations
-      textAnim.seek(textAnim.duration * scrollProgress);
-      videoAnim.seek(videoAnim.duration * scrollProgress);
+  if (!videoPlayed && progress > 0.5) {
+    video.play();
+    videoPlayed = true;
+  }
+});
 
-      // Play video when half the characters have changed
-      if (!videoPlayed && scrollProgress > 0.5) {
-        video.play();
-        videoPlayed = true;
-      }
-    }
-  });
 }
 
-// 3. Init
+// Init
 wrapCharacters(".scroll-text");
 setupScrollDrivenAnimation();
 
 // heroLoadAnimation();
+
+// Create the scroll-driven timeline (paused for manual control)
+
+
+const timeline = anime.timeline({
+  autoplay: false
+});
+
+// Build the timeline animation
+timeline
+  .add({
+    targets: '.line',
+    width:  ['0%', '80%'],
+    duration: 1500,
+    easing: 'easeInOutQuad'
+  })
+  .add({
+    targets: '.box',
+    height: ['0%', '100%'],
+    duration: 2000,
+    easing: 'easeInOutQuad'
+  })
+
+  .add({
+    targets: '.box-text',
+    translateY: ['-20px', '0px'],
+    opacity: [0, 1],
+    duration: 1500,
+    easing: 'easeOutQuad'
+  }, '-=1800'); 
+
+
+// Scroll event to control animation progress
+window.addEventListener('scroll', () => {
+   const stickyWrapper = document.querySelector('.sticky-wrapper');
+  const rect = stickyWrapper.getBoundingClientRect();
+
+  const totalScroll = stickyWrapper.offsetHeight - window.innerHeight;
+  const scrolled = Math.min(Math.max(0, -rect.top), totalScroll);
+
+  const progress = scrolled / totalScroll;
+  timeline.seek(timeline.duration * progress);
+
+});
