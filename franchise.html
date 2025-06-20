@@ -109,26 +109,32 @@
   </head>
 
   <body class="text-white">
+   <!-- Header Starts here -->
     <header
-      class="bg-transparent absolute top-0 left-0 w-screen z-[100] text-white py-4 px-16"
+      class="bg-transparent text-white py-4 px-0 md:px-16 absolute top-0 left-0 w-screen z-[100]"
     >
-      <div class="mx-auto flex items-center justify-between">
-        <!-- Left Navigation -->
-        <div class="flex items-center space-x-6">
-          <!-- <button class="bg-[#111] border border-gray-700 rounded-md p-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-yellow-400"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </button> -->
+      <div class="mx-auto flex items-center justify-between px-4 md:px-0">
+        <!-- Hamburger button (Mobile only) -->
+        <button
+          id="menu-toggle"
+          class="md:hidden bg-[#111] border border-gray-700 rounded-md p-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-yellow-400"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+
+        <!-- Left Navigation (desktop only) -->
+        <div class="hidden md:flex items-center space-x-6">
           <a
             href="/about.html"
             class="text-sm font-medium uppercase hover:text-yellow-400"
@@ -147,21 +153,21 @@
         </div>
 
         <!-- Logo -->
-        <div>
+        <div class="mx-auto md:mx-0">
           <a href="/">
             <img src="assets/logo.png" alt="Biggies Burger" class="h-10" />
           </a>
         </div>
 
-        <!-- Right Navigation -->
-        <div class="flex items-center space-x-6">
+        <!-- Right Navigation (desktop only) -->
+        <div class="hidden md:flex items-center space-x-6">
           <a
             href="#"
             class="text-sm font-medium uppercase hover:text-yellow-400"
             >Career</a
           >
           <a
-            href="#"
+            href="/store-locator.html"
             class="text-sm font-medium uppercase hover:text-yellow-400"
             >Store Locator</a
           >
@@ -187,8 +193,54 @@
             </svg>
           </button>
         </div>
+      <button class="bg-[#111] border border-gray-700 rounded-md p-2 w-fit md:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 text-yellow-400"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+      </button>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-col space-y-4 px-4 pt-4 h-screen bg-black mt-4 md:mt-0"
+      >
+        <a
+          href="/about.html"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >About Us</a
+        >
+        <a
+          href="/franchise.html"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Franchise</a
+        >
+        <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Menu</a
+        >
+        <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Career</a
+        >
+        <a href="/store-locator.html" class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Store Locator</a
+        >
+        <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Media</a
+        >
       </div>
     </header>
+    <!-- Header Ends here -->
 
     <!-- Section One Start -->
     <section class="relative w-screen h-screen overflow-hidden">
@@ -785,7 +837,9 @@
         <p class="text-[#FBCE0F] font-bold capitalize text-md leading-[140%]">
           TESTIMONIALS
         </p>
-        <h1 class="text-black font-medium text-2xl md:text-5xl leading-[120%] text-center">
+        <h1
+          class="text-black font-medium text-2xl md:text-5xl leading-[120%] text-center"
+        >
           Hear From Our Happy <br />
           Customers
         </h1>
@@ -823,7 +877,9 @@
                   Sarah H.
                 </div>
               </div>
-              <p class="text-black text-left font-normal text-[10px] leading-[150%] mt-2">
+              <p
+                class="text-black text-left font-normal text-[10px] leading-[150%] mt-2"
+              >
                 “The most reliable way to predict your future <br />
                 is to create it yourself
               </p>
@@ -851,7 +907,9 @@
               <div
                 class="absolute bottom-2 left-3 bg-white p-4 rounded-xl w-[192px] h-[143px] drop-shadow"
               >
-                <p class="text-black text-left font-normal text-[10px] leading-[150%]">
+                <p
+                  class="text-black text-left font-normal text-[10px] leading-[150%]"
+                >
                   "Vision is everything. Persistence makes all the difference.
                   Nothing brings everyone together like..."
                 </p>
@@ -897,7 +955,9 @@
                   Sarah H.
                 </div>
               </div>
-              <p class="text-black text-left font-normal text-[10px] leading-[150%] mt-2">
+              <p
+                class="text-black text-left font-normal text-[10px] leading-[150%] mt-2"
+              >
                 “The most reliable way to predict your future <br />
                 is to create it yourself
               </p>
@@ -925,7 +985,9 @@
               <div
                 class="absolute bottom-2 left-3 bg-white p-4 rounded-xl w-[192px] h-[143px] drop-shadow"
               >
-                <p class="text-black text-left font-normal text-[10px] leading-[150%]">
+                <p
+                  class="text-black text-left font-normal text-[10px] leading-[150%]"
+                >
                   "Vision is everything. Persistence makes all the difference.
                   Nothing brings everyone together like..."
                 </p>
@@ -971,7 +1033,9 @@
                   Ratan K.
                 </div>
               </div>
-              <p class="text-black text-left font-normal text-[10px] leading-[150%] mt-2">
+              <p
+                class="text-black text-left font-normal text-[10px] leading-[150%] mt-2"
+              >
                 “The most reliable way to predict your future <br />
                 is to create it yourself
               </p>
@@ -999,7 +1063,9 @@
               <div
                 class="absolute bottom-2 left-3 bg-white p-4 rounded-xl w-[192px] h-[143px] drop-shadow"
               >
-                <p class="text-black text-left font-normal text-[10px] leading-[150%]">
+                <p
+                  class="text-black text-left font-normal text-[10px] leading-[150%]"
+                >
                   "Vision is everything. Persistence makes all the difference.
                   Nothing brings everyone together like..."
                 </p>
@@ -1055,7 +1121,7 @@
             class="flex flex-col justify-start items-start space-y-2 text-sm"
           >
             <a href="#" class="text-white">Career</a>
-            <a href="#" class="text-white">Store Locator</a>
+            <a href="/store-locator.html" class="text-white">Store Locator</a>
             <a href="#" class="text-white">Media</a>
           </div>
           <div>
