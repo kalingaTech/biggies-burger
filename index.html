@@ -877,14 +877,63 @@
       </div>
 
       <!-- Main Sticky Button -->
+  <div class="fixed bottom-10 right-10">
+    <div class="relative">
       <button
         id="toggleButton"
-        class="bg-yellow-500 text-white p-4 rounded-full shadow-lg hover:bg-yellow-600 transition-all"
+        class="w-16 h-16 bg-black text-white flex items-center justify-center rounded-full shadow-lg border border-white/20 transition-all"
+        aria-expanded="false"
+        aria-controls="menuBox"
       >
         +
       </button>
+      <div
+      id="menuBox"
+      class="hidden absolute top-1/2 -translate-y-1/2 right-full mr-3 w-52 h-24 bg-black border border-white/20 flex flex-col justify-evenly items-start"
+    >
+        <button class="text-white text-xs pl-3">Instant Whatsapp Support</button>
+        <button class="text-white text-xs pl-3">Talk To Our Expert</button>
+      </div>
+    </div>
+  </div>
     </div>
      <!-- Floating Menu End -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButton = document.getElementById('toggleButton');
+      const menuBox = document.getElementById('menuBox');
+
+      if (!toggleButton || !menuBox) {
+        console.error('toggleButton or menuBox not found');
+        return;
+      }
+
+      toggleButton.addEventListener('click', function(event) {
+        event.stopPropagation();
+        const isHidden = menuBox.classList.contains('hidden');
+        if (isHidden) {
+          menuBox.classList.remove('hidden');
+          toggleButton.setAttribute('aria-expanded', 'true');
+        } else {
+          menuBox.classList.add('hidden');
+          toggleButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Click outside to close
+      document.addEventListener('click', function() {
+        if (!menuBox.classList.contains('hidden')) {
+          menuBox.classList.add('hidden');
+          toggleButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Prevent clicks inside menu from closing it
+      menuBox.addEventListener('click', function(event) {
+        event.stopPropagation();
+      });
+    });
+  </script>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   <script src="loader.js"></script>
