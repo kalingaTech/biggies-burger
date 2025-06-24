@@ -181,6 +181,7 @@ function setupScrollDrivenAnimation() {
   const chars = document.querySelectorAll(".scroll-text .char");
   const video = document.querySelector(".scroll-video");
   const section = document.querySelector(".what-so-good");
+  const videoText = document.querySelector(".video-text");
 
   let videoPlayed = false;
 
@@ -189,50 +190,75 @@ function setupScrollDrivenAnimation() {
     autoplay: false,
   });
 
-  // 1. Animate characters color
+  // Character color animation
   scrollTimeline.add({
     targets: chars,
     color: ["#888", "#000"],
-    delay: anime.stagger(30),
+    opacity: [0.7, 1],
+    delay: anime.stagger(25),
     duration: 1000,
     easing: "easeOutQuad"
   });
 
-  // 2. Animate video
+  // Scroll text fade up and disappear
+  scrollTimeline.add({
+    targets: ".scroll-text",
+    translateY: ["0%", "-120%"],
+    opacity: [1, 0],
+    duration: 1000,
+    easing: "easeInOutQuad"
+  });
+
+  // Video comes in
   scrollTimeline.add({
     targets: video,
-    translateY: ["100px", "0px"],
-    height: ["10%", "100%"],
-    width: ["80vw", "100vw"],
-    objectFit: 'cover',
+    translateY: ["100%", "0%"],
+    width:['80vw', '100vw'],
     opacity: [0, 1],
-    duration: 1500,
+    duration: 1000,
     easing: "easeOutQuad"
-  }, '-=800'); // Start before previous finishes fully
+  }, '-=500');
 
-  // Scroll-based progress
-window.addEventListener("scroll", () => {
-  const stickyWrapper = document.querySelector(".what-so-good-wrapper");
-  const rect = stickyWrapper.getBoundingClientRect();
+  // Video text fades in
+  scrollTimeline.add({
+    targets: videoText,
+    translateY: ["50px", "0px"],
+    opacity: [0, 1],
+    duration: 1000,
+    easing: "easeOutCubic"
+  });
+  
+  scrollTimeline.add({
+    targets: '.video-text h3',
+    translateY: ["30px", "0px"],
+    opacity:[0,1],
+    duration: 500,
+    easing: "easeOutCubic"
+  });
 
-  const totalScroll = stickyWrapper.offsetHeight - window.innerHeight;
-  const scrolled = Math.min(Math.max(0, -rect.top), totalScroll);
+  // Scroll-based control
+  window.addEventListener("scroll", () => {
+    const wrapper = document.querySelector(".what-so-good-wrapper");
+    const rect = wrapper.getBoundingClientRect();
 
-  const progress = scrolled / totalScroll;
+    const totalScroll = wrapper.offsetHeight - window.innerHeight;
+    const scrolled = Math.min(Math.max(0, -rect.top), totalScroll);
 
-  scrollTimeline.seek(scrollTimeline.duration * progress);
+    const progress = scrolled / totalScroll;
 
-  if (!videoPlayed && progress > 0.5) {
-    video.play();
-    videoPlayed = true;
-  }
-});
+    scrollTimeline.seek(scrollTimeline.duration * progress);
 
+    if (!videoPlayed && progress > 0.5) {
+      video.play();
+      videoPlayed = true;
+    }
+  });
 }
 
 // Init
 wrapCharacters(".scroll-text");
 setupScrollDrivenAnimation();
+
 
 // heroLoadAnimation();
 
@@ -279,3 +305,100 @@ window.addEventListener('scroll', () => {
   timeline.seek(timeline.duration * progress);
 
 });
+
+// =================================
+const blocks = document.querySelectorAll(".image-text-block");
+const boxContents = document.querySelectorAll(".box-section .box-content");
+
+let currentIndex = 0;
+let animating = false;
+let lastScrollY = window.scrollY;
+let ticking = false;
+
+function activate(index, direction = 1) {
+  if (index === currentIndex || animating) return;
+
+  animating = true;
+
+  const prev = currentIndex;
+  const next = index;
+
+  const tl = anime.timeline({
+    easing: "easeInOutQuad",
+    duration: 800,
+    complete: () => {
+      currentIndex = next;
+      animating = false;
+    }
+  });
+
+  // Animate out current block
+  tl.add({
+    targets: blocks[prev],
+    opacity: 0,
+    translateY: direction > 0 ? -250 : 250,
+    duration: 1000
+  });
+
+  // Reset and animate in next block
+  tl.add({
+    begin: () => {
+      blocks[next].style.opacity = 1;
+      blocks[next].style.transform = `translateY(${direction > 0 ? 250 : -250}px)`;
+    },
+    targets: blocks[next],
+    translateY: 0,
+    duration: 1000
+  }, 0); // Start at the same time for smoother feel if desired
+
+  tl.add({
+    targets: boxContents[currentIndex],
+    opacity: 1,
+    duration: 800
+  });
+  if(direction=== -1){
+  tl.add({
+    targets: boxContents[prev],
+    opacity: 0,
+    duration: 800
+  });
+  }
+}
+
+function onScroll() {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      const section = document.querySelector(".scroll-section");
+      const rect = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      const progress = Math.min(
+        Math.max((windowHeight - rect.top) / (windowHeight * blocks.length), 0),
+        1
+      );
+
+      let index = Math.floor(progress * blocks.length);
+      index = Math.min(index, blocks.length - 1);
+
+      const direction = window.scrollY > lastScrollY ? 1 : -1;
+
+      if (index !== currentIndex && index >= 0 && index < blocks.length) {
+        activate(index, direction);
+      }
+
+      lastScrollY = window.scrollY;
+      ticking = false;
+    });
+
+    ticking = true;
+  }
+}
+
+window.addEventListener("scroll", onScroll);
+
+// Initial setup
+blocks.forEach((block, i) => {
+  block.style.opacity = i === 0 ? "1" : "0";
+  block.style.transform = i === 0 ? "translateY(0px)" : "translateY(250px)";
+});
+

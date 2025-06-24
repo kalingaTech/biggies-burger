@@ -303,11 +303,12 @@ footer a:hover {
   display: inline-block;
   color: gray;
   transition: none;
-
+  opacity: 0.7;
+  transition: color 0.3s ease;
 }
 
 .what-so-good-wrapper {
-  height: 200vh; /* Controls scroll length */
+  height: 200vh; /* Defines scroll distance */
   position: relative;
 }
 
@@ -319,35 +320,55 @@ footer a:hover {
   background: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
-  z-index: 1;
-  padding: 4rem 1.5rem;
+  padding: 2rem;
 }
 
 .scroll-text {
-  transition: opacity 1s ease, transform 1s ease;
-  z-index: 2;
-  position: relative;
+  font-size: 3rem;
+  font-weight: bold;
+  width: 65%;
   text-align: center;
+  line-height: 1.4;
+  z-index: 2;
+  position: absolute;
   color: #000;
-  width: 70%;
-  font-size: 48px;
-  font-weight: 700;
 }
 
-.scroll-text.fade-up {
-  opacity: 0;
-  transform: translateY(-50px);
-}
 
 .scroll-video {
   position: absolute;
-  opacity: 0;
+  bottom: 0;
   width: 80vw;
-  height: 0;
+  height: 100vh;
+  object-fit: cover;
   z-index: 1;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.5s ease;
+}
+
+.video-text {
+  position: absolute;
+  width: 40%;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  z-index: 3;
+  opacity: 0;
+}
+.video-text h3{
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+.video-text p{
+  font-size: 16px;
+  line-height: 140%;
+  margin-bottom: 20px;
 }
 
 .vertical-text {
@@ -506,4 +527,51 @@ p.font-yellow {
     opacity: 0;
   transform: translateY(-20px); /* initial position */
   transition: none;
+}
+
+
+/* ========================================= */
+
+.scroll-section {
+  height: 400vh;
+  position: relative;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 10px 0;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.box-section {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  display: inline-flex;
+  font-weight: bold;
+}
+
+.box-content {
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.image-text-wrapper {
+  height: 100vh;
+  position: relative;
+}
+
+.image-text-block {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(250px);
+  pointer-events: none;
 }
