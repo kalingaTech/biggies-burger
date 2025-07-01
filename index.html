@@ -218,7 +218,7 @@
       <div class="video-text">
         <h3>BURGERS माने BIGGIES</h3>
         <p>The brainchild of Biraja Prasad Rout, Biggies Burger is the fulfilment of a great Indian dream of having an
-          in-house brand of authentic burgers. Being the PIONEER OF GRILLED BURGERS, our commitment to quality
+          in-house brand of authentic burgers. Being the PIONEER OF GRILLED BURGERS, our commitment to quality
           ingredients, signature recipes, and affordable prices is what has defined our legacy for the last 11
           successful years.</p>
         <button class="bg-yellow-400 text-black px-8 py-3 font-bold text-sm hover:bg-yellow-300 transition-colors">
@@ -236,7 +236,7 @@
           Our Journey
         </p>
         <h2 class="text-2xl md:text-3xl font-bold leading-snug text-black">
-          We’ve Been Crafting The Biggies Experience<br />
+          We've Been Crafting The Biggies Experience<br />
           For Over A Decade — Because We Know How<br />
           Powerful A Great Burger Can Be.
         </h2>
@@ -259,8 +259,8 @@
 
     <!-- Image and text block -->
      <div class="image-text-wrapper">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center image-text-block" data-index="0">
-      <img src="/assets/burger1.png" alt="Food Image" class="w-full object-cover" />
+    <div class="grid md:grid-cols-2 items-center image-text-block" data-index="0">
+      <img src="/assets/burger1.png" alt="Food Image" class=" object-cover" />
       <div>
         <p class="text-sm font-semibold mb-2">2014</p>
         <h3 class="text-[32] text-black font-[400] mb-2">
@@ -272,8 +272,8 @@
         </p>
       </div>
     </div>
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center image-text-block" data-index="1">
-      <img src="/assets/burger2.png" alt="Food Image" class="w-full object-cover" />
+    <div class="grid md:grid-cols-2 items-center image-text-block" data-index="1">
+      <img src="/assets/burger2.png" alt="Food Image" class=" object-cover" />
       <div>
         <p class="text-sm font-semibold mb-2">2014</p>
         <h3 class="text-[32] text-black font-[400] mb-2">
@@ -285,8 +285,8 @@
         </p>
       </div>
     </div>
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center image-text-block" data-index="2">
-      <img src="/assets/burger1.png" alt="Food Image" class="w-full object-cover" />
+    <div class="grid md:grid-cols-2 items-center image-text-block" data-index="2">
+      <img src="/assets/burger1.png" alt="Food Image" class=" object-cover" />
       <div>
         <p class="text-sm font-semibold mb-2">2014</p>
         <h3 class="text-[32] text-black font-[400] mb-2">
@@ -298,8 +298,8 @@
         </p>
       </div>
     </div>
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center image-text-block" data-index="3">
-      <img src="/assets/burger2.png" alt="Food Image" class="w-full object-cover" />
+    <div class="grid md:grid-cols-2 items-center image-text-block" data-index="3">
+      <img src="/assets/burger2.png" alt="Food Image" class=" object-cover" />
       <div>
         <p class="text-sm font-semibold mb-2">2014</p>
         <h3 class="text-[32] text-black font-[400] mb-2">
@@ -632,9 +632,17 @@
   </section>
 
   <!-- Floating Menu Start -->
-  <div class="fixed bottom-6 right-6 z-50">
-    <div id="menu"
-      class="flex flex-col items-end space-y-2 mb-2 transition-all duration-300 opacity-0 scale-0 origin-bottom-left">
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-2">
+    <!-- Floating Toggle Button -->
+    <button id="toggleButton" aria-expanded="false" class="bg-yellow-400 text-black p-4 rounded-full shadow-lg hover:bg-yellow-500 focus:outline-none mb-2 flex items-center justify-center">
+      <!-- Plus Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <!-- Floating Menu -->
+    <div id="menu" class="flex flex-col items-end space-y-2 mb-2 hidden">
       <button class="bg-blue-600 text-white px-4 py-2 rounded-full shadow hover:bg-blue-700">
         Option 1
       </button>
@@ -642,9 +650,9 @@
         Option 2
       </button>
       <div
-      id="menuBox"
-      class="hidden absolute top-1/2 -translate-y-1/2 right-full mr-3 w-52 h-24 bg-black border border-white/20 flex flex-col justify-evenly items-start"
-    >
+        id="menuBox"
+        class="hidden absolute top-1/2 -translate-y-1/2 right-full mr-3 w-52 h-24 bg-black border border-white/20 flex flex-col justify-evenly items-start"
+      >
         <button class="text-white text-xs pl-3">Instant Whatsapp Support</button>
         <button class="text-white text-xs pl-3">Talk To Our Expert</button>
       </div>
@@ -655,34 +663,43 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const toggleButton = document.getElementById('toggleButton');
+      const menu = document.getElementById('menu');
       const menuBox = document.getElementById('menuBox');
 
-      if (!toggleButton || !menuBox) {
-        console.error('toggleButton or menuBox not found');
+      if (!toggleButton || !menu || !menuBox) {
+        console.error('toggleButton, menu, or menuBox not found');
         return;
       }
 
       toggleButton.addEventListener('click', function(event) {
         event.stopPropagation();
-        const isHidden = menuBox.classList.contains('hidden');
+        const isHidden = menu.classList.contains('hidden');
         if (isHidden) {
-          menuBox.classList.remove('hidden');
+          menu.classList.remove('hidden');
           toggleButton.setAttribute('aria-expanded', 'true');
         } else {
-          menuBox.classList.add('hidden');
+          menu.classList.add('hidden');
           toggleButton.setAttribute('aria-expanded', 'false');
         }
       });
 
       // Click outside to close
-      document.addEventListener('click', function() {
-        if (!menuBox.classList.contains('hidden')) {
-          menuBox.classList.add('hidden');
-          toggleButton.setAttribute('aria-expanded', 'false');
+      document.addEventListener('click', function(event) {
+        if (!menu.classList.contains('hidden')) {
+          // Only close if click is outside the menu and toggleButton
+          if (!menu.contains(event.target) && event.target !== toggleButton) {
+            menu.classList.add('hidden');
+            toggleButton.setAttribute('aria-expanded', 'false');
+          }
         }
       });
 
       // Prevent clicks inside menu from closing it
+      menu.addEventListener('click', function(event) {
+        event.stopPropagation();
+      });
+
+      // MenuBox logic remains unchanged
       menuBox.addEventListener('click', function(event) {
         event.stopPropagation();
       });
