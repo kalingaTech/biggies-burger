@@ -308,7 +308,8 @@ window.addEventListener('scroll', () => {
 
 // =================================
 const blocks = document.querySelectorAll(".image-text-block");
-const boxContents = document.querySelectorAll(".box-section .box-content");
+const boxContents = document.querySelectorAll(".box-section img.box-content");
+const pContent= document.querySelectorAll("p.box-content");
 
 let currentIndex = 0;
 let animating = false;
@@ -354,13 +355,19 @@ function activate(index, direction = 1) {
   tl.add({
     targets: boxContents[currentIndex],
     opacity: 1,
-    duration: 800
+    duration: 800,
+      begin: () => {
+    pContent[prev].style.display = 'block';
+  }
   });
   if(direction=== -1){
   tl.add({
     targets: boxContents[prev],
     opacity: 0,
-    duration: 800
+    duration: 800,
+    complete: () => {
+      pContent[prev].style.display = 'none';
+    }
   });
   }
 }
@@ -401,4 +408,6 @@ blocks.forEach((block, i) => {
   block.style.opacity = i === 0 ? "1" : "0";
   block.style.transform = i === 0 ? "translateY(0px)" : "translateY(250px)";
 });
+
+
 
