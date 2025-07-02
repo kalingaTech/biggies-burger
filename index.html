@@ -21,52 +21,138 @@
 </head>
 
 <body class="bg-black text-white">
-  <header class="bg-black text-white py-4 px-16">
-    <div class="mx-auto flex items-center justify-between">
-      <!-- Left Navigation -->
-      <div class="flex items-center space-x-6">
-        <!-- <button class="bg-[#111] border border-gray-700 rounded-md p-2">
+   <!-- Header Starts here -->
+    <header
+      class="bg-transparent text-white py-4 px-0 md:px-16 absolute top-0 left-0 w-screen z-[100]"
+    >
+      <div class="mx-auto flex items-center justify-between px-4 md:px-0">
+        <!-- Hamburger button (Mobile only) -->
+        <button
+          id="menu-toggle"
+          class="md:hidden bg-[#111] border border-gray-700 rounded-md p-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-yellow-400"
+            viewBox="0 0 20 20"
+            fill="#FBCE0F"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+
+        <!-- Left Navigation (desktop only) -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a
+            href="/about.html"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >About Us</a
+          >
+          <a
+            href="/franchise.html"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Franchise</a
+          >
+          <a
+            href="#"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Menu</a
+          >
+        </div>
+
+        <!-- Logo -->
+        <div class="mx-auto md:mx-0">
+          <a href="/">
+            <img src="assets/logo.png" alt="Biggies Burger" class="h-10" />
+          </a>
+        </div>
+
+        <!-- Right Navigation (desktop only) -->
+        <div class="hidden md:flex items-center space-x-6">
+          <!-- <a
+            href="#"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Career</a
+          > -->
+          <a
+            href="/store-locator.html"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Store Locator</a
+          >
+          <a
+            href="#"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Media</a
+          >
+          <button class="bg-[#111] border border-gray-700 rounded-md p-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5 text-yellow-400"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#FBCE0F"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <path
-                fill-rule="evenodd"
-                d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2z"
-                clip-rule="evenodd"
-              />
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-          </button> -->
-        <a href="/about.html" class="text-sm font-medium uppercase hover:text-yellow-400">About Us</a>
-        <a href="/franchise.html" class="text-sm font-medium uppercase hover:text-yellow-400">Franchise</a>
-        <a href="#" class="text-sm font-medium uppercase hover:text-yellow-400">Menu</a>
+          </button>
+        </div>
+      <button class="bg-[#111] border border-gray-700 rounded-md p-2 w-fit md:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 text-yellow-400"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#FBCE0F"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+      </button>
       </div>
 
-      <!-- Logo -->
-      <div>
-        <a href="/">
-          <img src="assets/logo.png" alt="Biggies Burger" class="h-10" />
-        </a>
+      <!-- Mobile Navigation Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-col space-y-4 px-4 pt-4 h-screen bg-black mt-4 md:mt-0"
+      >
+        <a
+          href="/about.html"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >About Us</a
+        >
+        <a
+          href="/franchise.html"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Franchise</a
+        >
+        <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Menu</a
+        >
+        <!-- <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Career</a
+        > -->
+        <a href="/store-locator.html" class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Store Locator</a
+        >
+        <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Media</a
+        >
       </div>
-
-      <!-- Right Navigation -->
-      <div class="flex items-center space-x-6">
-        <a href="#" class="text-sm font-medium uppercase hover:text-yellow-400">Career</a>
-        <a href="#" class="text-sm font-medium uppercase hover:text-yellow-400">Store Locator</a>
-        <a href="#" class="text-sm font-medium uppercase hover:text-yellow-400">Media</a>
-        <button class="bg-[#111] border border-gray-700 rounded-md p-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
+    </header>
+    <!-- Header Ends here -->
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center justify-center">
