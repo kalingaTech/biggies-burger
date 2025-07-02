@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smooth Scroll Exit - Anime.js Only</title>
+  <style>
+  
+
+    .hero-wrapper {
+      height: 200vh; /* makes room for sticky to work */
+      position: relative;
+    }
+
+    .hero-section {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      background: url('./assets/about-section_2-1.png') center center / cover no-repeat;
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    .mask-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .spotlight {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: calc(50vw - 10px);
+      height: calc(100vh - 10px);
+      box-shadow: 0 0 0 9999px white;
+      border-radius: 20px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .text-content,
+    .text-content-2 {
+      position: absolute;
+      top: 50%;
+      width: 400px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      transform: translateY(-50%);
+      z-index: 3;
+    }
+
+    .text-content {
+      left: 60vw;
+    }
+
+    .text-content-2 {
+      left: -500px;
+    }
+
+    .after-hero {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Scroll Wrapper -->
+<div class="hero-wrapper">
+  <!-- Hero section (sticky) -->
+  <div class="hero-section" id="hero">
+    <div class="mask-layer">
+      <div class="spotlight" id="spotlight"></div>
+    </div>
+
+    <div class="text-content" id="text1">
+      <p>The Future of Mobility</p>
+      <h1>Making A to B better in every way</h1>
+      <h3>Zoox drives itself. We handle charging and maintenance and upgrading the fleet.</h3>
+    </div>
+
+    <div class="text-content-2" id="text2">
+      <p>Next Generation Drive</p>
+      <h1>Freedom Beyond Roads</h1>
+      <h3>Explore autonomous mobility that adapts to your life.</h3>
+    </div>
+  </div>
+</div>
+
+<!-- Scroll continues -->
+<div class="after-hero">
+  ✅ You’ve completed the scroll effect
+</div>
+
+<!-- Anime.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+<script>
+  const spotlight = document.getElementById("spotlight");
+  const text1 = document.getElementById("text1");
+  const text2 = document.getElementById("text2");
+  const heroWrapper = document.querySelector(".hero-wrapper");
+
+  const scrollEnd = window.innerHeight;
+  let isReleased = false;
+
+  function updateOnScroll() {
+    const scrollY = window.scrollY;
+    const sectionTop = heroWrapper.offsetTop;
+    const progress = Math.min(Math.max((scrollY - sectionTop) / scrollEnd, 0), 1);
+
+    // Animate spotlight
+    const spotX = progress * (window.innerWidth / 2);
+    spotlight.style.transform = `translateX(${spotX}px)`;
+
+    const text1X = progress * window.innerWidth;
+    text1.style.transform = `translate(${text1X}px, -50%)`;
+
+    const text2X = -500 + progress * ((window.innerWidth * 0.10) + 500);
+    text2.style.left = `${text2X}px`;
+
+    // Scroll Down Smoothly
+    if (progress >= 1 && !isReleased) {
+      isReleased = true;
+      anime({
+        targets: heroWrapper,
+        scrollTop: sectionTop + scrollEnd + 1,
+        duration: 1000,
+        easing: "easeInOutQuad",
+      });
+    }
+
+    // Scroll Up to Replay
+    if (progress < 1 && isReleased) {
+      isReleased = false;
+      anime({
+        targets: heroWrapper,
+        scrollTop: sectionTop,
+        duration: 800,
+        easing: "easeInOutQuad"
+      });
+    }
+  }
+
+  window.addEventListener("scroll", updateOnScroll);
+</script>
+
+</body>
+</html>
