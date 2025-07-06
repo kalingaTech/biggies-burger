@@ -125,7 +125,7 @@
   <!-- Section two Start -->
   <section class="bg-white py-32 hero-wrapper hidden md:block">
 
-    <div class="flex flex-col w-[75%] mx-auto px-6">
+    <div class="flex flex-col w-[75%] mx-auto px-6 pb-20">
       <p class="text-black text-sm">A revolution</p>
       <p class="text-black text-[32px] leading-[140%] text-center font-semibold">
         Leading the Grilled Burger Revolution — Empowering Indian Tastebuds
@@ -172,7 +172,7 @@
   <section class="bg-white py-32 block md:hidden">
     <div class="flex flex-col w-[75%] mx-auto px-6">
       <p class="text-black text-sm">A revolution</p>
-      <p class="text-black text-[32px] leading-[140%] text-center font-semibold">
+      <p class="text-black text-xl leading-[140%] text-center font-semibold">
         Leading the Grilled Burger Revolution — Empowering Indian Tastebuds
         with Authentic, Bold, and Flavor-Packed Innovations Daily
       </p>
@@ -220,14 +220,14 @@
   <!-- Section three start -->
   <img src="./assets/timeline-image.png" alt="" class="w-full" />
   <section class="bg-black min-h-screen text-white flex flex-col items-center py-32">
-    <div class="mx-auto w-[75%]">
+    <div class="mx-auto md:w-[75%]">
       <!-- Title -->
       <h2 class="text-3xl md:text-5xl capitalize font-semibold leading-[140%] text-center mb-32">
         From One Grill To A Nationwide <br />
         Burger Legacy
       </h2>
-      <div class="timeline-container w-full relative">
-        <div class="timeline-first-split relative pt-[160px]">
+      <div class="timeline-container w-full sticky md:relative top-0">
+        <div class="timeline-first-split  relative pt-[160px]">
 
           <svg id="timeline-svg " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 950" preserveAspectRatio="none"
             fill="none" class="w-full h-full">
@@ -252,7 +252,7 @@
             </defs>
           </svg>
           <!-- Curve one SVG end -->
-          <div class="timeline-content absolute top-0 left-0 max-w-[340px] text-left`">
+          <div class="timeline-content absolute top-0 left-0 max-w-[340px] text-left">
             <h4 class="flex justify-start gap-2 mb-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
@@ -301,7 +301,7 @@
             </h4>
           </div>
 
-          <div class="timeline-content absolute top-[50%] md:top-[32%] right-[3%] max-w-[340px]">
+          <div class="timeline-content absolute top-[45%] md:top-[35%] right-[10%] md:right-[5%] max-w-[340px]">
             <h4 class="flex justify-start gap-2 mb-2">
               Expanded
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -323,7 +323,7 @@
             </h4>
           </div>
         </div>
-        <div class="timeline-content absolute top-[60%] md:top-[55%] left-[25%] md:left-[50%] max-w-[340px]">
+        <div class="timeline-content absolute top-[55%] md:top-[55%] left-[20%] md:left-[55%] max-w-[340px]">
           <h4 class="flex justify-start gap-2 mb-2 flex-row-reverse md:flex-row">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
@@ -345,7 +345,7 @@
           </h4>
         </div>
 
-        <div class="timeline-content absolute top-[80%] md:top-[70%] left-[5%] max-w-[340px]">
+        <div class="timeline-content absolute top-[80%] md:top-[70%] left-[10%] max-w-[340px]">
           <h4 class="flex justify-start gap-2 mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
@@ -391,7 +391,7 @@
       </div>
     </div>
   </section>
-  <img src="./assets/timeline-image.png" alt="" class="w-full rotate-180" />
+  <img src="./assets/timeline-image.png" alt="" class="w-full rotate-180 pb-[10px] md:pb-0" />
   <!-- section three end -->
 
   <!-- Section four start -->
@@ -404,7 +404,7 @@
         Behind biggies
       </h3>
     </div>
-    <div class="flex gap-8 w-[75%] mx-auto">
+    <div class="flex flex-col md:flex-row gap-8 w-[75%] mx-auto">
       <!-- Card One -->
       <div class="card">
         <div class="relative overflow-hidden">
@@ -482,14 +482,41 @@
   <!-- Section four End -->
 
   <!-- Footer start -->
-  <section class="py-60">
-    <div class="w-[75%] mx-auto">
-      <h3 class="font-semibold text-[32px] leading-[140%] text-center capitalize">
+  <section class="py-20 md:py-60">
+    <div class="w-[90%] md:w-[75%] mx-auto">
+      <h3 class="font-semibold text-lg md:text-2xl lg:text-[32px] leading-[140%] text-center capitalize">
         Biggies Burger has built its legacy through passion and excellence.
         With proven expertise and innovation, we continue to serve
         unforgettable flavours and create lasting experiences.
       </h3>
     </div>
+    <section class="sticky-wrapper">
+      <div id="animate-section">
+        <div class="hidden md:flex line-section">
+          <span class="awards-text">Awards</span>
+          <div class="line"></div>
+          <span class="recognition-text">Recognition</span>
+        </div>
+        <div class="md:hidden">
+          <span class="awards-text">Awards Recognition</span>
+        </div>
+        <div class="line-section md:hidden top-[41px]">
+          <div class="line"></div>
+        </div>
+        <div class="box w-[90%] md:w-[70%]">
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Best Burger Chain 2023</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Customer Choice Award</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Excellence in Service</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Innovation Award</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Quality Assurance</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Franchise Excellence</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Community Impact</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Sustainability Award</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Employee Satisfaction</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Growth Achievement</p>
+        </div>
+      </div>
+    </section>
   </section>
 
   <footer class="py-10 bg-black text-white px-8 md:px-16 border-t border-[#FFFFFF33]">
