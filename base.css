@@ -191,8 +191,9 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* ==========Loader============ */
+/* ==========Animation-Related Properties Only============ */
 
+/* Loader animations */
 .loader {
   position: fixed;
   width: 100vw;
@@ -203,55 +204,25 @@ footer a:hover {
   z-index: 99999;
 }
 
-
 .loading-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   transition: transform 1s ease;
   z-index: 1;
   position: relative;
 }
 
-.emoji-bounce {
-  font-size: 80px;
-  text-align: center;
-}
-
 .emoji-bounce span {
-  display: inline-block;
   opacity: 0;
   transform: translateY(0);
 }
 
-.loading-text {
-  font-size: 24px;
-}
-
 .transition-line {
   width: 0%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 10vh;
   transition: transform 1s ease;
   background-color: #000;
   z-index: 1;
   position: absolute;
   top: 50%;
   right: -100%;
-}
-
-.word-roller {
-  height: 150px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .text {
@@ -268,7 +239,6 @@ footer a:hover {
   color: white;
   font-size: 5rem;
   font-weight: bold;
-  /* opacity: 0; */
   transform: translateY(100px);
 }
 
@@ -295,21 +265,13 @@ footer a:hover {
 
 #wordRoller .yellow {
   color: #FFD700;
-  /* Yellow color for specific words (if any remain) */
 }
-
 
 .scroll-text .char {
   display: inline-block;
   color: gray;
-  transition: none;
   opacity: 0.7;
   transition: color 0.3s ease;
-}
-
-.what-so-good-wrapper {
-  height: 200vh; /* Defines scroll distance */
-  position: relative;
 }
 
 .what-so-good {
@@ -318,25 +280,8 @@ footer a:hover {
   height: 100vh;
   width: 100%;
   background: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  padding: 2rem;
 }
-
-.scroll-text {
-  font-size: 3rem;
-  font-weight: bold;
-  width: 65%;
-  text-align: center;
-  line-height: 1.4;
-  z-index: 2;
-  position: absolute;
-  color: #000;
-}
-
 
 .scroll-video {
   position: absolute;
@@ -352,13 +297,13 @@ footer a:hover {
 
 .video-text {
   position: absolute;
-  width: 40%;
   margin: 0 auto;
   color: white;
   text-align: center;
   z-index: 3;
   opacity: 0;
 }
+
 .video-text h3{
   font-size: 40px;
   font-weight: 400;
@@ -371,22 +316,10 @@ footer a:hover {
   margin-bottom: 20px;
 }
 
-.vertical-text {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-}
-
-.menu-container {
-  display: flex;
-  overflow: hidden;
-  /* optional: avoids overflow when resizing */
-}
-
 .menu-item {
   transition: flex 0.3s ease;
   flex: 1;
   min-width: 0;
-  /* prevents content from forcing expansion */
 }
 
 .menu-container:hover .menu-item:not(:hover) {
@@ -395,26 +328,9 @@ footer a:hover {
 
 .menu-container:hover .menu-item:hover {
   flex: 1.6;
-  /* increase as needed */
-}
-
-.slider-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-}
-
-.slider {
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  height: 100%;
 }
 
 .slider-track {
-  display: flex;
-  white-space: nowrap;
   animation: scroll-left 4s linear infinite;
 }
 
@@ -423,12 +339,9 @@ footer a:hover {
 }
 
 .slider img {
-  height: 300px;
-  margin: 0 10px;
   transition: transform 0.3s ease;
 }
 
-/* Hover effect */
 .slider.reverse img:hover {
   transform: rotateZ(10deg);
   z-index: 10;
@@ -439,7 +352,6 @@ footer a:hover {
   z-index: 10;
 }
 
-/* Pause animation when hovered */
 .slider:hover .slider-track {
   animation-play-state: paused;
 }
@@ -448,7 +360,6 @@ footer a:hover {
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(-50%);
   }
@@ -458,23 +369,12 @@ footer a:hover {
   0% {
     transform: translateX(-50%);
   }
-
   100% {
     transform: translateX(0);
   }
 }
 
-p.font-yellow {
-  font-family: 'Inter Tight';
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 160%;
-  text-align: center;
-  text-transform: uppercase;
-  color: #FBCE0F;
-}
-
-/* =========================================== */
+/* Animation-related properties for sticky sections */
 .sticky-wrapper {
   height: 300vh;
   position: relative;
@@ -491,6 +391,7 @@ p.font-yellow {
   align-items: center;
   justify-content: flex-start;
 }
+
 .line-section{
   display: flex;
   align-items: center;
@@ -500,11 +401,39 @@ p.font-yellow {
   top: 50px;
   gap: 5px;
 }
+
+.awards-text,
+.recognition-text {
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .awards-text,
+  .recognition-text {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  .box {
+    width: 90%;
+  }
+  
+  .box-text {
+    font-size: 24px;
+    padding: 8px;
+  }
+}
+
 .line {
   height: 4px;
   width: 0%;
   background: #FFD700;
   z-index: 2;
+  transition: width 1.5s ease-in-out;
 }
 
 .box {
@@ -518,19 +447,33 @@ p.font-yellow {
   position: relative;
   top: 37px;
   z-index: 1;
+  transition: height 0.8s ease-in-out;
 }
 
 .box-text {
-   color: #000;
+  color: #000;
   padding: 10px;
   font-size: 30px;
-    opacity: 0;
-  transform: translateY(-20px); /* initial position */
-  transition: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  text-align: center;
+  font-weight: 600;
 }
 
+/* Animation states */
+.box-text.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-/* ========================================= */
+.box.expand {
+  height: 400px;
+}
+
+.line.expand {
+  width: 80%;
+}
 
 .scroll-section {
   height: 400vh;
@@ -541,17 +484,8 @@ p.font-yellow {
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 10px 0;
-  background: #fff;
-  border-bottom: 1px solid #ccc;
 }
-.boxes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 5px;
-}
+
 .box-section {
   width: 50px;
   height: 50px;
@@ -565,6 +499,10 @@ img.box-content {
   opacity: 0;
   pointer-events: none;
   white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 p.box-content {
@@ -586,10 +524,8 @@ p.box-content {
   pointer-events: none;
 }
 
-
-
 .hero-wrapper {
-  height: 200vh; /* makes room for sticky to work */
+  height: 200vh;
   position: relative;
 }
 
@@ -645,13 +581,20 @@ p.box-content {
   left: -500px;
 }
 
-
 .timeline-content {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s, transform 0.8s;
 }
+
 .timeline-content.visible {
   opacity: 1;
   transform: translateY(0);
 }
+@media (min-width: 1024px) {
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+}
+

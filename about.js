@@ -47,20 +47,17 @@ function updateOnScroll() {
 window.addEventListener("scroll", updateOnScroll);
 
 
-// Select the correct path elements from your new timeline SVGs
-const path1 = document.querySelector('.curve-one path:nth-of-type(2)');
-const path2 = document.querySelector('.curve-two path:nth-of-type(2)');
+const path1 = document.querySelector('#path1');
+  const path2 = document.querySelector('#path2');
 
-// Get the length of each path
-const length1 = path1.getTotalLength();
-const length2 = path2.getTotalLength();
+  const length1 = path1.getTotalLength();
+  const length2 = path2.getTotalLength();
 
-// Apply dash style for animation
-path1.style.strokeDasharray = length1;
-path1.style.strokeDashoffset = length1;
+  path1.style.strokeDasharray = length1;
+  path1.style.strokeDashoffset = length1;
 
-path2.style.strokeDasharray = length2;
-path2.style.strokeDashoffset = length2;
+  path2.style.strokeDasharray = length2;
+  path2.style.strokeDashoffset = length2;
 
 // Scroll-driven animation logic
 function updateScrollAnimation() {
@@ -70,7 +67,7 @@ function updateScrollAnimation() {
   const containerHeight = container.offsetHeight;
   const windowHeight = window.innerHeight;
   const middleTrigger = containerTop - (windowHeight / 2); // Start when container reaches middle
-  const maxScroll = containerHeight - windowHeight;
+  const maxScroll = Math.max(containerHeight - windowHeight, 200); // Prevent negative/zero
   const scrollRange = maxScroll * 2; // Increase scroll range to slow down animation
 
   const progress = Math.min(Math.max((scrollY - middleTrigger) / scrollRange, 0), 1);
@@ -78,13 +75,13 @@ function updateScrollAnimation() {
   if (progress <= 0.5) {
     // Animate first curve only
     const p1 = progress / 0.5;
-    path1.style.strokeDashoffset = length1 * (p1);
-    path2.style.strokeDashoffset = 0;
+    path1.style.strokeDashoffset = length1 * (1-p1);
+    path2.style.strokeDashoffset = length2;
   } else {
     // Animate second curve
-    path1.style.strokeDashoffset = length1;
+    path1.style.strokeDashoffset = 0;
     const p2 = (progress - 0.5) / 0.5;
-    path2.style.strokeDashoffset = -length2 * (p2);
+    path2.style.strokeDashoffset = length2 * (1-p2);
   }
 }
 
@@ -107,7 +104,7 @@ function updateContentVisibility() {
   const containerHeight = container.offsetHeight;
   const windowHeight = window.innerHeight;
   const middleTrigger = containerTop - (windowHeight / 2); // Start when container reaches middle
-  const maxScroll = containerHeight - windowHeight;
+  const maxScroll = Math.max(containerHeight - windowHeight, 200); // Prevent negative/zero
   const scrollRange = maxScroll * 2; // Increase scroll range to slow down animation
   const progress = Math.min(Math.max((scrollY - middleTrigger) / scrollRange, 0), 1);
 
