@@ -280,9 +280,9 @@ timeline
   .add({
     targets: '.box',
     height: ['0%', '100%'],
-    duration: 2000,
+    duration: 1500,
     easing: 'easeInOutQuad'
-  })
+  }, '+=800')
 
   .add({
     targets: '.box-text',
@@ -318,18 +318,29 @@ let ticking = false;
 
 // Helper to animate image transition to/from box
 function animateImageTransition(fromIdx, toIdx, direction) {
-  // Animate out previous image
-  anime({
-    targets: boxContents[fromIdx],
-    opacity: [1, 0],
-    scale: [1, 0.85],
-    translateY: direction > 0 ? [-10, 40] : [10, -40],
-    duration: 600,
-    easing: "easeInOutCubic",
-    complete: () => {
-      boxContents[fromIdx].style.display = "none";
-    }
-  });
+  // Handle previous box image based on direction
+  if (direction > 0) {
+    // Forward scroll: dim the previous image
+    anime({
+      targets: boxContents[fromIdx],
+      opacity: [1, 1],
+      scale: [1, 0.9],
+      duration: 400,
+      easing: "easeInOutCubic"
+    });
+  } else {
+    // Reverse scroll: hide the previous image completely
+    anime({
+      targets: boxContents[fromIdx],
+      opacity: [1, 0],
+      scale: [1, 0.85],
+      duration: 400,
+      easing: "easeInOutCubic",
+      complete: () => {
+        boxContents[fromIdx].style.display = "none";
+      }
+    });
+  }
 
   // Animate in next image
   boxContents[toIdx].style.display = "block";
@@ -385,32 +396,62 @@ function activate(index, direction = 1) {
   animateImageTransition(prev, next, direction);
 
   // Animate text content
-  anime({
-    targets: pContent[prev],
-    opacity: [1, 0],
-    translateY: [0, direction > 0 ? -30 : 30],
-    duration: 400,
-    easing: "easeInCubic",
-    complete: () => {
-      pContent[prev].style.display = "none";
-      pContent[next].style.display = "block";
-      anime.set(pContent[next], {
-        opacity: 0,
-        translateY: direction > 0 ? 30 : -30
-      });
-      anime({
-        targets: pContent[next],
-        opacity: [0, 1],
-        translateY: [direction > 0 ? 30 : -30, 0],
-        duration: 500,
-        easing: "easeOutCubic",
-        complete: () => {
-          currentIndex = next;
-          animating = false;
-        }
-      });
-    }
-  });
+  if (direction > 0) {
+    // Forward scroll: dim the previous text
+    anime({
+      targets: pContent[prev],
+      opacity: [1, 1],
+      translateY: [0, 0],
+      duration: 400,
+      easing: "easeInCubic",
+      complete: () => {
+        pContent[next].style.display = "block";
+        anime.set(pContent[next], {
+          opacity: 0,
+          translateY: 30
+        });
+        anime({
+          targets: pContent[next],
+          opacity: [0, 1],
+          translateY: [30, 0],
+          duration: 500,
+          easing: "easeOutCubic",
+          complete: () => {
+            currentIndex = next;
+            animating = false;
+          }
+        });
+      }
+    });
+  } else {
+    // Reverse scroll: hide the previous text completely
+    anime({
+      targets: pContent[prev],
+      opacity: [1, 0],
+      translateY: [0, 30],
+      duration: 400,
+      easing: "easeInCubic",
+      complete: () => {
+        pContent[prev].style.display = "none";
+        pContent[next].style.display = "block";
+        anime.set(pContent[next], {
+          opacity: 0,
+          translateY: -30
+        });
+        anime({
+          targets: pContent[next],
+          opacity: [0, 1],
+          translateY: [-30, 0],
+          duration: 500,
+          easing: "easeOutCubic",
+          complete: () => {
+            currentIndex = next;
+            animating = false;
+          }
+        });
+      }
+    });
+  }
 }
 
 function onScroll() {
@@ -461,53 +502,3 @@ pContent.forEach((p, i) => {
   p.style.opacity = i === 0 ? "1" : "0";
   p.style.transform = "translateY(0px)";
 });
-
-
-
-  const spotlight = document.getElementById("spotlight");
-  const text1 = document.getElementById("text1");
-  const text2 = document.getElementById("text2");
-  const heroWrapper = document.querySelector(".hero-wrapper");
-
-  const scrollEnd = window.innerHeight;
-  let isReleased = false;
-
-  function updateOnScroll() {
-    const scrollY = window.scrollY;
-    const sectionTop = heroWrapper.offsetTop;
-    const progress = Math.min(Math.max((scrollY - sectionTop) / scrollEnd, 0), 1);
-
-    // Animate spotlight
-    const spotX = progress * (window.innerWidth / 2);
-    spotlight.style.transform = `translateX(${spotX}px)`;
-
-    const text1X = progress * window.innerWidth;
-    text1.style.transform = `translate(${text1X}px, -50%)`;
-
-    const text2X = -500 + progress * ((window.innerWidth * 0.10) + 500);
-    text2.style.left = `${text2X}px`;
-
-    // Scroll Down Smoothly
-    if (progress >= 1 && !isReleased) {
-      isReleased = true;
-      anime({
-        targets: heroWrapper,
-        scrollTop: sectionTop + scrollEnd + 1,
-        duration: 1000,
-        easing: "easeInOutQuad",
-      });
-    }
-
-    // Scroll Up to Replay
-    if (progress < 1 && isReleased) {
-      isReleased = false;
-      anime({
-        targets: heroWrapper,
-        scrollTop: sectionTop,
-        duration: 800,
-        easing: "easeInOutQuad"
-      });
-    }
-  }
-
-  window.addEventListener("scroll", updateOnScroll);
