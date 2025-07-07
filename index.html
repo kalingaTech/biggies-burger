@@ -300,7 +300,7 @@
   </div>
 
   <section class="scroll-section">
-    <div class="bg-white px-4 sticky-header py-[10px]">
+    <div class="bg-white px-4 sticky-header py-[10px] h-[100vh] lg:h-[130vh]">
       <div class="max-w-5xl mx-auto text-center">
         <!-- Heading -->
         <p class="uppercase text-xs font-semibold tracking-wide text-black mb-2 md:mb-4">
@@ -340,7 +340,7 @@
       <!-- Image and text block -->
       <div class="image-text-wrapper mt-8 md:mt-12">
         <div class="flex flex-col md:flex-row items-center image-text-block" data-index="0">
-          <img src="./assets/about-section_2-1.png" alt="Food Image" class="w-fit h-fit object-contain" />
+          <img src="./assets/about-section_2-1.png" alt="Food Image" class="w-full md:w-[50%] object-contain" />
           <div class="p-4 md:p-6">
             <p class="text-xs md:text-sm font-semibold mb-2">2014</p>
             <h3 class="text-lg md:text-2xl lg:text-[32px] text-black font-[400] mb-2">
@@ -353,7 +353,7 @@
           </div>
         </div>
         <div class="flex flex-col md:flex-row items-center image-text-block" data-index="1">
-          <img src="./assets/about-section_2-1.png" alt="Food Image" class="w-fit h-fit object-contain" />
+          <img src="./assets/about-section_2-1.png" alt="Food Image" class="w-full md:w-[50%] object-contain" />
           <div class="p-4 md:p-6">
             <p class="text-xs md:text-sm font-semibold mb-2">2014</p>
             <h3 class="text-lg md:text-2xl lg:text-[32px] text-black font-[400] mb-2">
@@ -366,7 +366,7 @@
           </div>
         </div>
         <div class="flex flex-col md:flex-row items-center image-text-block" data-index="2">
-          <img src="./assets/about-section_2-1.png" alt="Food Image" class="w-fit h-fit object-contain" />
+          <img src="./assets/about-section_2-1.png" alt="Food Image" class="w-full md:w-[50%] object-contain" />
           <div class="p-4 md:p-6">
             <p class="text-xs md:text-sm font-semibold mb-2">2014</p>
             <h3 class="text-lg md:text-2xl lg:text-[32px] text-black font-[400] mb-2">
@@ -379,7 +379,7 @@
           </div>
         </div>
         <div class="flex flex-col md:flex-row items-center image-text-block" data-index="3">
-          <img src="./assets/about-section_2-1.png" alt="Food Image" class="w-fit h-fit object-contain" />
+          <img src="./assets/about-section_2-1.png" alt="Food Image" class="w-full md:w-[50%] object-contain" />
           <div class="p-4 md:p-6">
             <p class="text-xs md:text-sm font-semibold mb-2">2014</p>
             <h3 class="text-lg md:text-2xl lg:text-[32px] text-black font-[400] mb-2">
@@ -522,39 +522,42 @@
     <!-- Location Images Grid -->
     <div class="slider-container flex flex-col gap-5">
       <!-- Slider 1 -->
-      <div class="slider overflow-hidden whitespace-nowrap relative h-full">
-        <div class="slider-track flex whitespace-nowrap">
-          <!-- Duplicate images for infinite effect -->
-          <img src="/assets/burger2.png" alt="cat1" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat2" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat3" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat1" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat2" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat3" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat1" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat2" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat3" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat1" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat2" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat3" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
+      <div class="slider overflow-hidden relative h-full">
+        <div class="slider-track">
+          <!-- First set of images -->
+          <img src="/assets/burger2.png" alt="cat1" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat2" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat3" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat4" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat5" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat6" class="h-[200px] md:h-[300px]" />
+          <!-- Duplicate set for seamless loop -->
+          <img src="/assets/burger2.png" alt="cat1" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat2" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat3" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat4" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat5" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat6" class="h-[200px] md:h-[300px]" />
         </div>
       </div>
 
       <!-- Slider 2 - Opposite direction -->
-      <div class="slider reverse overflow-hidden whitespace-nowrap relative h-full">
-        <div class="slider-track flex whitespace-nowrap">
-          <img src="/assets/burger2.png" alt="cat4" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat5" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat6" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat4" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat5" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat6" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat4" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat5" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat6" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat4" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat5" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
-          <img src="/assets/burger2.png" alt="cat6" class="h-[200px] md:h-[300px] mx-[5px] md:mx-[10px]" />
+      <div class="slider reverse overflow-hidden relative h-full">
+        <div class="slider-track">
+          <!-- First set of images -->
+          <img src="/assets/burger2.png" alt="cat7" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat8" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat9" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat10" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat11" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat12" class="h-[200px] md:h-[300px]" />
+          <!-- Duplicate set for seamless loop -->
+          <img src="/assets/burger2.png" alt="cat7" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat8" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat9" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat10" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat11" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/burger2.png" alt="cat12" class="h-[200px] md:h-[300px]" />
         </div>
       </div>
     </div>
@@ -606,16 +609,16 @@
           <div class="line"></div>
         </div>
         <div class="box w-[90%] md:w-[70%]">
-          <p class="box-text -md:text-md" data-animation="fadeInUp">Best Burger Chain 2023</p>
-          <p class="box-text -md:text-md" data-animation="fadeInUp">Customer Choice Award</p>
-          <p class="box-text -md:text-md" data-animation="fadeInUp">Excellence in Service</p>
-          <p class="box-text -md:text-md" data-animation="fadeInUp">Innovation Award</p>
-          <p class="box-text -md:text-md" data-animation="fadeInUp">Quality Assurance</p>
-          <p class="box-text -md:text-md" data-animation="fadeInUp">Franchise Excellence</p>
-          <p class="box-text -md:text-md" data-animation="fadeInUp">Community Impact</p>
-          <p class="box-text -md:text-md" data-animation="fadeInUp">Sustainability Award</p>
-          <p class="box-text -md:text-md" data-animation="fadeInUp">Employee Satisfaction</p>
-          <p class="box-text -md:text-md" data-animation="fadeInUp">Growth Achievement</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Best Burger Chain 2023</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Customer Choice Award</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Excellence in Service</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Innovation Award</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Quality Assurance</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Franchise Excellence</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Community Impact</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Sustainability Award</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Employee Satisfaction</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Growth Achievement</p>
         </div>
       </div>
     </section>

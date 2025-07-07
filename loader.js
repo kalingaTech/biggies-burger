@@ -166,6 +166,8 @@ function animateWord(wordObj) {
 }
 
 updateProgress();
+
+
 function wrapCharacters(selector) {
   const el = document.querySelector(selector);
   const text = el.textContent;
@@ -271,26 +273,25 @@ const timeline = anime.timeline({
 
 // Build the timeline animation
 timeline
-  .add({
-    targets: '.line',
-    width:  ['0%', '80%'],
-    duration: 1500,
-    easing: 'easeInOutQuad'
-  })
-  .add({
-    targets: '.box',
-    height: ['0%', '100%'],
-    duration: 1500,
-    easing: 'easeInOutQuad'
-  }, '+=800')
-
-  .add({
-    targets: '.box-text',
-    translateY: ['-20px', '0px'],
-    opacity: [0, 1],
-    duration: 1500,
-    easing: 'easeOutQuad'
-  }, '-=1800'); 
+.add({
+  targets: '.line',
+  width:  ['0%', '80%'],
+  duration: 400,
+  easing: 'easeInOutCubic'
+})
+.add({
+  targets: '.box',
+  height: ['0%', '100%'],
+  duration: 800,
+  easing: 'easeInOutCubic'
+}, '+=400')
+.add({
+  targets: '.box-text',
+  translateY: ['-20px', '0px'],
+  opacity: [0, 1],
+  duration: 400,
+  easing: 'easeOutCubic'
+});
 
 
 // Scroll event to control animation progress
@@ -298,12 +299,10 @@ window.addEventListener('scroll', () => {
    const stickyWrapper = document.querySelector('.sticky-wrapper');
   const rect = stickyWrapper.getBoundingClientRect();
 
-  const totalScroll = stickyWrapper.offsetHeight - window.innerHeight;
-  const scrolled = Math.min(Math.max(0, -rect.top), totalScroll);
-
-  const progress = scrolled / totalScroll;
+  const scrollRange = 1500; // Match longer sticky duration
+  const scrolled = Math.min(Math.max(0, -rect.top), scrollRange);
+  const progress = scrolled / scrollRange;
   timeline.seek(timeline.duration * progress);
-
 });
 
 // =================================

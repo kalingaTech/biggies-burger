@@ -126,3 +126,42 @@ window.addEventListener('scroll', () => {
 });
 
 updateContentVisibility();
+
+
+const timeline = anime.timeline({
+  autoplay: false
+});
+
+// Build the timeline animation
+timeline
+.add({
+  targets: '.line',
+  width:  ['0%', '80%'],
+  duration: 400,
+  easing: 'easeInOutCubic'
+})
+.add({
+  targets: '.box',
+  height: ['0%', '100%'],
+  duration: 800,
+  easing: 'easeInOutCubic'
+}, '+=400')
+.add({
+  targets: '.box-text',
+  translateY: ['-20px', '0px'],
+  opacity: [0, 1],
+  duration: 400,
+  easing: 'easeOutCubic'
+});
+
+
+// Scroll event to control animation progress
+window.addEventListener('scroll', () => {
+   const stickyWrapper = document.querySelector('.sticky-wrapper');
+  const rect = stickyWrapper.getBoundingClientRect();
+
+  const scrollRange = 1500; // Match longer sticky duration
+  const scrolled = Math.min(Math.max(0, -rect.top), scrollRange);
+  const progress = scrolled / scrollRange;
+  timeline.seek(timeline.duration * progress);
+});
