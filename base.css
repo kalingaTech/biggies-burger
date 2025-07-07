@@ -191,8 +191,9 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* ==========Loader============ */
+/* ==========Animation-Related Properties Only============ */
 
+/* Loader animations */
 .loader {
   position: fixed;
   width: 100vw;
@@ -203,55 +204,25 @@ footer a:hover {
   z-index: 99999;
 }
 
-
 .loading-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   transition: transform 1s ease;
   z-index: 1;
   position: relative;
 }
 
-.emoji-bounce {
-  font-size: 80px;
-  text-align: center;
-}
-
 .emoji-bounce span {
-  display: inline-block;
   opacity: 0;
   transform: translateY(0);
 }
 
-.loading-text {
-  font-size: 24px;
-}
-
 .transition-line {
   width: 0%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 10vh;
   transition: transform 1s ease;
   background-color: #000;
   z-index: 1;
   position: absolute;
   top: 50%;
   right: -100%;
-}
-
-.word-roller {
-  height: 150px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .text {
@@ -268,7 +239,6 @@ footer a:hover {
   color: white;
   font-size: 5rem;
   font-weight: bold;
-  /* opacity: 0; */
   transform: translateY(100px);
 }
 
@@ -295,20 +265,13 @@ footer a:hover {
 
 #wordRoller .yellow {
   color: #FFD700;
-  /* Yellow color for specific words (if any remain) */
 }
-
 
 .scroll-text .char {
   display: inline-block;
   color: gray;
-  transition: none;
-
-}
-
-.what-so-good-wrapper {
-  height: 200vh; /* Controls scroll length */
-  position: relative;
+  opacity: 0.7;
+  transition: color 0.3s ease;
 }
 
 .what-so-good {
@@ -317,55 +280,46 @@ footer a:hover {
   height: 100vh;
   width: 100%;
   background: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
-  z-index: 1;
-  padding: 4rem 1.5rem;
-}
-
-.scroll-text {
-  transition: opacity 1s ease, transform 1s ease;
-  z-index: 2;
-  position: relative;
-  text-align: center;
-  color: #000;
-  width: 70%;
-  font-size: 48px;
-  font-weight: 700;
-}
-
-.scroll-text.fade-up {
-  opacity: 0;
-  transform: translateY(-50px);
 }
 
 .scroll-video {
   position: absolute;
-  opacity: 0;
+  bottom: 0;
   width: 80vw;
-  height: 0;
+  height: 100vh;
+  object-fit: cover;
   z-index: 1;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.5s ease;
 }
 
-.vertical-text {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+.video-text {
+  position: absolute;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  z-index: 3;
+  opacity: 0;
 }
 
-.menu-container {
-  display: flex;
-  overflow: hidden;
-  /* optional: avoids overflow when resizing */
+.video-text h3{
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+.video-text p{
+  font-size: 16px;
+  line-height: 140%;
+  margin-bottom: 20px;
 }
 
 .menu-item {
   transition: flex 0.3s ease;
   flex: 1;
   min-width: 0;
-  /* prevents content from forcing expansion */
 }
 
 .menu-container:hover .menu-item:not(:hover) {
@@ -374,40 +328,24 @@ footer a:hover {
 
 .menu-container:hover .menu-item:hover {
   flex: 1.6;
-  /* increase as needed */
-}
-
-.slider-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-}
-
-.slider {
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  height: 100%;
 }
 
 .slider-track {
   display: flex;
-  white-space: nowrap;
-  animation: scroll-left 4s linear infinite;
+  width: 200%;
+  animation: scroll-left 15s linear infinite;
 }
 
 .slider.reverse .slider-track {
-  animation: scroll-right 4s linear infinite;
+  animation: scroll-right 15s linear infinite;
 }
 
 .slider img {
-  height: 300px;
-  margin: 0 10px;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
+  width: calc(100% / 12); /* 12 images total (6 + 6 duplicates) */
 }
 
-/* Hover effect */
 .slider.reverse img:hover {
   transform: rotateZ(10deg);
   z-index: 10;
@@ -418,7 +356,6 @@ footer a:hover {
   z-index: 10;
 }
 
-/* Pause animation when hovered */
 .slider:hover .slider-track {
   animation-play-state: paused;
 }
@@ -427,7 +364,6 @@ footer a:hover {
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(-50%);
   }
@@ -437,25 +373,14 @@ footer a:hover {
   0% {
     transform: translateX(-50%);
   }
-
   100% {
     transform: translateX(0);
   }
 }
 
-p.font-yellow {
-  font-family: 'Inter Tight';
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 160%;
-  text-align: center;
-  text-transform: uppercase;
-  color: #FBCE0F;
-}
-
-/* =========================================== */
+/* Animation-related properties for sticky sections */
 .sticky-wrapper {
-  height: 200vh;
+  height: 300vh;
   position: relative;
 }
 
@@ -470,6 +395,7 @@ p.font-yellow {
   align-items: center;
   justify-content: flex-start;
 }
+
 .line-section{
   display: flex;
   align-items: center;
@@ -479,11 +405,39 @@ p.font-yellow {
   top: 50px;
   gap: 5px;
 }
+
+.awards-text,
+.recognition-text {
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .awards-text,
+  .recognition-text {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  .box {
+    width: 90%;
+  }
+  
+  .box-text {
+    font-size: 24px;
+    padding: 8px;
+  }
+}
+
 .line {
   height: 4px;
   width: 0%;
   background: #FFD700;
   z-index: 2;
+  transition: width 1.5s ease-in-out;
 }
 
 .box {
@@ -497,13 +451,158 @@ p.font-yellow {
   position: relative;
   top: 37px;
   z-index: 1;
+  transition: height 0.8s ease-in-out;
 }
 
 .box-text {
-   color: #000;
+  color: #000;
   padding: 10px;
   font-size: 30px;
-    opacity: 0;
-  transform: translateY(-20px); /* initial position */
-  transition: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  text-align: center;
+  font-weight: 600;
 }
+
+/* Animation states */
+.box-text.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.box.expand {
+  height: 400px;
+}
+
+.line.expand {
+  width: 80%;
+}
+
+.scroll-section {
+  height: 300vh;
+  position: relative;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.box-section {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  display: inline-flex;
+  font-weight: bold;
+}
+
+img.box-content {
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+p.box-content {
+  display: none;
+}
+
+.image-text-wrapper {
+  height: 100vh;
+  position: relative;
+}
+
+.image-text-block {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(250px);
+  pointer-events: none;
+}
+
+.hero-wrapper {
+  height: 200vh;
+  position: relative;
+}
+
+.about-hero-section {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background: url('./assets/about-section_2-1.png') center center / cover no-repeat;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.mask-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.spotlight {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(50vw - 10px);
+  height: calc(100vh - 10px);
+  box-shadow: 0 0 0 9999px white;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.text-content,
+.text-content-2 {
+  position: absolute;
+  top: 50%;
+  width: 400px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.text-content {
+  left: 60vw;
+}
+
+.text-content-2 {
+  left: -500px;
+}
+
+.timeline-content {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s;
+  font-size: 14px;
+}
+
+.timeline-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (min-width: 1024px) {
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+  .timeline-content {
+    font-size: 20px;
+  }
+}
+

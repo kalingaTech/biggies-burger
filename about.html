@@ -1,987 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Biggies Burger</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="base.css" />
-    <script src="script.js" defer></script>
-    <style>
-      body {
-        font-family: "Inter Tight", sans-serif;
-      }
-      .anton-regular {
-        font-family: "Anton", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-      header {
-        background: none;
-      }
-    </style>
-  </head>
-  <body>
-   <!-- Header Starts here -->
-    <header
-      class="bg-transparent text-white py-4 px-0 md:px-16 absolute top-0 left-0 w-screen z-[100]"
-    >
-      <div class="mx-auto flex items-center justify-between px-4 md:px-0">
-        <!-- Hamburger button (Mobile only) -->
-        <button
-          id="menu-toggle"
-          class="md:hidden bg-[#111] border border-gray-700 rounded-md p-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-yellow-400"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
 
-        <!-- Left Navigation (desktop only) -->
-        <div class="hidden md:flex items-center space-x-6">
-          <a
-            href="/about.html"
-            class="text-sm font-medium uppercase hover:text-yellow-400"
-            >About Us</a
-          >
-          <a
-            href="/franchise.html"
-            class="text-sm font-medium uppercase hover:text-yellow-400"
-            >Franchise</a
-          >
-          <a
-            href="#"
-            class="text-sm font-medium uppercase hover:text-yellow-400"
-            >Menu</a
-          >
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biggies Burger</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <script src="script.js" defer></script>
+  <style>
+    body {
+      font-family: "Inter Tight", sans-serif;
+    }
 
-        <!-- Logo -->
-        <div class="mx-auto md:mx-0">
-          <a href="/">
-            <img src="assets/logo.png" alt="Biggies Burger" class="h-10" />
-          </a>
-        </div>
+    .anton-regular {
+      font-family: "Anton", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-        <!-- Right Navigation (desktop only) -->
-        <div class="hidden md:flex items-center space-x-6">
-          <!-- <a
+    header {
+      background: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Starts here -->
+  <header class="bg-transparent text-white py-4 px-0 md:px-16 absolute top-0 left-0 w-full z-[100]">
+    <div class="mx-auto flex items-center justify-between px-4 md:px-0">
+      <!-- Hamburger button (Mobile only) -->
+      <button id="menu-toggle" class="md:hidden bg-[#111] border border-gray-700 rounded-md p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd"
+            d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2z"
+            clip-rule="evenodd" />
+        </svg>
+      </button>
+
+      <!-- Left Navigation (desktop only) -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="/about.html" class="text-sm font-medium uppercase hover:text-yellow-400">About Us</a>
+        <a href="/franchise.html" class="text-sm font-medium uppercase hover:text-yellow-400">Franchise</a>
+        <a href="#" class="text-sm font-medium uppercase hover:text-yellow-400">Menu</a>
+      </div>
+
+      <!-- Logo -->
+      <div class="mx-auto md:mx-0">
+        <a href="/">
+          <img src="assets/logo.png" alt="Biggies Burger" class="h-10" />
+        </a>
+      </div>
+
+      <!-- Right Navigation (desktop only) -->
+      <div class="hidden md:flex items-center space-x-6">
+        <!-- <a
             href="#"
             class="text-sm font-medium uppercase hover:text-yellow-400"
             >Career</a
           > -->
-          <a
-            href="/store-locator.html"
-            class="text-sm font-medium uppercase hover:text-yellow-400"
-            >Store Locator</a
-          >
-          <a
-            href="#"
-            class="text-sm font-medium uppercase hover:text-yellow-400"
-            >Media</a
-          >
-          <button class="bg-[#111] border border-gray-700 rounded-md p-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-yellow-400"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-          </button>
-        </div>
+        <a href="/store-locator.html" class="text-sm font-medium uppercase hover:text-yellow-400">Store Locator</a>
+        <a href="#" class="text-sm font-medium uppercase hover:text-yellow-400">Media</a>
+        <button class="bg-[#111] border border-gray-700 rounded-md p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+        </button>
+      </div>
       <button class="bg-[#111] border border-gray-700 rounded-md p-2 w-fit md:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 text-yellow-400"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
           <polyline points="7 10 12 15 17 10" />
           <line x1="12" y1="15" x2="12" y2="3" />
         </svg>
       </button>
-      </div>
+    </div>
 
-      <!-- Mobile Navigation Menu -->
-      <div
-        id="mobile-menu"
-        class="md:hidden hidden flex-col space-y-4 px-4 pt-4 h-screen bg-black mt-4 md:mt-0"
-      >
-        <a
-          href="/about.html"
-          class="text-sm block font-medium uppercase hover:text-yellow-400"
-          >About Us</a
-        >
-        <a
-          href="/franchise.html"
-          class="text-sm block font-medium uppercase hover:text-yellow-400"
-          >Franchise</a
-        >
-        <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
-          >Menu</a
-        >
-        <!-- <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="md:hidden hidden flex-col space-y-4 px-4 pt-4 h-screen bg-black mt-4 md:mt-0">
+      <a href="/about.html" class="text-sm block font-medium uppercase hover:text-yellow-400">About Us</a>
+      <a href="/franchise.html" class="text-sm block font-medium uppercase hover:text-yellow-400">Franchise</a>
+      <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400">Menu</a>
+      <!-- <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
           >Career</a
         > -->
-        <a href="/store-locator.html" class="text-sm block font-medium uppercase hover:text-yellow-400"
-          >Store Locator</a
-        >
-        <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
-          >Media</a
-        >
+      <a href="/store-locator.html" class="text-sm block font-medium uppercase hover:text-yellow-400">Store Locator</a>
+      <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400">Media</a>
+    </div>
+  </header>
+  <!-- Header Ends here -->
+
+  <!-- Section one start -->
+  <section class="w-full h-screen overflow-hidden">
+    <!-- Video Background -->
+    <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay muted loop playsinline>
+      <source src="/assets/about-hero.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay Content -->
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col h-full w-full min-h-screen">
+      <p class="font-yellow">Crafting India's Favourite Grilled</p>
+      <h1 class="text-white text-4xl md:text-[306px] leading-none anton-regular">
+        BURGER
+      </h1>
+      <p class="font-yellow">Since 2011</p>
+      <p class="text-base text-white text-center opacity-50 max-w-md mt-8">
+        Join millions of burger lovers across India who crave the sizzling
+        taste, bold flavors, and unforgettable experience of Biggies Burger.
+      </p>
+    </div>
+  </section>
+  <!-- Section one end -->
+
+  <!-- Section two Start -->
+  <section class="bg-white py-32 hero-wrapper hidden md:block">
+
+    <div class="flex flex-col w-[75%] mx-auto px-6 pb-20">
+      <p class="text-black text-sm">A revolution</p>
+      <p class="text-black text-[32px] leading-[140%] text-center font-semibold">
+        Leading the Grilled Burger Revolution — Empowering Indian Tastebuds
+        with Authentic, Bold, and Flavor-Packed Innovations Daily
+      </p>
+    </div>
+    <div class="about-hero-section" id="hero">
+
+      <div class="mask-layer">
+        <div class="spotlight" id="spotlight"></div>
       </div>
-    </header>
-    <!-- Header Ends here -->
 
-    <!-- Section one start -->
-    <section class="w-screen h-screen overflow-hidden">
-      <!-- Video Background -->
-      <video
-        class="absolute top-0 left-0 w-full h-full object-cover"
-        autoplay
-        muted
-        loop
-        playsinline
-      >
-        <source src="/assets/about-hero.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <!-- Overlay Content -->
-      <div
-        class="absolute inset-0 bg-black bg-opacity-50 flex flex-col h-full w-full min-h-screen"
-      >
-        <p class="font-yellow">Crafting India’s Favourite Grilled</p>
-        <h1
-          class="text-white text-4xl md:text-[306px] leading-none anton-regular"
-        >
-          BURGER
-        </h1>
-        <p class="font-yellow">Since 2011</p>
-        <p class="text-base text-white text-center opacity-50 max-w-md mt-8">
-          Join millions of burger lovers across India who crave the sizzling
-          taste, bold flavors, and unforgettable experience of Biggies Burger.
+      <!-- First row: Image on left, content on right -->
+      <div class="text-content" id="text1">
+        <p class="text-black text-sm font-bold uppercase leading-[160%]">
+          INNOVATION IN EVERY BITE
         </p>
-      </div>
-    </section>
-    <!-- Section one end -->
-
-    <!-- Section two Start -->
-    <section class="bg-white py-32">
-      <div class="flex flex-col w-[75%] mx-auto px-6">
-        <p class="text-black text-sm">A revolution</p>
-        <p
-          class="text-black text-[32px] leading-[140%] text-center font-semibold"
-        >
-          Leading the Grilled Burger Revolution — Empowering Indian Tastebuds
-          with Authentic, Bold, and Flavor-Packed Innovations Daily
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 gap-0 py-24">
-        <img
-          src="./assets/about-section_2-1.png"
-          alt=""
-          class="w-full h-screen object-cover object-right"
-        />
-        <div class="place-self-center px-32">
-          <p class="text-black text-sm font-bold uppercase leading-[160%]">
-            INNOVATION IN EVERY BITE
-          </p>
-          <h3
-            class="text-black font-normal text-[32px] leading-[140%] capitalize my-4"
-          >
-            Crafted with Purpose, Grilled to Perfection
-          </h3>
-          <p class="text-black text-base leading-[140%] capitalize">
-            Every burger at Biggies is a result of rigorous R&D, blending
-            international flavors with Indian preferences—offering a truly
-            one-of-a-kind QSR experience.
-          </p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-2 gap-0">
-        <div class="place-self-center px-32">
-          <p class="text-black text-sm font-bold uppercase leading-[160%]">
-            INNOVATION IN EVERY BITE
-          </p>
-          <h3
-            class="text-black font-normal text-[32px] leading-[140%] capitalize my-4"
-          >
-            Crafted with Purpose, Grilled to Perfection
-          </h3>
-          <p class="text-black text-base leading-[140%] capitalize">
-            Every burger at Biggies is a result of rigorous R&D, blending
-            international flavors with Indian preferences—offering a truly
-            one-of-a-kind QSR experience.
-          </p>
-        </div>
-        <img
-          src="./assets/about-section_2-1.png"
-          alt=""
-          class="w-full h-screen object-cover object-left"
-        />
-      </div>
-    </section>
-    <!-- Section two end -->
-
-    <!-- Section three start -->
-    <img src="./assets/timeline-image.png" alt="" class="w-full" />
-    <section
-      class="bg-black min-h-screen text-white flex flex-col items-center py-32"
-    >
-      <div class="mx-auto w-[75%]">
-        <!-- Title -->
-        <h2
-          class="text-3xl md:text-5xl capitalize font-semibold leading-[140%] text-center mb-32"
-        >
-          From One Grill To A Nationwide <br />
-          Burger Legacy
-        </h2>
-        <div class="timeline-container w-full">
-          <div class="timeline-first-split relative pt-[160px]">
-            <!-- Curve one SVG start -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1105"
-              height="382"
-              viewBox="0 0 1105 382"
-              fill="none"
-              class="curve-one relative"
-            >
-              <path
-                d="M879 380.5C1059.63 332.1 1098.5 285 1102.5 249.5C1121.34 82.2609 462.036 18.2005 1 2.31201"
-                stroke="#FBCE0F"
-                stroke-width="3"
-              />
-              <path
-                d="M879 380.5C1059.63 332.1 1098.5 285 1102.5 249.5C1121.34 82.2609 462.036 18.2005 1 2.31201"
-                stroke="url(#paint0_linear_386_366)"
-                stroke-opacity="0.9"
-                stroke-width="3"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_386_366"
-                  x1="53.5"
-                  y1="2"
-                  x2="879.5"
-                  y2="382.5"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-opacity="0" />
-                  <stop offset="1" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <!-- Curve one SVG end -->
-            <div class="timeline-content absolute top-0 left-0 max-w-[340px]">
-              <h4 class="flex justify-start gap-2 mb-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 8V7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M21 17V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H17"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M3 7V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M7 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V17"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M11 7H8C7.44772 7 7 7.44772 7 8V11C7 11.5523 7.44772 12 8 12H11C11.5523 12 12 11.5523 12 11V8C12 7.44772 11.5523 7 11 7Z"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                Born
-              </h4>
-              <p>
-                Back in November 2011, our parent company, Beamer Food &
-                Beverages was founded and the brand Biggies Burger was born as a
-                food enterprise.
-              </p>
-            </div>
-
-            <div
-              class="timeline-content absolute top-[30%] left-[60%] max-w-[340px]"
-            >
-              <h4 class="flex justify-start gap-2 mb-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 8V7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M21 17V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H17"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M3 7V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M7 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V17"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M11 7H8C7.44772 7 7 7.44772 7 8V11C7 11.5523 7.44772 12 8 12H11C11.5523 12 12 11.5523 12 11V8C12 7.44772 11.5523 7 11 7Z"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                Loving us from 2014
-              </h4>
-            </div>
-
-            <div
-              class="timeline-content absolute top-[72%] right-[16px] max-w-[340px]"
-            >
-              <h4 class="flex justify-start gap-2 mb-2">
-                Expanded
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 8V7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M21 17V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H17"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M3 7V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M7 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V17"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M11 7H8C7.44772 7 7 7.44772 7 8V11C7 11.5523 7.44772 12 8 12H11C11.5523 12 12 11.5523 12 11V8C12 7.44772 11.5523 7 11 7Z"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </h4>
-            </div>
-          </div>
-
-          <div class="timeline-second-split mt-[-3px] relative pb-[20px]">
-            <!-- Curve two SVG start -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="881"
-              height="526"
-              viewBox="0 0 881 526"
-              fill="none"
-              class="curve-two relative"
-            >
-              <path
-                d="M880 1.5C654.211 62 2 167 2 328C2 364.5 44.8688 410.6 225.5 459C291.428 476.665 393.712 498.125 505.5 523.664"
-                stroke="#FBCE0F"
-                stroke-width="3"
-              />
-              <path
-                d="M880 1.5C654.211 62 2 167 2 328C2 364.5 44.8688 410.6 225.5 459C291.428 476.665 393.712 498.125 505.5 523.664"
-                stroke="url(#paint0_linear_387_492)"
-                stroke-opacity="0.9"
-                stroke-width="3"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_387_492"
-                  x1="901.5"
-                  y1="1.99998"
-                  x2="429"
-                  y2="545"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop />
-                  <stop offset="1" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <!-- Curve two SVG end -->
-            <div
-              class="timeline-content absolute top-[20%] left-[50%] max-w-[340px]"
-            >
-              <h4 class="flex justify-start gap-2 mb-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 8V7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M21 17V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H17"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M3 7V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M7 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V17"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M11 7H8C7.44772 7 7 7.44772 7 8V11C7 11.5523 7.44772 12 8 12H11C11.5523 12 12 11.5523 12 11V8C12 7.44772 11.5523 7 11 7Z"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                Franchise In 2016
-              </h4>
-            </div>
-
-            <div
-              class="timeline-content absolute top-[60%] left-[16px] max-w-[340px]"
-            >
-              <h4 class="flex justify-start gap-2 mb-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 8V7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M21 17V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H17"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M3 7V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M7 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V17"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M11 7H8C7.44772 7 7 7.44772 7 8V11C7 11.5523 7.44772 12 8 12H11C11.5523 12 12 11.5523 12 11V8C12 7.44772 11.5523 7 11 7Z"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                Became Bigger 2017
-              </h4>
-            </div>
-
-            <div
-              class="timeline-content absolute bottom-0 left-[50%] max-w-[340px]"
-            >
-              <h4 class="flex justify-start gap-2 mb-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 8V7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M21 17V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H17"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M3 7V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H7"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M7 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V17"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M11 7H8C7.44772 7 7 7.44772 7 8V11C7 11.5523 7.44772 12 8 12H11C11.5523 12 12 11.5523 12 11V8C12 7.44772 11.5523 7 11 7Z"
-                    stroke="#FBCE0F"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                Expansion
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <img src="./assets/timeline-image.png" alt="" class="w-full rotate-180" />
-    <!-- section three end -->
-
-    <!-- Section four start -->
-    <section class="bg-white pb-32">
-      <div class="mb-10">
-        <p
-          class="text-black text-center text-sm font-bold uppercase leading-[160%]"
-        >
-          BRAINS
-        </p>
-        <h3
-          class="text-black text-center text-3xl font-bold leading-[160%] capitalize"
-        >
-          Behind biggies
+        <h3 class="text-black font-normal text-[24px] lg:text-[32px] leading-[140%] capitalize my-4">
+          Crafted with Purpose, Grilled to Perfection
         </h3>
+        <p class="text-black text-base leading-[140%] capitalize">
+          Every burger at Biggies is a result of rigorous R&D, blending
+          international flavors with Indian preferences—offering a truly
+          one-of-a-kind QSR experience.
+        </p>
       </div>
-      <div class="flex gap-8 w-[75%] mx-auto">
-        <!-- Card One -->
-        <div class="card">
-          <div class="relative overflow-hidden">
-            <!-- Image -->
-            <img
-              src="./assets/founder-1.png"
-              alt="Image"
-              class="object-cover w-[340px] h-[420px]"
-            />
 
-            <!-- Overlay -->
-            <div
-              class="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-black to-transparent opacity-60"
-            ></div>
-          </div>
-
-          <div class="card-content bg-[#F4F4F4] p-4">
-            <p class="text-black text-[15px] leading-[160%] font-medium">
-              Biraja Prasad Rout
-            </p>
-            <p
-              class="text-black text-[12px] leading-[160%] font-medium opacity-60 mb-4"
-            >
-              -(AVP Frontend)
-            </p>
-            <p class="text-[18px] text-black font-medium leading-[130%]">
-              Every day feels like game day here — fast-paced, collaborative,
-              and full of purpose.
-            </p>
-          </div>
-        </div>
-        <!-- Card two -->
-        <div class="card">
-          <div class="relative overflow-hidden">
-            <!-- Image -->
-            <img
-              src="./assets/founder-1.png"
-              alt="Image"
-              class="object-cover w-[340px] h-[420px]"
-            />
-
-            <!-- Overlay -->
-            <div
-              class="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-black to-transparent opacity-60"
-            ></div>
-          </div>
-
-          <div class="card-content bg-[#F4F4F4] p-4">
-            <p class="text-black text-[15px] leading-[160%] font-medium">
-              Biraja Prasad Rout
-            </p>
-            <p
-              class="text-black text-[12px] leading-[160%] font-medium opacity-60 mb-4"
-            >
-              -(AVP Frontend)
-            </p>
-            <p class="text-[18px] text-black font-medium leading-[130%]">
-              Every day feels like game day here — fast-paced, collaborative,
-              and full of purpose.
-            </p>
-          </div>
-        </div>
-        <!-- Card Three -->
-        <div class="card">
-          <div class="relative overflow-hidden">
-            <!-- Image -->
-            <img
-              src="./assets/founder-1.png"
-              alt="Image"
-              class="object-cover w-[340px] h-[420px]"
-            />
-
-            <!-- Overlay -->
-            <div
-              class="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-black to-transparent opacity-60"
-            ></div>
-          </div>
-
-          <div class="card-content bg-[#F4F4F4] p-4">
-            <p class="text-black text-[15px] leading-[160%] font-medium">
-              Biraja Prasad Rout
-            </p>
-            <p
-              class="text-black text-[12px] leading-[160%] font-medium opacity-60 mb-4"
-            >
-              -(AVP Frontend)
-            </p>
-            <p class="text-[18px] text-black font-medium leading-[130%]">
-              Every day feels like game day here — fast-paced, collaborative,
-              and full of purpose.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Section four End -->
-
-    <!-- Footer start -->
-    <section class="py-60">
-      <div class="w-[75%] mx-auto">
-        <h3
-          class="font-semibold text-[32px] leading-[140%] text-center capitalize"
-        >
-          Biggies Burger has built its legacy through passion and excellence.
-          With proven expertise and innovation, we continue to serve
-          unforgettable flavours and create lasting experiences.
+      <!-- Second row: Content on left, image on right -->
+      <div class="text-content-2" id="text2">
+        <p class="text-black text-sm font-bold uppercase leading-[160%]">
+          INNOVATION IN EVERY BITE
+        </p>
+        <h3 class="text-black font-normal text-[24px] lg:text-[32px] leading-[140%] capitalize my-4">
+          Crafted with Purpose, Grilled to Perfection
         </h3>
+        <p class="text-black text-base leading-[140%] capitalize">
+          Every burger at Biggies is a result of rigorous R&D, blending
+          international flavors with Indian preferences—offering a truly
+          one-of-a-kind QSR experience.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="bg-white py-32 block md:hidden">
+    <div class="flex flex-col w-[75%] mx-auto px-6">
+      <p class="text-black text-sm">A revolution</p>
+      <p class="text-black text-xl leading-[140%] text-center font-semibold">
+        Leading the Grilled Burger Revolution — Empowering Indian Tastebuds
+        with Authentic, Bold, and Flavor-Packed Innovations Daily
+      </p>
+    </div>
+
+    <!-- First row: Image on left, content on right -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 py-24 items-center">
+      <img src="./assets/about-section_2-1.png" alt="" class="w-full h-[500px] lg:h-screen object-cover object-right" />
+      <div class="flex flex-col justify-center px-8 lg:px-32 py-8 lg:py-0">
+        <p class="text-black text-sm font-bold uppercase leading-[160%]">
+          INNOVATION IN EVERY BITE
+        </p>
+        <h3 class="text-black font-normal text-[24px] lg:text-[32px] leading-[140%] capitalize my-4">
+          Crafted with Purpose, Grilled to Perfection
+        </h3>
+        <p class="text-black text-base leading-[140%] capitalize">
+          Every burger at Biggies is a result of rigorous R&D, blending
+          international flavors with Indian preferences—offering a truly
+          one-of-a-kind QSR experience.
+        </p>
+      </div>
+    </div>
+
+    <!-- Second row: Content on left, image on right -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center">
+      <div class="flex flex-col justify-center px-8 lg:px-32 py-8 lg:py-0 order-2 lg:order-1">
+        <p class="text-black text-sm font-bold uppercase leading-[160%]">
+          INNOVATION IN EVERY BITE
+        </p>
+        <h3 class="text-black font-normal text-[24px] lg:text-[32px] leading-[140%] capitalize my-4">
+          Crafted with Purpose, Grilled to Perfection
+        </h3>
+        <p class="text-black text-base leading-[140%] capitalize">
+          Every burger at Biggies is a result of rigorous R&D, blending
+          international flavors with Indian preferences—offering a truly
+          one-of-a-kind QSR experience.
+        </p>
+      </div>
+      <img src="./assets/about-section_2-1.png" alt=""
+        class="w-full h-[500px] lg:h-screen object-cover object-left order-1 lg:order-2" />
+    </div>
+  </section>
+  <!-- Section two end -->
+
+  <!-- Section three start -->
+  <img src="./assets/timeline-image.png" alt="" class="w-full" />
+  <section class="bg-black min-h-screen text-white flex flex-col items-center py-32">
+    <div class="mx-auto md:w-[75%]">
+      <!-- Title -->
+      <h2 class="text-3xl md:text-5xl capitalize font-semibold leading-[140%] text-center mb-32">
+        From One Grill To A Nationwide <br />
+        Burger Legacy
+      </h2>
+      <div class="timeline-container w-full sticky md:relative top-0">
+        <div class="timeline-first-split  relative pt-[160px]">
+
+          <svg id="timeline-svg " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 950" preserveAspectRatio="none"
+            fill="none" class="w-full h-full">
+            <!-- First Curve -->
+            <path id="path1" class="path"
+              d="M1 2.31201C462.036 18.2005 1121.34 82.2609 1102.5 249.5C1098.5 285 1059.63 332.1 879 380.5"
+              stroke="#FBCE0F" stroke-width="3" stroke-opacity="0.9" />
+
+            <!-- Second Curve -->
+            <g transform="translate(874, 379)">
+              <path id="path2" class="path"
+                d="M5 1.5C-220.789 62 -873 167 -873 328C-873 364.5 -830.131 410.6 -649.5 459C-583.572 476.665 -481.288 498.125 -369.5 523.664"
+                stroke="#FBCE0F" stroke-width="3" stroke-opacity="0.9" />
+            </g>
+
+            <!-- Gradient Definition -->
+            <defs>
+              <linearGradient id="grad1" x1="901.5" y1="1.99998" x2="429" y2="545" gradientUnits="userSpaceOnUse">
+                <stop />
+                <stop offset="1" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <!-- Curve one SVG end -->
+          <div class="timeline-content absolute top-0 left-0 max-w-[340px] text-left">
+            <h4 class="flex justify-start gap-2 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V7"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17 8V7" stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M21 17V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H17"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3 7V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H7"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V17"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M11 7H8C7.44772 7 7 7.44772 7 8V11C7 11.5523 7.44772 12 8 12H11C11.5523 12 12 11.5523 12 11V8C12 7.44772 11.5523 7 11 7Z"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              Born
+            </h4>
+            <p>
+              Back in November 2011, our parent company, Beamer Food &
+              Beverages was founded and the brand Biggies Burger was born as a
+              food enterprise.
+            </p>
+          </div>
+
+          <div class="timeline-content absolute top-[30%] md:top-[13%] left-[60%] max-w-[340px]">
+            <h4 class="flex justify-start gap-2 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V7"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17 8V7" stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M21 17V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H17"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3 7V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H7"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V17"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M11 7H8C7.44772 7 7 7.44772 7 8V11C7 11.5523 7.44772 12 8 12H11C11.5523 12 12 11.5523 12 11V8C12 7.44772 11.5523 7 11 7Z"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              Loving us from 2014
+            </h4>
+          </div>
+
+          <div class="timeline-content absolute top-[45%] md:top-[35%] right-[10%] md:right-[5%] max-w-[340px]">
+            <h4 class="flex justify-start gap-2 mb-2">
+              Expanded
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V7"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17 8V7" stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M21 17V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H17"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3 7V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H7"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V17"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M11 7H8C7.44772 7 7 7.44772 7 8V11C7 11.5523 7.44772 12 8 12H11C11.5523 12 12 11.5523 12 11V8C12 7.44772 11.5523 7 11 7Z"
+                  stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </h4>
+          </div>
+        </div>
+        <div class="timeline-content absolute top-[55%] md:top-[55%] left-[20%] md:left-[55%] max-w-[340px]">
+          <h4 class="flex justify-start gap-2 mb-2 flex-row-reverse md:flex-row">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M17 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V7"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M17 8V7" stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M21 17V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H17"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M3 7V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H7"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M7 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V17"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M11 7H8C7.44772 7 7 7.44772 7 8V11C7 11.5523 7.44772 12 8 12H11C11.5523 12 12 11.5523 12 11V8C12 7.44772 11.5523 7 11 7Z"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Franchise In 2016
+          </h4>
+        </div>
+
+        <div class="timeline-content absolute top-[80%] md:top-[70%] left-[10%] max-w-[340px]">
+          <h4 class="flex justify-start gap-2 mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M17 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V7"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M17 8V7" stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M21 17V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H17"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M3 7V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H7"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M7 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V17"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M11 7H8C7.44772 7 7 7.44772 7 8V11C7 11.5523 7.44772 12 8 12H11C11.5523 12 12 11.5523 12 11V8C12 7.44772 11.5523 7 11 7Z"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Became Bigger 2017
+          </h4>
+        </div>
+
+        <div class="timeline-content absolute bottom-[-5%] md:bottom-[5%] left-[45%] max-w-[340px]">
+          <h4 class="flex justify-start gap-2 mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M17 12V16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M17 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V7"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M17 8V7" stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M21 17V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H17"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M3 7V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H7"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M7 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V17"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M11 7H8C7.44772 7 7 7.44772 7 8V11C7 11.5523 7.44772 12 8 12H11C11.5523 12 12 11.5523 12 11V8C12 7.44772 11.5523 7 11 7Z"
+                stroke="#FBCE0F" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Expansion
+          </h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <img src="./assets/timeline-image.png" alt="" class="w-full rotate-180 pb-[10px] md:pb-0" />
+  <!-- section three end -->
+
+  <!-- Section four start -->
+  <section class="bg-white pb-32">
+    <div class="mb-10">
+      <p class="text-black text-center text-sm font-bold uppercase leading-[160%]">
+        BRAINS
+      </p>
+      <h3 class="text-black text-center text-3xl font-bold leading-[160%] capitalize">
+        Behind biggies
+      </h3>
+    </div>
+    <div class="flex flex-col md:flex-row gap-8 w-[75%] mx-auto">
+      <!-- Card One -->
+      <div class="card">
+        <div class="relative overflow-hidden">
+          <!-- Image -->
+          <img src="./assets/founder-1.png" alt="Image" class="object-cover w-[340px] h-[420px]" />
+
+          <!-- Overlay -->
+          <div class="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-black to-transparent opacity-60">
+          </div>
+        </div>
+
+        <div class="card-content bg-[#F4F4F4] p-4">
+          <p class="text-black text-[15px] leading-[160%] font-medium">
+            Biraja Prasad Rout
+          </p>
+          <p class="text-black text-[12px] leading-[160%] font-medium opacity-60 mb-4">
+            -(AVP Frontend)
+          </p>
+          <p class="text-[18px] text-black font-medium leading-[130%]">
+            Every day feels like game day here — fast-paced, collaborative,
+            and full of purpose.
+          </p>
+        </div>
+      </div>
+      <!-- Card two -->
+      <div class="card">
+        <div class="relative overflow-hidden">
+          <!-- Image -->
+          <img src="./assets/founder-1.png" alt="Image" class="object-cover w-[340px] h-[420px]" />
+
+          <!-- Overlay -->
+          <div class="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-black to-transparent opacity-60">
+          </div>
+        </div>
+
+        <div class="card-content bg-[#F4F4F4] p-4">
+          <p class="text-black text-[15px] leading-[160%] font-medium">
+            Biraja Prasad Rout
+          </p>
+          <p class="text-black text-[12px] leading-[160%] font-medium opacity-60 mb-4">
+            -(AVP Frontend)
+          </p>
+          <p class="text-[18px] text-black font-medium leading-[130%]">
+            Every day feels like game day here — fast-paced, collaborative,
+            and full of purpose.
+          </p>
+        </div>
+      </div>
+      <!-- Card Three -->
+      <div class="card">
+        <div class="relative overflow-hidden">
+          <!-- Image -->
+          <img src="./assets/founder-1.png" alt="Image" class="object-cover w-[340px] h-[420px]" />
+
+          <!-- Overlay -->
+          <div class="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-black to-transparent opacity-60">
+          </div>
+        </div>
+
+        <div class="card-content bg-[#F4F4F4] p-4">
+          <p class="text-black text-[15px] leading-[160%] font-medium">
+            Biraja Prasad Rout
+          </p>
+          <p class="text-black text-[12px] leading-[160%] font-medium opacity-60 mb-4">
+            -(AVP Frontend)
+          </p>
+          <p class="text-[18px] text-black font-medium leading-[130%]">
+            Every day feels like game day here — fast-paced, collaborative,
+            and full of purpose.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section four End -->
+
+  <!-- Footer start -->
+  <section class="py-20 md:py-60">
+    <div class="w-[90%] md:w-[75%] mx-auto">
+      <h3 class="font-semibold text-lg md:text-2xl lg:text-[32px] leading-[140%] text-center capitalize">
+        Biggies Burger has built its legacy through passion and excellence.
+        With proven expertise and innovation, we continue to serve
+        unforgettable flavours and create lasting experiences.
+      </h3>
+    </div>
+    <section class="sticky-wrapper">
+      <div id="animate-section">
+        <div class="hidden md:flex line-section">
+          <span class="awards-text">Awards</span>
+          <div class="line"></div>
+          <span class="recognition-text">Recognition</span>
+        </div>
+        <div class="md:hidden">
+          <span class="awards-text">Awards Recognition</span>
+        </div>
+        <div class="line-section md:hidden top-[41px]">
+          <div class="line"></div>
+        </div>
+        <div class="box w-[90%] md:w-[70%]">
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Best Burger Chain 2023</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Customer Choice Award</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Excellence in Service</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Innovation Award</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Quality Assurance</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Franchise Excellence</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Community Impact</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Sustainability Award</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Employee Satisfaction</p>
+          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Growth Achievement</p>
+        </div>
       </div>
     </section>
+  </section>
 
-    <footer class="py-10 bg-black text-white px-8 md:px-16 border-t border-[#FFFFFF33]">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:gap-20">
-        <!-- Left section -->
-        <div class="flex-1">
-          <img
-            src="/assets/logo.png"
-            alt="Biggies Burger Logo"
-            class="mb-4 w-32"
-          />
-          <p class="text-sm font-semibold text-left">
-            BEAMER FOOD & BEVERAGES PVT LTD
-          </p>
-          <p class="text-sm mt-2 leading-6 text-left">
-            #48, 2ND CROSS ST, SHANTHI PURA, PHASE 2,<br />
-            ELECTRONIC CITY, BENGALURU, KARNATAKA 560100
-          </p>
+  <footer class="py-10 bg-black text-white px-8 md:px-16 border-t border-[#FFFFFF33]">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:gap-20">
+      <!-- Left section -->
+      <div class="flex-1">
+        <img src="/assets/logo.png" alt="Biggies Burger Logo" class="mb-4 w-32" />
+        <p class="text-sm font-semibold text-left">
+          BEAMER FOOD & BEVERAGES PVT LTD
+        </p>
+        <p class="text-sm mt-2 leading-6 text-left">
+          #48, 2ND CROSS ST, SHANTHI PURA, PHASE 2,<br />
+          ELECTRONIC CITY, BENGALURU, KARNATAKA 560100
+        </p>
+      </div>
+
+      <!-- Right section -->
+      <div class="flex flex-1 flex-col items-start md:items-center md:flex-row justify-between gap-10">
+        <div class="flex flex-col justify-start items-start space-y-2 text-sm">
+          <a href="/about.html" class="text-white">About Us</a>
+          <a href="/franchise.html" class="text-white">Franchise</a>
+          <a href="#" class="text-white">Menu</a>
         </div>
-
-        <!-- Right section -->
-        <div class="flex flex-1 flex-col items-start md:items-center md:flex-row justify-between gap-10">
-          <div
-            class="flex flex-col justify-start items-start space-y-2 text-sm"
-          >
-            <a href="/about.html" class="text-white">About Us</a>
-            <a href="/franchise.html" class="text-white">Franchise</a>
-            <a href="#" class="text-white">Menu</a>
-          </div>
-          <div
-            class="flex flex-col justify-start items-start space-y-2 text-sm"
-          >
-            <!-- <a href="#" class="text-white">Career</a> -->
-            <a href="/store-locator.html" class="text-white">Store Locator</a>
-            <a href="#" class="text-white">Media</a>
-          </div>
-          <div>
-            <span
-              class="block mb-2 text-base font-semibold text-left md:text-right opacity-60"
-              >FOLLOW US</span
-            >
-            <div class="flex space-x-4">
-              <a href="#">
-                <svg
-                  class="h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M22 4.00002C22 4.00002 21.3 6.10002 20 7.40002C21.6 17.4 10.6 24.7 2 19C4.2 19.1 6.4 18.4 8 17C3 15.5 0.5 9.60002 3 5.00002C5.2 7.60002 8.6 9.10002 12 9.00002C11.1 4.80002 16 2.40002 19 5.20002C20.1 5.20002 22 4.00002 22 4.00002Z"
-                    stroke="#FBCE0F"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-              <a href="#">
-                <svg
-                  class="h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"
-                    stroke="#FBCE0F"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M6 9H2V21H6V9Z"
-                    stroke="#FBCE0F"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z"
-                    stroke="#FBCE0F"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-              <a href="#">
-                <svg
-                  class="h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"
-                    stroke="#FBCE0F"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-              <a href="#">
-                <svg
-                  class="h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
-                    stroke="#FBCE0F"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M15.9997 11.3703C16.1231 12.2025 15.981 13.0525 15.5935 13.7993C15.206 14.5461 14.5929 15.1517 13.8413 15.53C13.0898 15.9082 12.2382 16.0399 11.4075 15.9062C10.5768 15.7726 9.80947 15.3804 9.21455 14.7855C8.61962 14.1905 8.22744 13.4232 8.09377 12.5925C7.96011 11.7619 8.09177 10.9102 8.47003 10.1587C8.84829 9.40716 9.45389 8.79404 10.2007 8.40654C10.9475 8.01904 11.7975 7.87689 12.6297 8.0003C13.4786 8.12619 14.2646 8.52176 14.8714 9.12861C15.4782 9.73545 15.8738 10.5214 15.9997 11.3703Z"
-                    stroke="#FBCE0F"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17.5 6.5H17.51"
-                    stroke="#FBCE0F"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-            </div>
+        <div class="flex flex-col justify-start items-start space-y-2 text-sm">
+          <!-- <a href="#" class="text-white">Career</a> -->
+          <a href="/store-locator.html" class="text-white">Store Locator</a>
+          <a href="#" class="text-white">Media</a>
+        </div>
+        <div>
+          <span class="block mb-2 text-base font-semibold text-left md:text-right opacity-60">FOLLOW US</span>
+          <div class="flex space-x-4">
+            <a href="#">
+              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none">
+                <path
+                  d="M22 4.00002C22 4.00002 21.3 6.10002 20 7.40002C21.6 17.4 10.6 24.7 2 19C4.2 19.1 6.4 18.4 8 17C3 15.5 0.5 9.60002 3 5.00002C5.2 7.60002 8.6 9.10002 12 9.00002C11.1 4.80002 16 2.40002 19 5.20002C20.1 5.20002 22 4.00002 22 4.00002Z"
+                  stroke="#FBCE0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a href="#">
+              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none">
+                <path
+                  d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"
+                  stroke="#FBCE0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6 9H2V21H6V9Z" stroke="#FBCE0F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z"
+                  stroke="#FBCE0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a href="#">
+              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none">
+                <path
+                  d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"
+                  stroke="#FBCE0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a href="#">
+              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none">
+                <path
+                  d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
+                  stroke="#FBCE0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M15.9997 11.3703C16.1231 12.2025 15.981 13.0525 15.5935 13.7993C15.206 14.5461 14.5929 15.1517 13.8413 15.53C13.0898 15.9082 12.2382 16.0399 11.4075 15.9062C10.5768 15.7726 9.80947 15.3804 9.21455 14.7855C8.61962 14.1905 8.22744 13.4232 8.09377 12.5925C7.96011 11.7619 8.09177 10.9102 8.47003 10.1587C8.84829 9.40716 9.45389 8.79404 10.2007 8.40654C10.9475 8.01904 11.7975 7.87689 12.6297 8.0003C13.4786 8.12619 14.2646 8.52176 14.8714 9.12861C15.4782 9.73545 15.8738 10.5214 15.9997 11.3703Z"
+                  stroke="#FBCE0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.5 6.5H17.51" stroke="#FBCE0F" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
+    </div>
 
-      <hr class="my-6 border-gray-700" />
+    <hr class="my-6 border-gray-700" />
 
-      <div
-        class="flex flex-col md:flex-row justify-between text-xs text-gray-400"
-      >
-        <span>BENGALURU</span>
-        <span>© 2023 ALL RIGHTS RESERVED BY BIGGIES BURGER</span>
-        <span>ENGLISH / HINDI</span>
-      </div>
-    </footer>
-    <!-- Footer end -->
-  </body>
+    <div class="flex flex-col md:flex-row justify-between text-xs text-gray-400">
+      <span>BENGALURU</span>
+      <span>© 2023 ALL RIGHTS RESERVED BY BIGGIES BURGER</span>
+      <span>ENGLISH / HINDI</span>
+    </div>
+  </footer>
+  <!-- Footer end -->
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="about.js"></script>
+</body>
+
 </html>
