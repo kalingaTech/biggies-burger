@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biggies Burger - Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter Tight", sans-serif;
+        background-color: #0E0E0E;
+      }
+      .anton-regular {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .custom-radio {
+        position: absolute;
+        opacity: 0;
+      }
+      .custom-radio + label:before {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #a0a0a0;
+        background-color: #0e0e0e;
+        vertical-align: middle;
+        margin-right: 10px;
+        transition: all 0.2s ease;
+      }
+      .custom-radio:checked + label:before {
+        background-color: #ffd700;
+        border-color: #ffd700;
+      }
+   
+      input::placeholder,
+      textarea::placeholder,
+      select {
+        color: #a0a0a0 !important;
+      }
+      input,
+      select,
+      textarea {
+        color: white !important;
+      }
+      select option {
+        background-color: #0e0e0e;
+        color: white;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        background-color: #3a3a3a;
+      }
+      .form-section {
+        transition: all 0.3s ease;
+      }
+      .submit-btn {
+        transition: all 0.3s ease;
+        transform: perspective(1px) translateZ(0);
+      }
+      .submit-btn:hover {
+        transform: scale(1.05) perspective(1px) translateZ(0);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      }
+      .burger-image {
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body class="text-white">
+    <!-- Header Starts here -->
+    <header
+      class="bg-transparent text-white py-4 px-0 md:px-16 absolute top-0 left-0 w-screen z-[100]"
+    >
+      <div class="mx-auto flex items-center justify-between px-4 md:px-0">
+     
+        <button
+          id="menu-toggle"
+          class="md:hidden bg-[#111] border border-gray-700 rounded-md p-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-yellow-400"
+            viewBox="0 0 20 20"
+            fill="#FBCE0F"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+
+   
+        <div class="hidden md:flex items-center space-x-6">
+          <a
+            href="/about.html"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >About Us</a
+          >
+          <a
+            href="/franchise.html"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Franchise</a
+          >
+          <a
+            href="#"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Menu</a
+          >
+        </div>
+
+        <!-- Logo -->
+        <div class="mx-auto md:mx-0">
+          <a href="/">
+            <div class="text-3xl text-[#FBCE0F] anton-regular">BIGGIES</div>
+          </a>
+        </div>
+
+        <!-- Right Navigation (desktop only) -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a
+            href="/store-locator.html"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Store Locator</a
+          >
+          <a
+            href="#"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Media</a
+          >
+          <button class="bg-[#111] border border-gray-700 rounded-md p-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-yellow-400"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#FBCE0F"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+          </button>
+        </div>
+        <button class="bg-[#111] border border-gray-700 rounded-md p-2 w-fit md:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-yellow-400"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#FBCE0F"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-col space-y-4 px-4 pt-4 h-screen bg-black mt-4 md:mt-0"
+      >
+        <a
+          href="/about.html"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >About Us</a
+        >
+        <a
+          href="/franchise.html"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Franchise</a
+        >
+        <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Menu</a
+        >
+        <a href="/store-locator.html" class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Store Locator</a
+        >
+        <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Media</a
+        >
+      </div>
+    </header>
+    <!-- Header Ends here -->
+
+    <section class="relative w-screen h-screen overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+        alt="Franchise Hero"
+        class="absolute top-0 left-0 w-full h-full object-cover z-0"
+      />
+
+      <div
+        class="absolute inset-0 bg-black bg-opacity-80 z-10 flex flex-col justify-center items-center text-center px-4"
+      >
+        <p class="text-yellow-400 text-lg font-yellow mb-2">
+          DISCOVER THE TASTE OF
+        </p>
+        <h1
+          class="text-white text-5xl md:text-[120px] leading-none anton-regular"
+        >
+          BIGGIES
+        </h1>
+        <p class="text-yellow-400 text-lg font-yellow mt-2">BURGER</p>
+        <p class="text-white text-sm md:text-base opacity-70 max-w-xl mt-6">
+          Experience the sizzling taste, bold flavors, and unforgettable experience of Biggies Burger.
+        </p>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Menu Section Start -->
+    <div class="w-full bg-white py-16">
+      <div class="flex flex-col justify-center items-start max-w-screen-lg mx-auto w-full gap-10 px-4">
+        <!-- Section Title -->
+        <h1 class="text-[#fbce0f] text-5xl font-semibold">BIGGIES BURGER</h1>
+        <p class="text-black text-2xl">The best grilled burger in India and more!</p>
+        
+        <!-- Section 1 -->
+        <div class="w-full">
+          <div class="h-1 bg-[#fbce0f] w-full mb-5"></div> 
+          <div class="text-[#fbce0f] text-3xl font-semibold text-left">BIGG BURGER</div>
+          <div class="h-1 bg-[#fbce0f] w-full mt-5"></div> 
+        </div>
+
+        <!-- Burger Cards Grid - Section 1 -->
+        <div class="mt-10 w-full">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=1920"
+                  alt="Smoked Whole Wheat Burger"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Smoked Whole Wheat Burger</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹249</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Grilled patty with smoked cheese, fresh veggies on whole wheat bun</p>
+              </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1920"
+                  alt="Classic Cheese Blast"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Classic Cheese Blast</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹279</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Double cheese, crispy lettuce, special sauce on sesame bun</p>
+              </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?q=80&w=1920"
+                  alt="Spicy Jalapeño Crunch"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Spicy Jalapeño Crunch</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹299</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Beef patty, jalapeños, pepper jack cheese, spicy mayo</p>
+              </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?q=80&w=1920"
+                  alt="Mushroom Swiss Delight"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Mushroom Swiss Delight</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹289</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Sautéed mushrooms, Swiss cheese, garlic aioli on brioche</p>
+              </div>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?q=80&w=1920"
+                  alt="BBQ Bacon Blast"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">BBQ Bacon Blast</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹319</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Crispy bacon, cheddar, onion rings, BBQ sauce on pretzel bun</p>
+              </div>
+            </div>
+            
+            <!-- Card 6 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?q=80&w=1920"
+                  alt="Veggie Supreme"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Veggie Supreme</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹259</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Grilled vegetable patty, avocado, sprouts, herb mayo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Section 2 -->
+        <div class="w-full">
+          <div class="h-1 bg-[#fbce0f] w-full mb-5"></div> 
+          <div class="text-[#fbce0f] text-3xl font-semibold text-left">BIGGIES SIGNATURE</div>
+          <div class="h-1 bg-[#fbce0f] w-full mt-5"></div> 
+        </div>
+
+        <!-- Burger Cards Grid - Section 2 -->
+        <div class="mt-10 w-full">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=1920"
+                  alt="Smoked Whole Wheat Burger"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Smoked Whole Wheat Burger</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹249</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Grilled patty with smoked cheese, fresh veggies on whole wheat bun</p>
+              </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1920"
+                  alt="Classic Cheese Blast"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Classic Cheese Blast</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹279</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Double cheese, crispy lettuce, special sauce on sesame bun</p>
+              </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?q=80&w=1920"
+                  alt="Spicy Jalapeño Crunch"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Spicy Jalapeño Crunch</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹299</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Beef patty, jalapeños, pepper jack cheese, spicy mayo</p>
+              </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?q=80&w=1920"
+                  alt="Mushroom Swiss Delight"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Mushroom Swiss Delight</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹289</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Sautéed mushrooms, Swiss cheese, garlic aioli on brioche</p>
+              </div>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?q=80&w=1920"
+                  alt="BBQ Bacon Blast"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">BBQ Bacon Blast</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹319</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Crispy bacon, cheddar, onion rings, BBQ sauce on pretzel bun</p>
+              </div>
+            </div>
+            
+            <!-- Card 6 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?q=80&w=1920"
+                  alt="Veggie Supreme"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Veggie Supreme</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹259</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Grilled vegetable patty, avocado, sprouts, herb mayo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Section 3 -->
+        <div class="w-full">
+          <div class="h-1 bg-[#fbce0f] w-full mb-5"></div> 
+          <div class="text-[#fbce0f] text-3xl font-semibold text-left">BIGGIES CLASSICS</div>
+          <div class="h-1 bg-[#fbce0f] w-full mt-5"></div> 
+        </div>
+
+        <!-- Burger Cards Grid - Section 3 -->
+        <div class="mt-10 w-full">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=1920"
+                  alt="Smoked Whole Wheat Burger"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Smoked Whole Wheat Burger</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹249</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Grilled patty with smoked cheese, fresh veggies on whole wheat bun</p>
+              </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1920"
+                  alt="Classic Cheese Blast"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Classic Cheese Blast</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹279</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Double cheese, crispy lettuce, special sauce on sesame bun</p>
+              </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?q=80&w=1920"
+                  alt="Spicy Jalapeño Crunch"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Spicy Jalapeño Crunch</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹299</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Beef patty, jalapeños, pepper jack cheese, spicy mayo</p>
+              </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?q=80&w=1920"
+                  alt="Mushroom Swiss Delight"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Mushroom Swiss Delight</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹289</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Sautéed mushrooms, Swiss cheese, garlic aioli on brioche</p>
+              </div>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?q=80&w=1920"
+                  alt="BBQ Bacon Blast"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">BBQ Bacon Blast</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹319</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Crispy bacon, cheddar, onion rings, BBQ sauce on pretzel bun</p>
+              </div>
+            </div>
+            
+            <!-- Card 6 -->
+            <div class="flex flex-col bg-[#161616] w-full rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <div class="flex justify-center items-center pt-4 px-4 w-full">
+                <img
+                  src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?q=80&w=1920"
+                  alt="Veggie Supreme"
+                  class="burger-image rounded-lg"
+                />
+              </div>
+              <div class="flex justify-start items-start flex-col p-6 gap-2 w-full">
+                <div class="flex justify-between items-center w-full">
+                  <h3 class="text-white text-xl font-bold">Veggie Supreme</h3>
+                  <span class="text-[#fbce0f] text-lg font-bold">₹259</span>
+                </div>
+                <p class="text-gray-300 text-sm mt-2">Grilled vegetable patty, avocado, sprouts, herb mayo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Menu Section End -->
+
+    <!-- Footer start -->
+    <footer class="py-10 bg-black text-white px-8 md:px-16 border-t border-[#FFFFFF33]">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:gap-20">
+       
+        <div class="flex-1">
+          <div class="text-3xl text-[#FBCE0F] anton-regular mb-4">BIGGIES</div>
+          <p class="text-sm font-semibold text-left">
+            BEAMER FOOD & BEVERAGES PVT LTD
+          </p>
+          <p class="text-sm mt-2 leading-6 text-left">
+            #48, 2ND CROSS ST, SHANTHI PURA, PHASE 2,<br />
+            ELECTRONIC CITY, BENGALURU, KARNATAKA 560100
+          </p>
+        </div>
+
+       
+        <div class="flex flex-1 flex-col items-start md:items-center md:flex-row justify-between gap-10">
+          <div
+            class="flex flex-col justify-start items-start space-y-2 text-sm"
+          >
+            <a href="/about.html" class="text-white">About Us</a>
+            <a href="/franchise.html" class="text-white">Franchise</a>
+            <a href="#" class="text-white">Menu</a>
+          </div>
+          <div
+            class="flex flex-col justify-start items-start space-y-2 text-sm"
+          >
+            <a href="/store-locator.html" class="text-white">Store Locator</a>
+            <a href="#" class="text-white">Media</a>
+          </div>
+          <div>
+            <span
+              class="block mb-2 text-base font-semibold text-left md:text-right opacity-60"
+              >FOLLOW US</span
+            >
+            <div class="flex space-x-4">
+              <a href="#">
+                <svg
+                  class="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M22 4.00002C22 4.00002 21.3 6.10002 20 7.40002C21.6 17.4 10.6 24.7 2 19C4.2 19.1 6.4 18.4 8 17C3 15.5 0.5 9.60002 3 5.00002C5.2 7.60002 8.6 9.10002 12 9.00002C11.1 4.80002 16 2.40002 19 5.20002C20.1 5.20002 22 4.00002 22 4.00002Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M6 9H2V21H6V9Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="#">
+                <svg
+                  class="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M15.9997 11.3703C16.1231 12.2025 15.981 13.0525 15.5935 13.7993C15.206 14.5461 14.5929 15.1517 13.8413 15.53C13.0898 15.9082 12.2382 16.0399 11.4075 15.9062C10.5768 15.7726 9.80947 15.3804 9.21455 14.7855C8.61962 14.1905 8.22744 13.4232 8.09377 12.5925C7.96011 11.7619 8.09177 10.9102 8.47003 10.1587C8.84829 9.40716 9.45389 8.79404 10.2007 8.40654C10.9475 8.01904 11.7975 7.87689 12.6297 8.0003C13.4786 8.12619 14.2646 8.52176 14.8714 9.12861C15.4782 9.73545 15.8738 10.5214 15.9997 11.3703Z"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M17.5 6.5H17.51"
+                    stroke="#FBCE0F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-6 border-gray-700" />
+
+      <div
+        class="flex flex-col md:flex-row justify-between text-xs text-gray-400"
+      >
+        <span>BENGALURU</span>
+        <span>© 2023 ALL RIGHTS RESERVED BY BIGGIES BURGER</span>
+        <span>ENGLISH / HINDI</span>
+      </div>
+    </footer>
+    <!-- Footer end -->
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+      
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (menuToggle && mobileMenu) {
+          menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
