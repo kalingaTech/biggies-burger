@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biggies Burger</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="base.css" />
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: "Inter Tight", sans-serif;
+      }
+      .anton-regular {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      /* Custom utility class for font-yellow */
+      .font-yellow {
+        font-family: "Inter Tight";
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 160%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fbce0f;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header Starts here -->
+    <header
+      class="bg-transparent text-white py-4 px-0 md:px-16 absolute top-0 left-0 w-screen z-[100]"
+    >
+      <div class="mx-auto flex items-center justify-between px-4 md:px-0">
+        <!-- Hamburger button (Mobile only) -->
+        <button
+          id="menu-toggle"
+          class="md:hidden bg-[#111] border border-gray-700 rounded-md p-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-yellow-400"
+            viewBox="0 0 20 20"
+            fill="#FBCE0F"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2zm0 4h14a1 1 0 010 2H3a1 1 0 010-2z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+
+        <!-- Left Navigation (desktop only) -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a
+            href="/about.html"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >About Us</a
+          >
+          <a
+            href="/franchise.html"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Franchise</a
+          >
+          <a
+            href="/menu.html"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Menu</a
+          >
+        </div>
+
+        <!-- Logo -->
+        <div class="mx-auto md:mx-0">
+          <a href="/">
+            <img src="assets/logo.png" alt="Biggies Burger" class="h-10" />
+          </a>
+        </div>
+
+        <!-- Right Navigation (desktop only) -->
+        <div class="hidden md:flex items-center space-x-6">
+          <!-- <a
+            href="#"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Career</a
+          > -->
+          <a
+            href="/store-locator.html"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Store Locator</a
+          >
+          <a
+            href="#"
+            class="text-sm font-medium uppercase hover:text-yellow-400"
+            >Media</a
+          >
+          <button class="bg-[#111] border border-gray-700 rounded-md p-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-yellow-400"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#FBCE0F"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+          </button>
+        </div>
+        <button
+          class="bg-[#111] border border-gray-700 rounded-md p-2 w-fit md:hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-yellow-400"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#FBCE0F"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden flex-col space-y-4 px-4 pt-4 h-screen bg-black mt-4 md:mt-0"
+      >
+        <a
+          href="/about.html"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >About Us</a
+        >
+        <a
+          href="/franchise.html"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Franchise</a
+        >
+        <a
+          href="#"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Menu</a
+        >
+        <!-- <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Career</a
+        > -->
+        <a
+          href="/store-locator.html"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Store Locator</a
+        >
+        <a
+          href="#"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
+          >Media</a
+        >
+      </div>
+    </header>
+    <!-- Header Ends here -->
+
+    <!-- Section One Start -->
+    <section class="relative w-screen h-screen overflow-hidden">
+      <!-- Background Image -->
+      <img
+        src="./assets/franchise-hero.png"
+        alt="Franchise Hero"
+        class="absolute top-0 left-0 w-full h-full object-cover z-0"
+      />
+
+      <!-- Overlay Content -->
+      <div
+        class="absolute inset-0 bg-black bg-opacity-80 z-10 flex flex-col justify-center items-center text-center px-4"
+      >
+        <p class="text-yellow-400 text-lg font-yellow mb-2">
+          JOIN THE WORLD OF
+        </p>
+        <h1
+          class="text-white text-5xl md:text-[120px] leading-none anton-regular"
+        >
+          BIGGIES
+        </h1>
+        <p class="text-yellow-400 text-lg font-yellow mt-2">BURGER</p>
+        <p class="text-white text-sm md:text-base opacity-70 max-w-xl mt-6">
+          Join millions of burger lovers across India who crave the sizzling
+          taste, bold flavors, and unforgettable experience of Biggies Burger.
+        </p>
+      </div>
+    </section>
+    <!-- Section One End -->
+
+    <!-- Media Grid Starts -->
+        
+    <!-- Media Grid Ends -->
+  </body>
+</html>

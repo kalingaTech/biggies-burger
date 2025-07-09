@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" /> -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="base.css" />
@@ -16,6 +16,12 @@
   <style>
     body {
       font-family: "Inter Tight", sans-serif;
+    }
+
+    .anton-regular {
+      font-family: "Anton", sans-serif;
+      font-weight: 400;
+      font-style: normal;
     }
 
     /* Custom utility class for font-yellow */
@@ -139,7 +145,7 @@
       <!-- Large BURGER Text with Image -->
       <div class="relative">
         <div
-          class="text-white select-none text-[100px] md:text-[130px] lg:text-[180px] font-bold leading-[160%] py-14">
+          class="text-white select-none text-[100px] md:text-[130px] lg:text-[306px] font-bold leading-[160%] py-14 anton-regular">
           BURGER
         </div>
         <!-- Burger Image Overlay -->
@@ -495,9 +501,9 @@
         </div>
         <!-- Vertical Text -->
         <div class="flex items-center bg-yellow-400 h-[90px] lg:h-full w-full lg:w-[90px]">
-          <div class="vertical-text text-black font-bold text-sm md:text-lg tracking-wider text-center md:text-left">
+          <a href="/menu.html" class="vertical-text text-black hover:text-black font-bold text-sm md:text-lg tracking-wider text-center md:text-left">
             DUE INTO OUR FULL MENU
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -714,7 +720,7 @@
   </footer>
   <!-- Footer end -->
 
-  <section class="loader">
+  <section class="loader" style="display: none;">
     <div class="loading-container flex flex-col items-center justify-center h-screen">
       <div class="emoji-bounce text-8xl text-center">
         <span id="emoji">🍔</span>
