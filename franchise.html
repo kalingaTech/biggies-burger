@@ -1126,13 +1126,16 @@
         >
           &times;
         </button>
-        <iframe
-          class="w-full h-full rounded-lg"
-          src=""
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-        ></iframe>
+        <div class="flex">
+          <img src="./assets/founder-1.png" alt="Happy Customer Image">
+          <div class="bg-white">
+            <p>Life is not about chasing; it is about living. All our life, we are chasing things oblivious to the fact that it's the journey which makes life interesting rather than the destination. I am Sunil K. Mishra and here is my journey with Biggies Burger, which is of utmost interest to me now. During my corporate career, I was looking for a sustainable F&B startup where I can invest in. After 2 years of job, I ended up taking a Franchise of BIGGIES BURGER at Bhubaneswar.  Handling the business for a year provided me with the requisite experience & confidence with the chain. Later, I expanded my fleet by taking the role of Master Franchise for two different states in Eastern India. TEAM WORK is the virtue we always believed in & has been our forte.</p>
+            <div class="flex items-center">
+              <p>Sarah H.</p>
+              <p>Powai</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -1458,29 +1461,37 @@
     </div>
   </div>
 
-    <script>
-      document.querySelectorAll(".testimonial-play").forEach((button) => {
-        button.addEventListener("click", () => {
-          const modalId = button.getAttribute("data-modal-id");
-          const videoSrc = button.getAttribute("data-video-src");
-          const modal = document.getElementById(modalId);
-          const iframe = modal.querySelector("iframe");
+<script>
+document.querySelectorAll('[data-video-modal-open]').forEach(button => {
+  button.addEventListener('click', function () {
+    const modalId = this.getAttribute('data-video-modal-open');
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden'); // Prevent scrolling
+    }
+  });
+});
 
-          iframe.src = videoSrc + "?autoplay=1";
-          modal.classList.remove("hidden");
-          modal.classList.add("flex");
-        });
-      });
+document.querySelectorAll('.video-modal-close').forEach(button => {
+  button.addEventListener('click', function () {
+    const modal = this.closest('[id^="video-modal"]');
+    if (modal) {
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+  });
+});
 
-      document.querySelectorAll(".video-modal-close").forEach((closeBtn) => {
-        closeBtn.addEventListener("click", () => {
-          const modal = closeBtn.closest('div[id^="video-modal"]');
-          const iframe = modal.querySelector("iframe");
-          iframe.src = "";
-          modal.classList.add("hidden");
-          modal.classList.remove("flex");
-        });
-      });
-    </script>
+document.querySelectorAll('[id^="video-modal"]').forEach(modal => {
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+  });
+});
+</script>
+
   </body>
 </html>
