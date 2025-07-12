@@ -63,7 +63,7 @@
         background-color: #ffd700;
         border-color: #ffd700;
       }
-   
+
       input::placeholder,
       textarea::placeholder,
       select {
@@ -99,7 +99,7 @@
   </head>
 
   <body class="text-white">
-   <!-- Header Starts here -->
+    <!-- Header Starts here -->
     <header
       class="bg-transparent text-white py-4 px-0 md:px-16 absolute top-0 left-0 w-screen z-[100]"
     >
@@ -136,7 +136,7 @@
             >Franchise</a
           >
           <a
-            href="#"
+            href="/menu.html"
             class="text-sm font-medium uppercase hover:text-yellow-400"
             >Menu</a
           >
@@ -183,22 +183,24 @@
             </svg>
           </button>
         </div>
-      <button class="bg-[#111] border border-gray-700 rounded-md p-2 w-fit md:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 text-yellow-400"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#FBCE0F"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+        <button
+          class="bg-[#111] border border-gray-700 rounded-md p-2 w-fit md:hidden"
         >
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-          <polyline points="7 10 12 15 17 10" />
-          <line x1="12" y1="15" x2="12" y2="3" />
-        </svg>
-      </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-yellow-400"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#FBCE0F"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+        </button>
       </div>
 
       <!-- Mobile Navigation Menu -->
@@ -216,16 +218,22 @@
           class="text-sm block font-medium uppercase hover:text-yellow-400"
           >Franchise</a
         >
-        <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
+        <a
+          href="#"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
           >Menu</a
         >
         <!-- <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
           >Career</a
         > -->
-        <a href="/store-locator.html" class="text-sm block font-medium uppercase hover:text-yellow-400"
+        <a
+          href="/store-locator.html"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
           >Store Locator</a
         >
-        <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
+        <a
+          href="#"
+          class="text-sm block font-medium uppercase hover:text-yellow-400"
           >Media</a
         >
       </div>
@@ -820,306 +828,443 @@
       </div>
     </section>
     <!-- Section Three End -->
-  <!-- Section Four Start -->
-<section class="bg-white">
-  <div class="flex flex-col gap-4 items-center justify-center py-10">
-    <p class="text-[#FBCE0F] font-bold capitalize text-md leading-[140%]">
-      TESTIMONIALS
-    </p>
-    <h1
-      class="text-black font-medium text-2xl md:text-5xl leading-[120%] text-center"
-    >
-      Hear From Our Happy <br />
-      Customers
-    </h1>
-  </div>
+    <!-- Section Four Start -->
+    <section class="bg-white">
+      <div class="flex flex-col gap-4 items-center justify-center py-10">
+        <p class="text-[#FBCE0F] font-bold capitalize text-md leading-[140%]">
+          TESTIMONIALS
+        </p>
+        <h1
+          class="text-black font-medium text-2xl md:text-5xl leading-[120%] text-center"
+        >
+          Hear From Our Happy <br />
+          Customers
+        </h1>
+      </div>
+      <div class="px-4 pb-20">
+        <div
+          id="testimonial-slider"
+          class="text-center overflow-x-auto 2xl:overflow-x-visible snap-x snap-mandatory scroll-smooth cursor-grab active:cursor-grabbing scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 py-4"
+        >
+          <div class="inline-flex justify-center space-x-4">
+            <!-- Card 1 -->
+            <div class="snap-start flex-shrink-0 w-[208px] px-2 relative">
+              <div class="relative">
+                <img
+                  src="/assets/slider/sarah.png"
+                  alt="Sarah's Testimonial"
+                  class="w-full h-[286px] object-cover rounded-lg"
+                />
+                <button
+                  class="absolute inset-0 flex items-center justify-center testimonial-play"
+                  data-modal-id="video-modal-1"
+                  data-video-src="https://www.youtube.com/embed/VIDEO_ID"
+                  aria-label="Play testimonial video"
+                >
+                  <img
+                    src="/assets/slider/play.svg"
+                    alt="Play"
+                    class="w-10 h-10"
+                  />
+                </button>
+                <button
+                  class="absolute bottom-3 right-3 bg-[#FBCE0F] text-black font-bold text-[10px] px-2 py-1 rounded-full"
+                >
+                  Powai
+                </button>
+                <div
+                  class="absolute bottom-4 left-3 text-white font-normal text-sm drop-shadow-md"
+                >
+                  Sarah H.
+                </div>
+              </div>
+              <p
+                class="text-black text-left font-normal text-[10px] leading-[150%] mt-2"
+              >
+                “The most reliable way to predict your future <br />
+                is to create it yourself”
+              </p>
+              <div
+                class="text-black text-left underline text-[10px] leading-[150%] mt-1"
+              >
+                Read More
+              </div>
+            </div>
 
-  <div class="px-4 pb-20">
+            <!-- Card 2 -->
+            <div class="snap-start flex-shrink-0 w-[223px] px-2 relative">
+              <img
+                src="/assets/slider/sarah-h-2.png"
+                alt="Sarah's Testimonial"
+                class="w-full h-[381px] object-cover rounded-lg"
+              />
+              <button
+                class="absolute inset-0 flex items-center justify-center testimonial-play"
+                data-modal-id="video-modal-2"
+                data-video-src="https://www.youtube.com/embed/VIDEO_ID"
+                aria-label="Play testimonial video"
+              >
+                <img
+                  src="/assets/slider/play.svg"
+                  alt="Play"
+                  class="w-10 h-10"
+                />
+              </button>
+              <div
+                class="absolute bottom-2 left-3 bg-white p-4 rounded-xl w-[192px] h-[143px] drop-shadow"
+              >
+                <p
+                  class="text-black text-left font-normal text-[10px] leading-[150%]"
+                >
+                  "Vision is everything. Persistence makes all the difference.
+                  Nothing brings everyone together like..."
+                </p>
+                <div class="text-black text-left underline text-[10px] mt-2">
+                  Read More
+                </div>
+              </div>
+              <div
+                class="absolute bottom-6 left-7 text-black font-normal text-sm"
+              >
+                Sarah H.
+              </div>
+              <button
+                class="absolute bottom-6 right-8 bg-[#FBCE0F] text-black font-bold text-[10px] px-2 py-1 rounded-full"
+              >
+                Powai
+              </button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="snap-start flex-shrink-0 w-[208px] px-2 relative">
+              <div class="relative">
+                <img
+                  src="/assets/slider/sarah-h-3.png"
+                  alt="Sarah's Testimonial"
+                  class="w-full h-[286px] object-cover rounded-lg"
+                />
+                <button
+                  class="absolute inset-0 flex items-center justify-center testimonial-play"
+                  data-modal-id="video-modal-3"
+                  data-video-src="https://www.youtube.com/embed/VIDEO_ID"
+                  aria-label="Play testimonial video"
+                >
+                  <img
+                    src="/assets/slider/play.svg"
+                    alt="Play"
+                    class="w-10 h-10"
+                  />
+                </button>
+                <button
+                  class="absolute bottom-3 right-3 bg-[#FBCE0F] text-black font-bold text-[10px] px-2 py-1 rounded-full"
+                >
+                  Powai
+                </button>
+                <div
+                  class="absolute bottom-4 left-3 text-white font-normal text-sm drop-shadow-md"
+                >
+                  Sarah H.
+                </div>
+              </div>
+              <p
+                class="text-black text-left font-normal text-[10px] leading-[150%] mt-2"
+              >
+                “The most reliable way to predict your future <br />
+                is to create it yourself”
+              </p>
+              <div
+                class="text-black text-left underline text-[10px] leading-[150%] mt-1"
+              >
+                Read More
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="snap-start flex-shrink-0 w-[223px] px-2 relative">
+              <img
+                src="/assets/slider/sarah-h-3.png"
+                alt="Sarah's Testimonial"
+                class="w-full h-[381px] object-cover rounded-lg"
+              />
+              <button
+                class="absolute inset-0 flex items-center justify-center testimonial-play"
+                data-modal-id="video-modal-4"
+                data-video-src="https://www.youtube.com/embed/VIDEO_ID"
+                aria-label="Play testimonial video"
+              >
+                <img
+                  src="/assets/slider/play.svg"
+                  alt="Play"
+                  class="w-10 h-10"
+                />
+              </button>
+              <div
+                class="absolute bottom-2 left-3 bg-white p-4 rounded-xl w-[192px] h-[143px] drop-shadow"
+              >
+                <p
+                  class="text-black text-left font-normal text-[10px] leading-[150%]"
+                >
+                  "Vision is everything. Persistence makes all the difference.
+                  Nothing brings everyone together like..."
+                </p>
+                <div class="text-black text-left underline text-[10px] mt-2">
+                  Read More
+                </div>
+              </div>
+              <div
+                class="absolute bottom-6 left-7 text-black font-normal text-sm"
+              >
+                Sarah H.
+              </div>
+              <button
+                class="absolute bottom-6 right-8 bg-[#FBCE0F] text-black font-bold text-[10px] px-2 py-1 rounded-full"
+              >
+                Powai
+              </button>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="snap-start flex-shrink-0 w-[208px] px-2 relative">
+              <div class="relative">
+                <img
+                  src="/assets/slider/ratan-kumar.png"
+                  alt="Ratan's Testimonial"
+                  class="w-full h-[286px] object-cover rounded-lg"
+                />
+                <button
+                  class="absolute inset-0 flex items-center justify-center testimonial-play"
+                  data-modal-id="video-modal-5"
+                  data-video-src="https://www.youtube.com/embed/VIDEO_ID"
+                  aria-label="Play testimonial video"
+                >
+                  <img
+                    src="/assets/slider/play.svg"
+                    alt="Play"
+                    class="w-10 h-10"
+                  />
+                </button>
+                <button
+                  class="absolute bottom-3 right-3 bg-[#FBCE0F] text-black font-bold text-[10px] px-2 py-1 rounded-full"
+                >
+                  Powai
+                </button>
+                <div
+                  class="absolute bottom-4 left-3 text-white font-normal text-sm drop-shadow-md"
+                >
+                  Ratan K.
+                </div>
+              </div>
+              <p
+                class="text-black text-left font-normal text-[10px] leading-[150%] mt-2"
+              >
+                “The most reliable way to predict your future <br />
+                is to create it yourself”
+              </p>
+              <div
+                class="text-black text-left underline text-[10px] leading-[150%] mt-1"
+              >
+                Read More
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="snap-start flex-shrink-0 w-[223px] px-2 relative">
+              <img
+                src="/assets/slider/sarah-h-4.png"
+                alt="Sarah's Testimonial"
+                class="w-full h-[381px] object-cover rounded-lg"
+              />
+              <button
+                class="absolute inset-0 flex items-center justify-center testimonial-play"
+                data-modal-id="video-modal-6"
+                data-video-src="https://www.youtube.com/embed/VIDEO_ID"
+                aria-label="Play testimonial video"
+              >
+                <img
+                  src="/assets/slider/play.svg"
+                  alt="Play"
+                  class="w-10 h-10"
+                />
+              </button>
+              <div
+                class="absolute bottom-2 left-3 bg-white p-4 rounded-xl w-[192px] h-[143px] drop-shadow"
+              >
+                <p
+                  class="text-black text-left font-normal text-[10px] leading-[150%]"
+                >
+                  "Vision is everything. Persistence makes all the difference.
+                  Nothing brings everyone together like..."
+                </p>
+                <div class="text-black text-left underline text-[10px] mt-2">
+                  Read More
+                </div>
+              </div>
+              <div
+                class="absolute bottom-6 left-7 text-black font-normal text-sm"
+              >
+                Sarah H.
+              </div>
+              <button
+                class="absolute bottom-6 right-8 bg-[#FBCE0F] text-black font-bold text-[10px] px-2 py-1 rounded-full"
+              >
+                Powai
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALS -->
     <div
-      id="testimonial-slider"
-      class="text-center overflow-x-auto 2xl:overflow-x-visible snap-x snap-mandatory scroll-smooth cursor-grab active:cursor-grabbing scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 py-4"
+      id="video-modal-1"
+      class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50"
     >
-      <div class="inline-flex justify-center space-x-4">
-        <!-- Card 1 -->
-        <div class="snap-start flex-shrink-0 w-[208px] px-2">
-          <div class="relative">
-            <img
-              src="/assets/slider/sarah.png"
-              alt="Sarah's Testimonial"
-              class="w-full h-[286px] object-cover rounded-lg"
-            />
-            <button
-              class="absolute inset-0 flex items-center justify-center testimonial-play"
-              data-video-src="https://www.youtube.com/embed/VIDEO_ID_1"
-              aria-label="Play testimonial video"
-            >
-              <img
-                src="/assets/slider/play.svg"
-                alt="Play"
-                class="w-10 h-10"
-              />
-            </button>
-            <button
-              class="absolute bottom-3 right-3 bg-[#FBCE0F] text-black font-bold text-[10px] px-2 py-1 rounded-full"
-            >
-              Powai
-            </button>
-            <div
-              class="absolute bottom-4 left-3 text-white font-normal text-sm drop-shadow-md"
-            >
-              Sarah H.
+      <div class="relative w-[90%] max-w-3xl aspect-video">
+        <button
+          class="video-modal-close absolute top-1 right-3 text-white text-xl font-bold z-10"
+        >
+          &times;
+        </button>
+        <div class="flex">
+          <img src="./assets/founder-1.png" alt="Happy Customer Image">
+          <div class="bg-white">
+            <p>Life is not about chasing; it is about living. All our life, we are chasing things oblivious to the fact that it's the journey which makes life interesting rather than the destination. I am Sunil K. Mishra and here is my journey with Biggies Burger, which is of utmost interest to me now. During my corporate career, I was looking for a sustainable F&B startup where I can invest in. After 2 years of job, I ended up taking a Franchise of BIGGIES BURGER at Bhubaneswar.  Handling the business for a year provided me with the requisite experience & confidence with the chain. Later, I expanded my fleet by taking the role of Master Franchise for two different states in Eastern India. TEAM WORK is the virtue we always believed in & has been our forte.</p>
+            <div class="flex items-center">
+              <p>Sarah H.</p>
+              <p>Powai</p>
             </div>
           </div>
-          <p
-            class="text-black text-left font-normal text-[10px] leading-[150%] mt-2"
-          >
-            “The most reliable way to predict your future <br />
-            is to create it yourself
-          </p>
-          <div
-            class="text-black text-left underline text-[10px] leading-[150%] mt-1"
-          >
-            Read More
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="snap-start flex-shrink-0 w-[223px] px-2 relative">
-          <img
-            src="/assets/slider/sarah-h-2.png"
-            alt="Sarah's Testimonial"
-            class="w-full h-[381px] object-cover rounded-lg"
-          />
-          <button
-            class="absolute inset-0 flex items-center justify-center testimonial-play"
-            data-video-src="https://www.youtube.com/embed/VIDEO_ID_2"
-            aria-label="Play testimonial video"
-          >
-            <img
-              src="/assets/slider/play.svg"
-              alt="Play"
-              class="w-10 h-10"
-            />
-          </button>
-          <div
-            class="absolute bottom-2 left-3 bg-white p-4 rounded-xl w-[192px] h-[143px] drop-shadow"
-          >
-            <p
-              class="text-black text-left font-normal text-[10px] leading-[150%]"
-            >
-              "Vision is everything. Persistence makes all the difference.
-              Nothing brings everyone together like..."
-            </p>
-            <div class="text-black text-left underline text-[10px] mt-2">
-              Read More
-            </div>
-          </div>
-          <div
-            class="absolute bottom-6 left-7 text-black font-normal text-sm"
-          >
-            Sarah H.
-          </div>
-          <button
-            class="absolute bottom-6 right-8 bg-[#FBCE0F] text-black font-bold text-[10px] px-2 py-1 rounded-full"
-          >
-            Powai
-          </button>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="snap-start flex-shrink-0 w-[208px] px-2">
-          <div class="relative">
-            <img
-              src="/assets/slider/sarah-h-3.png"
-              alt="Sarah's Testimonial"
-              class="w-full h-[286px] object-cover rounded-lg"
-            />
-            <button
-              class="absolute inset-0 flex items-center justify-center testimonial-play"
-              data-video-src="https://www.youtube.com/embed/VIDEO_ID_3"
-              aria-label="Play testimonial video"
-            >
-              <img
-                src="/assets/slider/play.svg"
-                alt="Play"
-                class="w-10 h-10"
-              />
-            </button>
-            <button
-              class="absolute bottom-3 right-3 bg-[#FBCE0F] text-black font-bold text-[10px] px-2 py-1 rounded-full"
-            >
-              Powai
-            </button>
-            <div
-              class="absolute bottom-4 left-3 text-white font-normal text-sm drop-shadow-md"
-            >
-              Sarah H.
-            </div>
-          </div>
-          <p
-            class="text-black text-left font-normal text-[10px] leading-[150%] mt-2"
-          >
-            “The most reliable way to predict your future <br />
-            is to create it yourself
-          </p>
-          <div
-            class="text-black text-left underline text-[10px] leading-[150%] mt-1"
-          >
-            Read More
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="snap-start flex-shrink-0 w-[223px] px-2 relative">
-          <img
-            src="/assets/slider/sarah-h-3.png"
-            alt="Sarah's Testimonial"
-            class="w-full h-[381px] object-cover rounded-lg"
-          />
-          <button
-            class="absolute inset-0 flex items-center justify-center testimonial-play"
-            data-video-src="https://www.youtube.com/embed/VIDEO_ID_4"
-            aria-label="Play testimonial video"
-          >
-            <img
-              src="/assets/slider/play.svg"
-              alt="Play"
-              class="w-10 h-10"
-            />
-          </button>
-          <div
-            class="absolute bottom-2 left-3 bg-white p-4 rounded-xl w-[192px] h-[143px] drop-shadow"
-          >
-            <p
-              class="text-black text-left font-normal text-[10px] leading-[150%]"
-            >
-              "Vision is everything. Persistence makes all the difference.
-              Nothing brings everyone together like..."
-            </p>
-            <div class="text-black text-left underline text-[10px] mt-2">
-              Read More
-            </div>
-          </div>
-          <div
-            class="absolute bottom-6 left-7 text-black font-normal text-sm"
-          >
-            Sarah H.
-          </div>
-          <button
-            class="absolute bottom-6 right-8 bg-[#E6EFE1] text-black font-bold text-[10px] px-2 py-1 rounded-full"
-          >
-            Powai
-          </button>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="snap-start flex-shrink-0 w-[208px] px-2">
-          <div class="relative">
-            <img
-              src="/assets/slider/ratan-kumar.png"
-              alt="Ratan's Testimonial"
-              class="w-full h-[286px] object-cover rounded-lg"
-            />
-            <button
-              class="absolute inset-0 flex items-center justify-center testimonial-play"
-              data-video-src="https://www.youtube.com/embed/VIDEO_ID_5"
-              aria-label="Play testimonial video"
-            >
-              <img
-                src="/assets/slider/play.svg"
-                alt="Play"
-                class="w-10 h-10"
-              />
-            </button>
-            <button
-              class="absolute bottom-3 right-3 bg-[#FBCE0F] text-black font-bold text-[10px] px-2 py-1 rounded-full"
-            >
-              Powai
-            </button>
-            <div
-              class="absolute bottom-4 left-3 text-white font-normal text-sm drop-shadow-md"
-            >
-              Ratan K.
-            </div>
-          </div>
-          <p
-            class="text-black text-left font-normal text-[10px] leading-[150%] mt-2"
-          >
-            “The most reliable way to predict your future <br />
-            is to create it yourself
-          </p>
-          <div
-            class="text-black text-left underline text-[10px] leading-[150%] mt-1"
-          >
-            Read More
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="snap-start flex-shrink-0 w-[223px] px-2 relative">
-          <img
-            src="/assets/slider/sarah-h-4.png"
-            alt="Sarah's Testimonial"
-            class="w-full h-[381px] object-cover rounded-lg"
-          />
-          <button
-            class="absolute inset-0 flex items-center justify-center testimonial-play"
-            data-video-src="https://www.youtube.com/embed/VIDEO_ID_6"
-            aria-label="Play testimonial video"
-          >
-            <img
-              src="/assets/slider/play.svg"
-              alt="Play"
-              class="w-10 h-10"
-            />
-          </button>
-          <div
-            class="absolute bottom-2 left-3 bg-white p-4 rounded-xl w-[192px] h-[143px] drop-shadow"
-          >
-            <p
-              class="text-black text-left font-normal text-[10px] leading-[150%]"
-            >
-              "Vision is everything. Persistence makes all the difference.
-              Nothing brings everyone together like..."
-            </p>
-            <div class="text-black text-left underline text-[10px] mt-2">
-              Read More
-            </div>
-          </div>
-          <div
-            class="absolute bottom-6 left-7 text-black font-normal text-sm"
-          >
-            Sarah H.
-          </div>
-          <button
-            class="absolute bottom-6 right-8 bg-[#FBCE0F] text-black font-bold text-[10px] px-2 py-1 rounded-full"
-          >
-            Powai
-          </button>
         </div>
       </div>
     </div>
-  </div>
-</section>
+    <div
+      id="video-modal-2"
+      class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50"
+    >
+      <div class="relative w-[90%] max-w-3xl aspect-video">
+        <button
+          class="video-modal-close absolute top-1 right-3 text-white text-xl font-bold z-10"
+        >
+          &times;
+        </button>
+        <iframe
+          class="w-full h-full rounded-lg"
+          src=""
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div
+      id="video-modal-3"
+      class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50"
+    >
+      <div class="relative w-[90%] max-w-3xl aspect-video">
+        <button
+          class="video-modal-close absolute top-1 right-3 text-white text-xl font-bold z-10"
+        >
+          &times;
+        </button>
+        <iframe
+          class="w-full h-full rounded-lg"
+          src=""
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div
+      id="video-modal-4"
+      class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50"
+    >
+      <div class="relative w-[90%] max-w-3xl aspect-video">
+        <button
+          class="video-modal-close absolute top-1 right-3 text-white text-xl font-bold z-10"
+        >
+          &times;
+        </button>
+        <iframe
+          class="w-full h-full rounded-lg"
+          src=""
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div
+      id="video-modal-5"
+      class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50"
+    >
+      <div class="relative w-[90%] max-w-3xl aspect-video">
+        <button
+          class="video-modal-close absolute top-1 right-3 text-white text-xl font-bold z-10"
+        >
+          &times;
+        </button>
+        <iframe
+          class="w-full h-full rounded-lg"
+          src=""
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div
+      id="video-modal-6"
+      class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50"
+    >
+      <div class="relative w-[90%] max-w-3xl aspect-video">
+        <button
+          class="video-modal-close absolute top-1 right-3 text-white text-xl font-bold z-10"
+        >
+          &times;
+        </button>
+        <iframe
+          class="w-full h-full rounded-lg"
+          src=""
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
 
-<!-- Modal for Video Playback -->
-<div id="video-modal" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50">
-  <div class="relative w-[90%] max-w-3xl aspect-video">
-    <button id="video-modal-close" class="absolute top-1 right-3 text-white text-xl font-bold z-10" aria-label="Close video">&times;</button>
-    <iframe
-      id="video-modal-iframe"
-      class="w-full h-full rounded-lg"
-      src=""
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </div>
-</div>
+    <!-- Modal for Video Playback -->
+    <div
+      id="video-modal"
+      class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50"
+    >
+      <div class="relative w-[90%] max-w-3xl aspect-video">
+        <button
+          id="video-modal-close"
+          class="absolute top-1 right-3 text-white text-xl font-bold z-10"
+          aria-label="Close video"
+        >
+          &times;
+        </button>
+        <iframe
+          id="video-modal-iframe"
+          class="w-full h-full rounded-lg"
+          src=""
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
     <!-- Section Four End -->
     <!-- Footer start -->
-    <footer class="py-10 bg-black text-white px-8 md:px-16 border-t border-[#FFFFFF33]">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:gap-20">
+    <footer
+      class="py-10 bg-black text-white px-8 md:px-16 border-t border-[#FFFFFF33]"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:gap-20"
+      >
         <!-- Left section -->
         <div class="flex-1">
           <img
@@ -1137,18 +1282,20 @@
         </div>
 
         <!-- Right section -->
-        <div class="flex flex-1 flex-col items-start md:items-center md:flex-row justify-between gap-10">
+        <div
+          class="flex flex-1 flex-col items-start md:items-center md:flex-row justify-between gap-10"
+        >
           <div
             class="flex flex-col justify-start items-start space-y-2 text-sm"
           >
             <a href="/about.html" class="text-white">About Us</a>
             <a href="/franchise.html" class="text-white">Franchise</a>
-            <a href="#" class="text-white">Menu</a>
+            <a href="/menu.html" class="text-white">Menu</a>
           </div>
           <div
             class="flex flex-col justify-start items-start space-y-2 text-sm"
           >
-            <!-- <a href="#" class="text-white">Career</a> -->
+             <!-- <a href="#" class="text-white">Career</a> -->
             <a href="/store-locator.html" class="text-white">Store Locator</a>
             <a href="#" class="text-white">Media</a>
           </div>
@@ -1157,7 +1304,7 @@
               class="block mb-2 text-base font-semibold text-left md:text-right opacity-60"
               >FOLLOW US</span
             >
-            <div class="flex space-x-4">
+            <div class="flex space-x-4 justify-end">
               <a href="#">
                 <svg
                   class="h-5 w-5"
@@ -1274,41 +1421,77 @@
       </div>
     </footer>
     <!-- Footer end -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const modal = document.getElementById('video-modal');
-        const iframe = document.getElementById('video-modal-iframe');
-        const closeBtn = document.getElementById('video-modal-close');
-        const playButtons = document.querySelectorAll('.testimonial-play');
-    
-        playButtons.forEach(btn => {
-          btn.addEventListener('click', function (e) {
-            e.preventDefault();
-            const src = btn.getAttribute('data-video-src');
-            if (!src) return;
-            let separator = src.includes('?') ? '&' : '?';
-            iframe.src = src + separator + 'autoplay=1';
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-          });
-        });
-        function closeModal() {
-          iframe.src = '';
-          modal.classList.remove('flex');
-          modal.classList.add('hidden');
-        }
-        closeBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', function (e) {
-          const container = iframe.parentElement;
-          if (!container.contains(e.target)) {
-            closeModal();
-          }
-        });
-    
-        iframe.parentElement.addEventListener('click', function (e) {
-          e.stopPropagation();
-        });
-      });
-    </script>
+
+      <!-- Floating Menu Start -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-row-reverse items-end space-y-2">
+    <!-- Floating Toggle Button -->
+    <button id="toggleButton" aria-expanded="false"
+      class="bg-black text-white p-4 rounded-full shadow-lg focus:outline-none mb-2 flex items-center justify-center border border-solid border-[#FFFFFF33] transform transition-transform duration-100">
+      <!-- Plus Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        stroke-width="2">
+        <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </button>
+    <!-- Floating Menu -->
+    <div id="menu" class="flex flex-col items-end mb-2 hidden gap-6 bg-black px-6 py-10 border border-solid border-[#FFFFFF33] mr-2 w-[280px] md:w-[350px]">
+      <button class="text-white text-sm sm:text-lg px-4 py-2 rounded-full shadow hover:bg-yellow-400 hover:text-black flex justify-between items-center w-full">
+        <span>Instant WhatsApp Support</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+          <rect y="0.5" width="24" height="24" fill="white" fill-opacity="0.1"/>
+          <path d="M14.71 11.002L13.208 12.5029L14.7109 14.0049L10.7021 18.0127L9.19922 16.5098L13.2051 12.5029L9.19922 8.49707L10.7021 6.99414L14.71 11.002Z" fill="white"/>
+        </svg>
+      </button>
+
+      <div class="w-full h-[1px] bg-[#DADBE4] opacity-20"></div>
+
+      <button class="text-white text-sm sm:text-lg px-4 py-2 rounded-full shadow hover:bg-yellow-400 hover:text-black flex justify-between items-center w-full">
+       <span> Talk To Our Expert</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+          <rect y="0.5" width="24" height="24" fill="white" fill-opacity="0.1"/>
+          <path d="M14.71 11.002L13.208 12.5029L14.7109 14.0049L10.7021 18.0127L9.19922 16.5098L13.2051 12.5029L9.19922 8.49707L10.7021 6.99414L14.71 11.002Z" fill="white"/>
+        </svg>
+      </button>
+      <div id="menuBox"
+        class="hidden absolute top-1/2 -translate-y-1/2 right-full mr-3 w-52 h-24 bg-black border border-white/20 flex flex-col justify-evenly items-start">
+        <button class="text-white text-xs pl-3">Instant Whatsapp Support</button>
+        <button class="text-white text-xs pl-3">Talk To Our Expert</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+document.querySelectorAll('[data-video-modal-open]').forEach(button => {
+  button.addEventListener('click', function () {
+    const modalId = this.getAttribute('data-video-modal-open');
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden'); // Prevent scrolling
+    }
+  });
+});
+
+document.querySelectorAll('.video-modal-close').forEach(button => {
+  button.addEventListener('click', function () {
+    const modal = this.closest('[id^="video-modal"]');
+    if (modal) {
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+  });
+});
+
+document.querySelectorAll('[id^="video-modal"]').forEach(modal => {
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+  });
+});
+</script>
+
   </body>
 </html>

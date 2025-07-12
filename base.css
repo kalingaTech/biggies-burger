@@ -333,6 +333,7 @@ footer a:hover {
 .slider-track {
   display: flex;
   width: 200%;
+  gap: 16px;
   animation: scroll-left 15s linear infinite;
 }
 
@@ -343,7 +344,8 @@ footer a:hover {
 .slider img {
   transition: transform 0.3s ease;
   flex-shrink: 0;
-  width: calc(100% / 12); /* 12 images total (6 + 6 duplicates) */
+  width: calc(100% / 8); /* 12 images total (6 + 6 duplicates) */
+  object-fit: cover;
 }
 
 .slider.reverse img:hover {
@@ -352,7 +354,7 @@ footer a:hover {
 }
 
 .slider img:hover {
-  transform: rotateZ(-10deg);
+  transform: rotateZ(-4deg);
   z-index: 10;
 }
 

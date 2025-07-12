@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" /> -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="base.css" />
@@ -16,6 +16,12 @@
   <style>
     body {
       font-family: "Inter Tight", sans-serif;
+    }
+
+    .anton-regular {
+      font-family: "Anton", sans-serif;
+      font-weight: 400;
+      font-style: normal;
     }
 
     /* Custom utility class for font-yellow */
@@ -48,7 +54,7 @@
     <div class="hidden md:flex items-center space-x-6">
       <a href="/about.html" class="text-sm font-medium uppercase hover:text-yellow-400">About Us</a>
       <a href="/franchise.html" class="text-sm font-medium uppercase hover:text-yellow-400">Franchise</a>
-      <a href="#" class="text-sm font-medium uppercase hover:text-yellow-400">Menu</a>
+      <a href="./menu.html" class="text-sm font-medium uppercase hover:text-yellow-400">Menu</a>
     </div>
 
     <!-- Logo -->
@@ -88,7 +94,7 @@
   <div id="mobile-menu" class="md:hidden hidden flex-col space-y-4 px-4 pt-4 h-screen bg-black mt-4 md:mt-0">
     <a href="/about.html" class="text-sm block font-medium uppercase hover:text-yellow-400">About Us</a>
     <a href="/franchise.html" class="text-sm block font-medium uppercase hover:text-yellow-400">Franchise</a>
-    <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400">Menu</a>
+    <a href="./menu.html" class="text-sm block font-medium uppercase hover:text-yellow-400">Menu</a>
     <!-- <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400">Career</a> -->
     <a href="/store-locator.html" class="text-sm block font-medium uppercase hover:text-yellow-400">Store Locator</a>
     <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400">Media</a>
@@ -100,15 +106,14 @@
     <div id="mobile-menu" class="md:hidden hidden flex-col space-y-4 px-4 pt-4 h-screen bg-black mt-4 md:mt-0">
       <a href="/about.html" class="text-sm block font-medium uppercase hover:text-yellow-400">About Us</a>
       <a href="/franchise.html" class="text-sm block font-medium uppercase hover:text-yellow-400">Franchise</a>
-      <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400">Menu</a>
+      <a href="./menu.html" class="text-sm block font-medium uppercase hover:text-yellow-400">Menu</a>
       <!-- <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400"
        >Career</a
      > -->
       <a href="/store-locator.html" class="text-sm block font-medium uppercase hover:text-yellow-400">Store Locator</a>
       <a href="#" class="text-sm block font-medium uppercase hover:text-yellow-400">Media</a>
     </div>
-  </header>
-  <!-- Header Ends here -->
+  <!-- Mobile Navigation Menu Ends -->
   <!-- Hero Section -->
   <section class="h-screen flex items-center lg:justify-around gap-5 flex-col lg:flex-row mt-20">
     <!-- Award Badge -->
@@ -140,7 +145,7 @@
       <!-- Large BURGER Text with Image -->
       <div class="relative">
         <div
-          class="text-white select-none text-[100px] md:text-[130px] lg:text-[180px] font-bold leading-[160%] py-14">
+          class="text-white select-none text-[100px] md:text-[130px] lg:text-[306px] font-bold leading-[160%] py-14 anton-regular">
           BURGER
         </div>
         <!-- Burger Image Overlay -->
@@ -300,7 +305,7 @@
   </div>
 
   <section class="scroll-section">
-    <div class="bg-white px-4 sticky-header py-[10px] h-[100vh] lg:h-[130vh]">
+    <div class="bg-white px-4 sticky-header py-[24px] h-[100vh] lg:h-[130vh]">
       <div class="max-w-5xl mx-auto text-center">
         <!-- Heading -->
         <p class="uppercase text-xs font-semibold tracking-wide text-black mb-2 md:mb-4">
@@ -338,7 +343,7 @@
 
 
       <!-- Image and text block -->
-      <div class="image-text-wrapper mt-8 md:mt-12">
+      <div class="image-text-wrapper mt-8 md:mt-4">
         <div class="flex flex-col md:flex-row items-center image-text-block" data-index="0">
           <img src="./assets/about-section_2-1.png" alt="Food Image" class="w-full md:w-[50%] object-contain" />
           <div class="p-4 md:p-6">
@@ -400,7 +405,7 @@
     <div class="mb-4 md:mb-8 px-4">
       <div class="flex flex-col md:flex-row items-start mb-4 md:mb-6">
         <span class="text-yellow-400 font-bold text-xs md:text-[14px] mb-2 md:mb-0 md:mr-8 md:mt-7">MENU</span>
-        <h1 class="text-white text-2xl md:text-4xl lg:text-[48px] font-[400] leading-[140%]">
+        <h1 class="text-white text-2xl md:text-4xl lg:text-[48px] font-[400] !leading-[140%] capitalize">
           You guessed it right! We are BIGG on our burgers. Check out what's
           so good about the burgers everyone is talking about and order your
           favorite!
@@ -413,92 +418,137 @@
       <!-- Menu Items Container -->
       <div class="menu-container flex flex-col lg:flex-row gap-0 flex-1 overflow-hidden">
         <!-- Grilled Chicken Wings -->
-        <div class="menu-item relative overflow-hidden h-48 md:h-96">
-          <img src="/assets/burger1.png" alt="Grilled Chicken Wings" class="w-full h-full object-cover" />
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
-            <h3 class="text-white font-bold text-sm md:text-xl mb-1">
-              GRILLED CHICKEN WINGS
-            </h3>
-            <p class="text-gray-300 text-xs md:text-sm">
-              Biggies Burger Started Gaining Popularity.
-            </p>
-          </div>
+         <div class="menu-item relative overflow-hidden h-48 md:h-[579px] border-r-[0.6px] border-black">
+      <div class="absolute inset-0" style="
+          background: 
+            linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.96%, rgba(0, 0, 0, 0.70) 100%),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+            url('/assets/menu/grilled-chicken-wings.png') lightgray 50% / cover no-repeat;">
+      </div>
+        <img src="/assets/menu/grilled-chicken-wings.png" alt="Grilled Chicken Wings" class="w-full h-full object-cover opacity-0" />
+
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
+          <h3 class="text-white text-sm md:text-2xl mb-1 leading-[100%] anton-regular uppercase">Grilled Chicken Wings</h3>
+          <p class="text-gray-300 text-xs md:text-sm">
+            Biggies Burger Started Gaining Popularity.
+          </p>
         </div>
+      </div>
 
         <!-- Doner Wraps -->
-        <div class="menu-item relative overflow-hidden h-48 md:h-96">
-          <img src="/assets/burger1.png" alt="Doner Wraps" class="w-full h-full object-cover" />
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
-            <h3 class="text-white font-bold text-sm md:text-xl mb-1">DONER WRAPS</h3>
-            <p class="text-gray-300 text-xs md:text-sm">
-              Biggies Burger Started Gaining Popularity.
-            </p>
-          </div>
+      <div class="menu-item relative overflow-hidden h-48 md:h-[579px] border-r-[0.6px] border-black">
+      <div class="absolute inset-0" style="
+          background: 
+            linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.96%, rgba(0, 0, 0, 0.70) 100%),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+            url('/assets/menu/doner-wraps.png') lightgray 50% / cover no-repeat;">
+      </div>
+        <img src="/assets/menu/doner-wraps.png" alt="Doner Wraps" class="w-full h-full object-cover opacity-0" />
+
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
+          <h3 class="text-white text-sm md:text-2xl mb-1 leading-[100%] anton-regular uppercase">DONER WRAPS</h3>
+          <p class="text-gray-300 text-xs md:text-sm">
+            Biggies Burger Started Gaining Popularity.
+          </p>
         </div>
+      </div>
+
 
         <!-- Crinkle Fries -->
-        <div class="menu-item relative overflow-hidden h-48 md:h-96">
-          <img src="/assets/burger1.png" alt="Crinkle Fries" class="w-full h-full object-cover" />
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
-            <h3 class="text-white font-bold text-sm md:text-xl mb-1">CRINKLE FRIES</h3>
-            <p class="text-gray-300 text-xs md:text-sm">
-              Biggies Burger Started Gaining Popularity.
-            </p>
-          </div>
+             <div class="menu-item relative overflow-hidden h-48 md:h-[579px] border-r-[0.6px] border-black">
+      <div class="absolute inset-0" style="
+          background: 
+            linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.96%, rgba(0, 0, 0, 0.70) 100%),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+            url('/assets/menu/crinkle-fries.png') lightgray 50% / cover no-repeat;">
+      </div>
+        <img src="/assets/menu/crinkle-fries.png" alt="Crinkle Fries" class="w-full h-full object-cover opacity-0" />
+
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
+          <h3 class="text-white text-sm md:text-2xl mb-1 leading-[100%] anton-regular uppercase">Crinkle Fries</h3>
+          <p class="text-gray-300 text-xs md:text-sm">
+            Biggies Burger Started Gaining Popularity.
+          </p>
         </div>
+      </div>
 
         <!-- Sides and Platter -->
-        <div class="menu-item relative overflow-hidden h-48 md:h-96">
-          <img src="/assets/burger1.png" alt="Sides and Platter" class="w-full h-full object-cover" />
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
-            <h3 class="text-white font-bold text-sm md:text-xl mb-1">
-              SIDES AND PLATTER
-            </h3>
-            <p class="text-gray-300 text-xs md:text-sm">
-              Biggies Burger Started Gaining Popularity.
-            </p>
-          </div>
+              <div class="menu-item relative overflow-hidden h-48 md:h-[579px] border-r-[0.6px] border-black">
+      <div class="absolute inset-0" style="
+          background: 
+            linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.96%, rgba(0, 0, 0, 0.70) 100%),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+            url('/assets/menu/sides-platter.png') lightgray 50% / cover no-repeat;">
+      </div>
+        <img src="/assets/menu/sides-platter.png" alt="Sides and Platter" class="w-full h-full object-cover opacity-0" />
+
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
+          <h3 class="text-white text-sm md:text-2xl mb-1 leading-[100%] anton-regular uppercase">Sides and Platter</h3>
+          <p class="text-gray-300 text-xs md:text-sm">
+            Biggies Burger Started Gaining Popularity.
+          </p>
         </div>
+      </div>
 
         <!-- Cookie Shakes and Mojitos -->
-        <div class="menu-item relative overflow-hidden h-48 md:h-96">
-          <img src="/assets/burger1.png" alt="Cookie Shakes and Mojitos" class="w-full h-full object-cover" />
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
-            <h3 class="text-white font-bold text-sm md:text-xl mb-1">
-              COOKIE SHAKES AND MOJITOS
-            </h3>
-            <p class="text-gray-300 text-xs md:text-sm">
-              Biggies Burger Started Gaining Popularity.
-            </p>
-          </div>
+              <div class="menu-item relative overflow-hidden h-48 md:h-[579px] border-r-[0.6px] border-black">
+      <div class="absolute inset-0" style="
+          background: 
+            linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.96%, rgba(0, 0, 0, 0.70) 100%),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+            url('/assets/menu/cookie-shakes.png') lightgray 50% / cover no-repeat;">
+      </div>
+        <img src="/assets/menu/cookie-shakes.png" alt="Cookie Shakes and Mojitos" class="w-full h-full object-cover opacity-0" />
+
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
+          <h3 class="text-white text-sm md:text-2xl mb-1 leading-[100%] anton-regular uppercase">Cookie Shakes and Mojitos</h3>
+          <p class="text-gray-300 text-xs md:text-sm">
+            Biggies Burger Started Gaining Popularity.
+          </p>
         </div>
+      </div>
 
         <!-- Bigg 6 Meal Box -->
-        <div class="menu-item relative overflow-hidden h-48 md:h-96">
-          <img src="/assets/burger1.png" alt="Bigg 6 Meal Box" class="w-full h-full object-cover" />
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
-            <h3 class="text-white font-bold text-sm md:text-xl mb-1">BIGG 6 MEAL BOX</h3>
-            <p class="text-gray-300 text-xs md:text-sm">
-              Biggies Burger Started Gaining Popularity.
-            </p>
-          </div>
+             <div class="menu-item relative overflow-hidden h-48 md:h-[579px] border-r-[0.6px] border-black">
+      <div class="absolute inset-0" style="
+          background: 
+            linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.96%, rgba(0, 0, 0, 0.70) 100%),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+            url('/assets/menu/big-6-meal.png') lightgray 50% / cover no-repeat;">
+      </div>
+        <img src="/assets/menu/big-6-meal.png" alt="Bigg 6 Meal Box" class="w-full h-full object-cover opacity-0" />
+
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
+          <h3 class="text-white text-sm md:text-2xl mb-1 leading-[100%] anton-regular uppercase">Bigg 6 Meal Box</h3>
+          <p class="text-gray-300 text-xs md:text-sm">
+            Biggies Burger Started Gaining Popularity.
+          </p>
         </div>
+      </div>
 
         <!-- Desserts -->
-        <div class="menu-item relative overflow-hidden h-48 md:h-96">
-          <img src="/assets/burger1.png" alt="Desserts" class="w-full h-full object-cover" />
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
-            <h3 class="text-white font-bold text-sm md:text-xl mb-1">DESSERTS</h3>
-            <p class="text-gray-300 text-xs md:text-sm">
-              Biggies Burger Started Gaining Popularity.
-            </p>
-          </div>
+              <div class="menu-item relative overflow-hidden h-48 md:h-[579px] border-r-[0.6px] border-black">
+      <div class="absolute inset-0" style="
+          background: 
+            linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.96%, rgba(0, 0, 0, 0.70) 100%),
+            linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+            url('/assets/menu/desserts.png') lightgray 50% / cover no-repeat;">
+      </div>
+        <img src="/assets/menu/desserts.png" alt="Desserts" class="w-full h-full object-cover opacity-0" />
+
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:p-4">
+          <h3 class="text-white text-sm md:text-2xl mb-1 leading-[100%] anton-regular uppercase">Desserts</h3>
+          <p class="text-gray-300 text-xs md:text-sm">
+            Biggies Burger Started Gaining Popularity.
+          </p>
         </div>
+      </div>
+
         <!-- Vertical Text -->
         <div class="flex items-center bg-yellow-400 h-[90px] lg:h-full w-full lg:w-[90px]">
-          <div class="vertical-text text-black font-bold text-sm md:text-lg tracking-wider text-center md:text-left">
+          <a href="/menu.html" class="vertical-text text-black hover:text-black font-bold text-sm md:text-lg tracking-wider text-center md:text-left">
             DUE INTO OUR FULL MENU
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -520,24 +570,20 @@
     </div>
 
     <!-- Location Images Grid -->
-    <div class="slider-container flex flex-col gap-5">
+    <div class="slider-container flex flex-col gap-8">
       <!-- Slider 1 -->
       <div class="slider overflow-hidden relative h-full">
         <div class="slider-track">
           <!-- First set of images -->
-          <img src="/assets/burger2.png" alt="cat1" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat2" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat3" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat4" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat5" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat6" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/stores/store-1.png" alt="cat1" class="h-[auto] w-full md:h-[200px]" />
+          <img src="/assets/stores/store-2.png" alt="cat2" class="h-[auto] w-full md:h-[200px]" />
+          <img src="/assets/stores/store-3.png" alt="cat3" class="h-[auto] w-full md:h-[200px]" />
+          <img src="/assets/stores/store-5.png" alt="cat4" class="h-[auto] w-full md:h-[200px]" />
           <!-- Duplicate set for seamless loop -->
-          <img src="/assets/burger2.png" alt="cat1" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat2" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat3" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat4" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat5" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat6" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/stores/store-1.png" alt="cat1" class="h-[auto] w-full md:h-[200px]" />
+          <img src="/assets/stores/store-2.png" alt="cat2" class="h-[auto] w-full md:h-[200px]" />
+          <img src="/assets/stores/store-3.png" alt="cat3" class="h-[auto] w-full md:h-[200px]" />
+          <img src="/assets/stores/store-5.png" alt="cat4" class="h-[auto] w-full md:h-[200px]" />
         </div>
       </div>
 
@@ -545,19 +591,15 @@
       <div class="slider reverse overflow-hidden relative h-full">
         <div class="slider-track">
           <!-- First set of images -->
-          <img src="/assets/burger2.png" alt="cat7" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat8" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat9" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat10" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat11" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat12" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/stores/store-6.png" alt="cat7" class="h-[auto] w-full md:h-[200px]" />
+          <img src="/assets/stores/store-7.png" alt="cat8" class="h-[auto] w-full md:h-[200px]" />
+          <img src="/assets/stores/store-8.png" alt="cat9" class="h-[auto] w-full md:h-[200px]" />
+          <img src="/assets/stores/store-10.png" alt="cat10" class="h-[auto] w-full md:h-[200px]" />
           <!-- Duplicate set for seamless loop -->
-          <img src="/assets/burger2.png" alt="cat7" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat8" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat9" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat10" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat11" class="h-[200px] md:h-[300px]" />
-          <img src="/assets/burger2.png" alt="cat12" class="h-[200px] md:h-[300px]" />
+          <img src="/assets/stores/store-6.png" alt="cat7" class="h-[auto] w-full md:h-[200px]" />
+          <img src="/assets/stores/store-7.png" alt="cat8" class="h-[auto] w-full md:h-[200px]" />
+          <img src="/assets/stores/store-8.png" alt="cat9" class="h-[auto] w-full md:h-[200px]" />
+          <img src="/assets/stores/store-10.png" alt="cat10" class="h-[auto] w-full md:h-[200px]" />
         </div>
       </div>
     </div>
@@ -609,16 +651,16 @@
           <div class="line"></div>
         </div>
         <div class="box w-[90%] md:w-[70%]">
-          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Best Burger Chain 2023</p>
-          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Customer Choice Award</p>
-          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Excellence in Service</p>
-          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Innovation Award</p>
-          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Quality Assurance</p>
-          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Franchise Excellence</p>
-          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Community Impact</p>
-          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Sustainability Award</p>
-          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Employee Satisfaction</p>
-          <p class="box-text text-[18px] md:text-lg" data-animation="fadeInUp">Growth Achievement</p>
+          <p class="box-text text-[18px] sm:text-[36px]" data-animation="fadeInUp">Best Burger Chain 2023</p>
+          <p class="box-text text-[18px] sm:text-[36px]" data-animation="fadeInUp">Customer Choice Award</p>
+          <p class="box-text text-[18px] sm:text-[36px]" data-animation="fadeInUp">Excellence in Service</p>
+          <p class="box-text text-[18px] sm:text-[36px]" data-animation="fadeInUp">Innovation Award</p>
+          <p class="box-text text-[18px] sm:text-[36px]" data-animation="fadeInUp">Quality Assurance</p>
+          <p class="box-text text-[18px] sm:text-[36px]" data-animation="fadeInUp">Franchise Excellence</p>
+          <p class="box-text text-[18px] sm:text-[36px]" data-animation="fadeInUp">Community Impact</p>
+          <p class="box-text text-[18px] sm:text-[36px]" data-animation="fadeInUp">Sustainability Award</p>
+          <p class="box-text text-[18px] sm:text-[36px]" data-animation="fadeInUp">Employee Satisfaction</p>
+          <p class="box-text text-[18px] sm:text-[36px]" data-animation="fadeInUp">Growth Achievement</p>
         </div>
       </div>
     </section>
@@ -647,17 +689,17 @@
         <div class="flex flex-col justify-start items-start space-y-2 text-xs md:text-sm">
           <a href="/about.html" class="text-white">About Us</a>
           <a href="/franchise.html" class="text-white">Franchise</a>
-          <a href="#" class="text-white">Menu</a>
+          <a href="/menu.html" class="text-white">Menu</a>
         </div>
         <div class="flex flex-col justify-start items-start space-y-2 text-xs md:text-sm">
-          <a href="#" class="text-white">Career</a>
-          <a href="#" class="text-white">Store Locator</a>
+          <!-- <a href="#" class="text-white">Career</a> -->
+          <a href="/store-locator.html" class="text-white">Store Locator</a>
           <a href="#" class="text-white">Media</a>
         </div>
         <span class="block lg:hidden mb-2 text-sm md:text-base font-semibold text-left opacity-60">FOLLOW US</span>
         <div class="">
           <span class="hidden lg:block mb-2 text-sm md:text-base font-semibold text-right opacity-60">FOLLOW US</span>
-          <div class="flex space-x-4">
+          <div class="flex space-x-4 justify-end">
             <a href="#">
               <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                 fill="none">
@@ -729,10 +771,10 @@
   </section>
 
   <!-- Floating Menu Start -->
-  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-2">
+  <div class="fixed bottom-6 right-6 z-50 flex flex-row-reverse items-end space-y-2">
     <!-- Floating Toggle Button -->
     <button id="toggleButton" aria-expanded="false"
-      class="bg-yellow-400 text-black p-4 rounded-full shadow-lg hover:bg-yellow-500 focus:outline-none mb-2 flex items-center justify-center">
+      class="bg-black text-white p-4 rounded-full shadow-lg focus:outline-none mb-2 flex items-center justify-center border border-solid border-[#FFFFFF33] transform transition-transform duration-100">
       <!-- Plus Icon -->
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
         stroke-width="2">
@@ -741,12 +783,23 @@
       </svg>
     </button>
     <!-- Floating Menu -->
-    <div id="menu" class="flex flex-col items-end space-y-2 mb-2 hidden">
-      <button class="bg-blue-600 text-white px-4 py-2 rounded-full shadow hover:bg-blue-700">
-        Option 1
+    <div id="menu" class="flex flex-col items-end mb-2 hidden gap-6 bg-black px-6 py-6 border border-solid border-[#FFFFFF33] mr-2 w-[280px] md:w-[350px]">
+      <button class="text-white text-sm sm:text-lg px-4 py-2 shadow hover:bg-yellow-400 hover:text-black flex justify-between items-center w-full">
+        <span>Instant WhatsApp Support</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+          <rect y="0.5" width="24" height="24" fill="white" fill-opacity="0.1"/>
+          <path d="M14.71 11.002L13.208 12.5029L14.7109 14.0049L10.7021 18.0127L9.19922 16.5098L13.2051 12.5029L9.19922 8.49707L10.7021 6.99414L14.71 11.002Z" fill="white"/>
+        </svg>
       </button>
-      <button class="bg-blue-600 text-white px-4 py-2 rounded-full shadow hover:bg-blue-700">
-        Option 2
+
+      <div class="w-full h-[1px] bg-[#DADBE4] opacity-20"></div>
+
+      <button class="text-white text-sm sm:text-lg px-4 py-2 shadow hover:bg-yellow-400 hover:text-black flex justify-between items-center w-full">
+       <span> Talk To Our Expert</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+          <rect y="0.5" width="24" height="24" fill="white" fill-opacity="0.1"/>
+          <path d="M14.71 11.002L13.208 12.5029L14.7109 14.0049L10.7021 18.0127L9.19922 16.5098L13.2051 12.5029L9.19922 8.49707L10.7021 6.99414L14.71 11.002Z" fill="white"/>
+        </svg>
       </button>
       <div id="menuBox"
         class="hidden absolute top-1/2 -translate-y-1/2 right-full mr-3 w-52 h-24 bg-black border border-white/20 flex flex-col justify-evenly items-start">
@@ -756,55 +809,8 @@
     </div>
   </div>
   </div>
-  <!-- Floating Menu End -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const toggleButton = document.getElementById('toggleButton');
-      const menu = document.getElementById('menu');
-      const menuBox = document.getElementById('menuBox');
-
-      if (!toggleButton || !menu || !menuBox) {
-        console.error('toggleButton, menu, or menuBox not found');
-        return;
-      }
-
-      toggleButton.addEventListener('click', function (event) {
-        event.stopPropagation();
-        const isHidden = menu.classList.contains('hidden');
-        if (isHidden) {
-          menu.classList.remove('hidden');
-          toggleButton.setAttribute('aria-expanded', 'true');
-        } else {
-          menu.classList.add('hidden');
-          toggleButton.setAttribute('aria-expanded', 'false');
-        }
-      });
-
-      // Click outside to close
-      document.addEventListener('click', function (event) {
-        if (!menu.classList.contains('hidden')) {
-          // Only close if click is outside the menu and toggleButton
-          if (!menu.contains(event.target) && event.target !== toggleButton) {
-            menu.classList.add('hidden');
-            toggleButton.setAttribute('aria-expanded', 'false');
-          }
-        }
-      });
-
-      // Prevent clicks inside menu from closing it
-      menu.addEventListener('click', function (event) {
-        event.stopPropagation();
-      });
-
-      // MenuBox logic remains unchanged
-      menuBox.addEventListener('click', function (event) {
-        event.stopPropagation();
-      });
-    });
-  </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 <script src="loader.js"></script>
-
 </html>
 <!--  -->
