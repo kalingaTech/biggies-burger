@@ -39,7 +39,7 @@
 
 <body class="bg-black text-white">
 <!-- Header Starts here -->
-<header class="bg-transparent text-white py-4 px-0 md:px-16 absolute top-0 left-0 w-full z-[100]">
+<header class="bg-transparent text-white py-4 px-0 md:px-16 w-full z-[100]">
   <div class="mx-auto flex items-center justify-between px-4 md:px-0">
     <!-- Hamburger button (Mobile only) -->
     <button id="menu-toggle" class="md:hidden bg-[#111] border border-gray-700 rounded-md p-2">
@@ -115,7 +115,7 @@
     </div>
   <!-- Mobile Navigation Menu Ends -->
   <!-- Hero Section -->
-  <section class="h-screen flex items-center lg:justify-around gap-5 flex-col lg:flex-row mt-20">
+  <section class="h-screen flex items-center lg:justify-between gap-5 flex-col lg:flex-row lg:px-5 mt-10 lg:mt-0">
     <!-- Award Badge -->
     <div class="award-section order-2 lg:order-1 flex lg:flex-col items-center justify-center">
 
@@ -136,43 +136,7 @@
     </div>
 
     <!-- Main Content -->
-    <div
-      class="hero-section text-center max-w-5xl relative px-4 flex flex-col items-center justify-center order-1 lg:order-2">
-      <h1 class="text-yellow-400 text-sm md:text-md font-medium mb-4 md:mb-8 tracking-wider">
-        WELCOME TO THE BIGGEST
-      </h1>
 
-      <!-- Large BURGER Text with Image -->
-      <div class="relative">
-        <div
-          class="text-white select-none text-[100px] md:text-[130px] lg:text-[306px] font-bold leading-[160%] py-14 anton-regular">
-          BURGER
-        </div>
-        <!-- Burger Image Overlay -->
-        <div class="hero-burger absolute inset-0 flex items-center justify-center">
-          <img src="/assets/burger1.png" alt="Delicious Burger"
-            class="w-[320px] md:w-[400px] lg:w-fit object-contain lg:object-cover" />
-        </div>
-      </div>
-
-      <div class="mt-2">
-        <h2 class="text-yellow-400 text-sm md:text-md font-medium tracking-wider mb-4 md:mb-6">
-          CHAIN IN INDIA
-        </h2>
-        <p class="text-gray-300 max-w-2xl mx-auto text-xs md:text-sm leading-relaxed px-4">
-          Join millions of burger lovers across India who crave the sizzling
-          taste, bold flavors, and unforgettable experience of Biggies Burger.
-        </p>
-      </div>
-      <div class="absolute bottom-10 md:bottom-20 right-4 md:right-44 block">
-        <div class="w-20 h-20 md:w-28 md:h-28 border-2 border-yellow-400 rounded-full flex items-center justify-center">
-          <div class="text-center">
-            <div class="text-yellow-400 text-lg md:text-2xl font-bold">14</div>
-            <div class="text-xs">YEARS</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- 14 Years Badge -->
     <!-- Social Media Icons -->
@@ -211,6 +175,44 @@
         </a>
       </div>
     </div>
+
+    <div
+    class="hero-section text-center max-w-5xl relative lg:absolute px-4 flex flex-col items-center justify-center order-1 lg:order-2 lg:left-1/2 lg:-translate-x-1/2 gap-16 lg:gap-0">
+    <h1 class="text-yellow-400 text-sm md:text-md font-medium tracking-wider">
+      WELCOME TO THE BIGGEST
+    </h1>
+
+    <!-- Large BURGER Text with Image -->
+    <div class="relative">
+      <div
+        class="text-white select-none text-[100px] md:text-[130px] lg:text-[308px] font-bold anton-regular">
+  BURGER
+      </div>
+      <!-- Burger Image Overlay -->
+      <div class="hero-burger absolute inset-0 flex items-center justify-center">
+        <img src="/assets/burger1.png" alt="Delicious Burger"
+          class="w-[320px] md:w-[400px] lg:w-fit object-contain lg:object-cover" />
+      </div>
+    </div>
+
+    <div >
+      <h2 class="text-yellow-400 text-sm md:text-md font-medium tracking-wider mb-4 md:mb-6">
+        CHAIN IN INDIA
+      </h2>
+      <p class="text-gray-300 max-w-2xl mx-auto text-xs md:text-sm leading-relaxed px-4">
+        Join millions of burger lovers across India who crave the sizzling
+        taste, bold flavors, and unforgettable experience of Biggies Burger.
+      </p>
+    </div>
+    <div class="absolute bottom-10 md:bottom-20 right-4 md:right-44 block">
+      <div class="w-20 h-20 md:w-28 md:h-28 border-2 border-yellow-400 rounded-full flex items-center justify-center">
+        <div class="text-center">
+          <div class="text-yellow-400 text-lg md:text-2xl font-bold">14</div>
+          <div class="text-xs">YEARS</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   </section>
   <!-- Success Statistics Section -->
