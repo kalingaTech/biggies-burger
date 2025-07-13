@@ -462,7 +462,7 @@ footer a:hover {
   font-size: 30px;
   opacity: 0;
   transform: translateY(-20px);
-  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  transition: none !important; /* Disable CSS transitions for JS control */
   text-align: center;
   font-weight: 600;
 }
@@ -481,8 +481,12 @@ footer a:hover {
   width: 80%;
 }
 
+
+
+
+
 .scroll-section {
-  height: 300vh;
+  height: 450vh;
   position: relative;
 }
 
